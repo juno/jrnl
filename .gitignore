@@ -5,3 +5,4 @@ tmp/**/*
 tmp/cache/*
 tmp/sessions/*
 tmp/sockets/*
+config/database.yml
