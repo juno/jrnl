@@ -11,9 +11,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: things_development
+  database: jrnl_development
   pool: 5
-  username: things
+  username: jrnl
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -37,15 +37,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: things_test
+  database: jrnl_test
   pool: 5
-  username: things
+  username: jrnl
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: things_production
+  database: jrnl_production
   pool: 5
-  username: things
+  username: jrnl
   password:
