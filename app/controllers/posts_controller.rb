@@ -4,16 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
+    @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5
     respond_to do |format|
-      format.html { @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5 }
-      format.rss {
-        @posts = Post.order('created_at desc').limit(200)
-        render(:layout => false)  # index.rss.builder
-      }
-      format.xml  {
-        @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5
-        render :xml => @posts
-      }
+      format.html
+      format.rss { render(:layout => false) }  # index.rss.builder
+      format.xml  { render :xml => @posts }
     end
   end
 
