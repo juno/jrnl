@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.atom { @posts = Post.order('created_at desc').limit(200) }
       format.html { @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5 }
+      format.rss {
+        @posts = Post.order('created_at desc').limit(200)
+        render(:action => 'index.rxml')
+      }
       format.xml  {
         @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5
         render :xml => @posts
