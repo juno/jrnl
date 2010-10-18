@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.atom
   # GET /posts.xml
   def index
-    response.headers['Cache-Control'] = 'public, max-age=300' # for Heroku HTTP Caching
     respond_to do |format|
       format.atom { @posts = Post.order('created_at desc').limit(200) }
       format.html { @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5 }
@@ -20,8 +19,6 @@ class PostsController < ApplicationController
   # GET /posts/1.xml
   def show
     @post = Post.find(params[:id])
-
-    response.headers['Cache-Control'] = 'public, max-age=300' # for Heroku HTTP Caching
     respond_to do |format|
       format.html
       format.xml  { render :xml => @post }

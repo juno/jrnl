@@ -10,3 +10,8 @@
     <%= raw @post.html %>
   </div>
 </article>
+
+<% if current_user -%>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+  <%= link_to 'Delete', @post, :confirm => 'Are you ok?', :method => :delete %>
+<% end -%>
