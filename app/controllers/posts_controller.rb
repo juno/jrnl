@@ -2,15 +2,13 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
 
   # GET /posts
-  # GET /posts.atom
   # GET /posts.xml
   def index
     respond_to do |format|
-      format.atom { @posts = Post.order('created_at desc').limit(200) }
       format.html { @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5 }
       format.rss {
         @posts = Post.order('created_at desc').limit(200)
-        render(:action => 'index.rxml')
+        render(:layout => false)  # index.rss.builder
       }
       format.xml  {
         @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5
