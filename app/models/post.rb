@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   # @return [String]
   def title
-    self.content.split("\n").first.split(//).first(30).inject('') do |result, char|
+      ActionController::Base.helpers.strip_tags(html).split("\n").first.split(//).first(30).inject('') do |result, char|
       result += char
     end
   end
