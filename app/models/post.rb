@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   # @return [String]
   def title
-    self.content.split("\n").first.split(//).first(15).inject('') do |result, char|
+    self.content.split("\n").first.split(//).first(30).inject('') do |result, char|
       result += char
     end
   end
