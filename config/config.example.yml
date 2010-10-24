@@ -25,6 +25,10 @@ common:
     use: false
     code:
 
+  typekit:
+    use: true
+    id: TYPEKIT_ID
+
   twitter_anywhere:
     use: true
     id: TWITTER_APP_ID
