@@ -38,6 +38,15 @@ textarea {
     padding: 0;
 }
 
+nav.primary {
+}
+
+#cse {
+    background: #eee;
+    display:none;
+    width: 100%;
+}
+
 #social {
     display: block;
     min-height: 1px;
