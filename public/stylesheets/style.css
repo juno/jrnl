@@ -4,7 +4,7 @@ body {
     font-size: 14px;
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
+/*    -webkit-font-smoothing: antialiased; */
 }
 
 a,
@@ -34,9 +34,10 @@ textarea {
 }
 
 #logo {
+    font-size: 3em;
     font-style: normal;
     font-weight: 400;
-    margin: 0 0 1em 0;
+    margin: 0 0 30px 0;
     padding: 0;
 }
 #logo a {
@@ -46,39 +47,48 @@ textarea {
 
 nav.primary {
     font-size: 1em;
+    margin-bottom: 40px;
 }
-nav.primary .social a {
-    color: #333;
-    text-decoration: none;
-}
-
-#cse {
-    background: #eee;
-    border-radius: 5px;
-    display:none;
-    padding: 10px;
-    width: 100%;
-}
-
-#social {
-    display: block;
-    min-height: 1px;
-    margin: 0 0 50px 0;
-    padding: 0;
-}
-
-#social ul {
+nav.primary .social {
     list-style: none;
+    height: 1em;
     margin: 0;
     padding: 0;
 }
-
-#social li {
+nav.primary .social li {
     float: left;
     height: 1em;
     line-height: 1em;
     padding-right: 1em;
     position: relative;
+}
+nav.primary .social a {
+    color: #333;
+    text-decoration: none;
+}
+nav.primary .search-form {
+    clear: both;
+    margin-top: 10px;
+}
+
+#search-enabler {
+    background: url(/images/magnifying_glass_alt_16x16.png) no-repeat top left;
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    text-indent: -9999px;
+    width: 16px;
+}
+
+#cse {
+    -moz-border-raidus: 5px;
+    -webkit-border-raidus: 5px;
+    background: #eee;
+    border-radius: 5px;
+    display:none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 #content {
@@ -87,7 +97,7 @@ nav.primary .social a {
 }
 
 article.post {
-    margin: 2em 0;
+    margin: 2em 0 3em;
     padding: 0;
 }
 
@@ -95,12 +105,45 @@ article.post header h1 {
     font-size: 1em;
     font-weight: normal;
 }
+article.post header h1 a {
+    color: #333;
+}
 
 article.post .content {
+    margin-left: 2em;
+}
+
+article.post .content a {
+    background-color: rgba(0, 0, 0, 0.046875);
+    color: #32abc9;
+    font-weight: bold;
+    padding: 0px 0.2em;
+    -webkit-transition-duration: 0.33s;
+    -webkit-transition-property: color, background;
+}
+article.post .content a:link,
+article.post .content a:visited {
+    border-radius: 3px;
+}
+article.post .content a:hover {
+    background-color: #32abc9;
+    color: #fff;
+    text-decoration: none;
+}
+
+article.post .content blockquote {
+    Background: #eee;
+    border-left: 3px solid #ddd;
+    margin-left: 0;
+    padding: 0 1em;
 }
 
 article.post .content p {
     line-height: 1.8;
+}
+
+article.post .content img {
+    border: none;
 }
 
 
@@ -125,4 +168,19 @@ footer address {
 }
 
 footer .copyright {
+}
+
+
+.flash {
+    border: 2px solid #666;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: .5em;
+    -moz-border-raidus: 3px;
+    -webkit-border-raidus: 3px;
+}
+.sign-out {
+    float: right;
+    font-size: .9em;
+    text-align: right;
 }

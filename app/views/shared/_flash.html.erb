@@ -1,2 +1,2 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%= content_tag('div', alert, :class => 'flash alert') if flash[:alert] %>
+<%= content_tag('div', notice, :class => 'flash notice') if flash[:notice] %>

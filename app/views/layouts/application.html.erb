@@ -17,14 +17,15 @@
   <body>
 
     <div id="main">
-      <%= render :partial => 'shared/flash' %>
+      <%= render :partial => 'shared/flash', :locals => { :flash => flash } %>
+
+      <%= content_tag('div', link_to('Sign out', [ :destroy, current_user, :session ]), :class => 'sign-out') if current_user %>
 
       <header>
         <h1 id="logo" class="tk-gooddog-new"><%= link_to 'Sooey', root_path %></h1>
       </header>
 
       <nav class="primary">
-        <%= link_to('Sign out', [ :destroy, current_user, :session ], :class => 'signOut') if current_user %>
         <%= render :partial => 'shared/social' %>
         <%= render :partial => 'shared/google_custom_search' if AppConfig.google_custom_search['use'] %>
       </nav>
