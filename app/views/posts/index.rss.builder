@@ -13,11 +13,9 @@ xml.rss('version' => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom') do
       xml.item do
         date = e.created_at.strftime("%a, %d %b %Y %H:%M:%S %Z")
         xml.title(date)
-        xml.link(request.protocol + request.host_with_port +
-                 url_for(:controller => 'posts', :action => 'show', :id => e.id ))
+        xml.link(request.protocol + request.host_with_port + permalink_path(:id => e.id))
         xml.description(e.html)
-        xml.guid(request.protocol + request.host_with_port +
-                 url_for(:controller => 'posts', :action => 'show', :id => e.id ))
+        xml.guid(request.protocol + request.host_with_port + permalink_path(:id => e.id))
         xml.pubDate(date)
         xml.author 'junyaogura@gmail.com (Junya Ogura)'
       end
