@@ -10,12 +10,15 @@ class Post < ActiveRecord::Base
   # @return [String]
   def html
     BlueFeather.parse(self.content)
+  rescue => e
+    "Couldn't parse content as HTML: #{e}"
   end
 
   # @return [String]
   def title
-    self.content.split("\n").first.split(//).first(15).inject('') do |result, char|
-      result += char
-    end
+    first_line = ActionController::Base.helpers.strip_tags(html).split("\n").first
+    str = first_line.split(//).first(30).inject('') { |result, char| result += char }
+    str += '...' if first_line.length > 30
+    str
   end
 end

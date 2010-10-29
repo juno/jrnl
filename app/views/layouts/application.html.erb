@@ -1,70 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" >
+    <%= csrf_meta_tag %>
     <title><%= content_for?(:title) ? yield(:title) : 'Sooey' %></title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <%= render :partial => 'shared/feedburner' if AppConfig.feedburner['use'] %>
     <%= stylesheet_link_tag :all %>
     <%= javascript_include_tag :defaults %>
-    <%= csrf_meta_tag %>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/Sooey" />
-
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-17293111-2']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-
-    <script type="text/javascript" src="http://www.observerapp.com/record.js"></script>
-    <script type="text/javascript">try { Observerapp.record("4c8dd5f1e697483134009cba"); } catch(e) {};</script>
-
-    <script src="http://platform.twitter.com/anywhere.js?id=ua931JjzNdqgvz2B0S85jA&amp;v=1"></script>
-    <script type="text/javascript">
-      twttr.anywhere(function(T) { T('article.post .content').hovercards(); });
-    </script>
+    <%= render :partial => 'shared/google_analytics' if AppConfig.google_analytics['use'] %>
+    <%= render :partial => 'shared/observer_app' if AppConfig.observer_app['use'] %>
+    <%= render :partial => 'shared/typekit' if AppConfig.typekit['use'] %>
+    <%= render :partial => 'shared/twitter_anywhere' if AppConfig.twitter_anywhere['use'] %>
   </head>
 
   <body>
 
     <div id="main">
+      <%= render :partial => 'shared/flash', :locals => { :flash => flash } %>
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+      <%= content_tag('div', link_to('Sign out', [ :destroy, current_user, :session ]), :class => 'sign-out') if current_user %>
 
       <header>
-        <h1 id="logo"><%= link_to 'Sooey', root_path %></h1>
+        <h1 id="logo" class="tk-gooddog-new"><%= link_to 'Sooey', root_path %></h1>
       </header>
 
-      <%= link_to('Sign out', [ :destroy, current_user, :session ], :class => 'signOut') if current_user %>
-
-      <section id="social">
-        <ul>
-          <li><a href="http://twitter.com/junya">twitter</a></li>
-          <li><a href="http://facebook.com/junya.ogura">facebook</a></li>
-          <li><a href="http://www.flickr.com/photos/sooey/">flickr</a></li>
-        </ul>
-      </section>
+      <nav class="primary">
+        <%= render :partial => 'shared/social' %>
+        <%= render :partial => 'shared/google_custom_search' if AppConfig.google_custom_search['use'] %>
+      </nav>
 
       <div id="content">
         <%= yield %>
       </div>
 
-      <footer class="autopagerize_insert_before">
-        <address>Junya Ogura &lt;junyaogura@gmail.com&gt;</address>
+      <footer>
+        <address><%= AppConfig.author['name'] %> &lt;<%= AppConfig.author['email'] %>&gt;</address>
         <p class="copyright">
           <a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/80x15.png" /></a>
         </p>
       </footer>
 
+      <div class="autopagerize_insert_before"></div>
     </div>
 
     <script src="/javascripts/jquery.embedly.min.js"></script>
-
-    <!-- rendered at <%= Time.now %> -->
 
   </body>
 </html>

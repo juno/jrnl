@@ -1,0 +1,6 @@
+<ul class="social tk-museo">
+  <% AppConfig.social.each do |s| -%>
+    <li><a href="<%= s['url'] %>"><%= s['name'] %></a></li>
+  <% end -%>
+  <li><a id="search-enabler" class="tk-museo">Search</a></li>
+</ul>

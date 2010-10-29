@@ -1,0 +1,43 @@
+common:
+  author:
+    name: YOUR NAME
+    email: YOUR ADDRESS
+
+  social:
+    - name: twitter
+      url: http://twitter.com/YOURNAME
+    - name: facebook
+      url: http://facebook.com/YOURNAME
+
+  feedburner:
+    use: false
+    url: FEED_ADDRESS
+
+  google_analytics:
+    use: false
+    code:
+
+  google_custom_search:
+    use: true
+    code: CUSTOM_SEARCH_CODE
+
+  observer_app:
+    use: false
+    code:
+
+  typekit:
+    use: true
+    id: TYPEKIT_ID
+
+  twitter_anywhere:
+    use: true
+    id: TWITTER_APP_ID
+
+production:
+  google_analytics:
+    use: true
+    code: UA-XXXXXXX-X
+
+  observer_app:
+    use: true
+    code: XXXXXXXXXXXXXXXXXXXXXXXX

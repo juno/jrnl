@@ -1,13 +1,6 @@
 <% title @post.title -%>
 
-<article class="post">
-  <header>
-    <h1><%= link_to @post.created_at, @post %></h1>
-  </header>
-  <div class="content">
-    <%= raw @post.html %>
-  </div>
-</article>
+<%= render :partial => 'post', :locals => { :post => @post } %>
 
 <% if current_user -%>
   <%= link_to 'Edit', edit_post_path(@post) %>

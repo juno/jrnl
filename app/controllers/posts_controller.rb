@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.rss { render(:layout => false) }  # index.rss.builder
-      format.xml  { render :xml => @posts }
+      format.xml { render :xml => @posts }
     end
   end
 
