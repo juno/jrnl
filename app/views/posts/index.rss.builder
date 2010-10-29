@@ -4,7 +4,7 @@ xml.rss('version' => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom') do
     xml.title "Sooey"
     xml.description "duh"
     xml.link(request.protocol + request.host_with_port + url_for(:rss => nil))
-    xml.language "ja-ja"
+    xml.language "ja"
 
     xml.ttl "40"
     xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
