@@ -34,8 +34,8 @@ common:
     code:
 
   typekit:
-    use: true
-    id: ock6krn
+    use: false
+    id:
 
   twitter_anywhere:
     use: true
@@ -49,5 +49,9 @@ production:
   observer_app:
     use: true
     code: 4c8dd5f1e697483134009cba
+
+  typekit:
+    use: true
+    id: ock6krn
 
 development:
