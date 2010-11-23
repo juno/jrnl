@@ -14,6 +14,8 @@ common:
       url: http://pinboard.in/u:junya/
     - name: flickr
       url: http://www.flickr.com/photos/sooey/
+    - name: plancast
+      url: http://plancast.com/junya
     - name: wishlist
       url: http://www.amazon.co.jp/wishlist/2VFJWLLDJF03B/
 
@@ -34,8 +36,8 @@ common:
     code:
 
   typekit:
-    use: true
-    id: ock6krn
+    use: false
+    id:
 
   twitter_anywhere:
     use: true
@@ -49,5 +51,9 @@ production:
   observer_app:
     use: true
     code: 4c8dd5f1e697483134009cba
+
+  typekit:
+    use: true
+    id: ock6krn
 
 development:
