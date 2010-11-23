@@ -198,4 +198,5 @@ footer .copyright {
         padding: 0 !important;
         margin: 0 !important;
     }
+    article.post { margin-left: 0; }
 }
