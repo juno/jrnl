@@ -41,3 +41,7 @@ production:
   observer_app:
     use: true
     code: XXXXXXXXXXXXXXXXXXXXXXXX
+
+  mixpanel:
+    use: true
+    code: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
