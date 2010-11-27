@@ -49,11 +49,11 @@ common:
 
 production:
   google_analytics:
-    use: false
+    use: true
     code: UA-17293111-2
 
   observer_app:
-    use: false
+    use: true
     code: 4c8dd5f1e697483134009cba
 
   typekit:
@@ -61,7 +61,7 @@ production:
     id: ock6krn
 
   mixpanel:
-    use: true
+    use: false
     code: 32f9c23f0217d2d45165cf2d2283f113
 
 development:
