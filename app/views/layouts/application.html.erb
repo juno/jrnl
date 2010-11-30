@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" >
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=yes" >
     <%= csrf_meta_tag %>
     <title><%= content_for?(:title) ? yield(:title) : 'Sooey' %></title>
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -44,6 +45,7 @@
     <%= render :partial => 'shared/google_analytics' if AppConfig.google_analytics['use'] %>
     <%= render :partial => 'shared/observer_app' if AppConfig.observer_app['use'] %>
     <%= render :partial => 'shared/typekit' if AppConfig.typekit['use'] %>
+    <%= render :partial => 'shared/mixpanel' if AppConfig.mixpanel['use'] %>
 
   </body>
 </html>

@@ -45,6 +45,10 @@ common:
     use: true
     id: ua931JjzNdqgvz2B0S85jA
 
+  mixpanel:
+    use: false
+    code:
+
 production:
   google_analytics:
     use: true
@@ -57,5 +61,9 @@ production:
   typekit:
     use: true
     id: ock6krn
+
+  mixpanel:
+    use: false
+    code: 32f9c23f0217d2d45165cf2d2283f113
 
 development:
