@@ -16,6 +16,8 @@ common:
       url: http://www.flickr.com/photos/sooey/
     - name: plancast
       url: http://plancast.com/junya
+    - name: homescreen
+      url: http://homescreen.me/junya
     - name: wishlist
       url: http://www.amazon.co.jp/wishlist/2VFJWLLDJF03B/
 
