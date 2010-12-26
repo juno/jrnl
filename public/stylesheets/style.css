@@ -1,10 +1,10 @@
 body {
     background-color: #fff;
     color: #333;
-    font-size: 14px;
+    font: 20px/1.5 Helvetica,Arial,sans-serif;
     margin: 0;
     padding: 0;
-/*    -webkit-font-smoothing: antialiased; */
+    -webkit-font-smoothing: antialiased;
 }
 
 a,
@@ -103,15 +103,14 @@ article.post {
 }
 
 article.post header h1 {
-    font-size: 1em;
-    font-weight: normal;
+    font-size: 30px;
+    font-weight: bold;
 }
 article.post header h1 a {
     color: #333;
 }
 
 article.post .content {
-    margin-left: 2em;
 }
 
 article.post .content a {
@@ -133,10 +132,17 @@ article.post .content a:hover {
 }
 
 article.post .content blockquote {
-    Background: #eee;
+    background: #eee;
     border-left: 3px solid #ddd;
     margin-left: 0;
     padding: 0 1em;
+}
+
+article.post .content pre {
+    background: #333;
+    color: #fff;
+    margin-left: 0;
+    padding: .5em;
 }
 
 article.post .content p {
