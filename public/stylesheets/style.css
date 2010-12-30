@@ -194,6 +194,7 @@ footer .copyright {
 
 
 /* for iPhone */
+/*
 @media screen and (max-device-width: 480px) {
     * { margin: 0; border: 0; padding: 0; }
     body { -webkit-text-size-adjust: none; }
@@ -206,3 +207,4 @@ footer .copyright {
     }
     article.post { margin-left: 0; }
 }
+*/
