@@ -103,8 +103,8 @@ article.post {
 }
 
 article.post header h1 {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: normal;
 }
 article.post header h1 a {
     color: #333;
