@@ -1,11 +1,11 @@
 class Post < ActiveRecord::Base
   validates :content, :presence => true
 
-  # @param [Integer] page
-  # @return [Array]
-  def self.search(page)
-    paginate :per_page => 5, :page => page, :conditions => ['draft is ?', false], :order => 'created_at DESC'
-  end
+  scope :created_within, lambda { |from, to|
+    where(:created_at => from..to)
+  }
+  scope :oldest, order("posts.created_at ASC")
+  scope :recent, order("posts.created_at DESC")
 
   # @return [String]
   def html

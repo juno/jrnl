@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :monthly_archive]
 
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.order('created_at desc').paginate :page => params[:page], :per_page => 5
+    @posts = Post.recent.paginate :page => params[:page], :per_page => 5
     respond_to do |format|
       format.html
       format.rss { render(:layout => false) }  # index.rss.builder
@@ -80,5 +81,11 @@ class PostsController < ApplicationController
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def monthly_archive
+    t = Time.new(params[:year], params[:month], 1)
+    @posts = Post.created_within(t.beginning_of_month, t.end_of_month).oldest.paginate(:page => params[:page], :per_page => 100)
+    render :index
   end
 end
