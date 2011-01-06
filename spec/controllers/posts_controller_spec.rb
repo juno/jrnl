@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe PostsController do
-  include Devise::TestHelpers
 
   def mock_post(stubs={})
     (@mock_post ||= mock_model(Post).as_null_object).tap do |post|
