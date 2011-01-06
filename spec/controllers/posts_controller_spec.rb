@@ -8,126 +8,205 @@ describe PostsController do
     end
   end
 
+  def stub_recent_posts
+    @posts = []
+    5.times { @posts << mock_model(Post) }
+    Post.stub(:recent) { @posts }
+  end
+
   describe "GET index" do
-    it "assigns all posts as @posts" do
-      Post.stub(:recent) { [mock_post] }
+    before do
+      stub_recent_posts
       get :index
-      assigns(:posts).should eq([mock_post])
     end
+
+    subject { controller }
+    it { should assign_to(:posts).with(@posts) }
+    it { should respond_with_content_type(:html) }
+    it { should render_template(:index) }
+  end
+
+  describe "GET index.rss" do
+    before do
+      stub_recent_posts
+      get :index, :format => :rss
+    end
+
+    subject { controller }
+    it { should assign_to(:posts).with(@posts) }
+    it { should respond_with_content_type(:rss) }
+    it { should render_template(:index) }
   end
 
   describe "GET show" do
-    it "assigns the requested post as @post" do
-      Post.stub(:find).with("37") { mock_post }
-      get :show, :id => "37"
-      assigns(:post).should be(mock_post)
+    before do
+      Post.stub(:find).with('37') { mock_post }
+      get :show, :id => '37'
     end
+
+    subject { controller }
+    it { should render_template(:show) }
+    it { should assign_to(:post).with(mock_post) }
   end
 
   describe "GET new" do
-    before { sign_in Factory(:author) }
-    it "assigns a new post as @post" do
-      Post.stub(:new) { mock_post }
-      get :new
-      assigns(:post).should be(mock_post)
+    before { Post.stub(:new) { mock_post} }
+
+    context "not sign in" do
+      before { get :new }
+      subject { controller }
+      it { should respond_with(:redirect) }
+    end
+
+    context "sign in" do
+      before do
+        sign_in Factory(:author)
+        get :new
+      end
+
+      subject { controller }
+      it { should render_template(:new) }
+      it { should assign_to(:post).with(mock_post) }
     end
   end
 
   describe "GET edit" do
-    before { sign_in Factory(:author) }
-    it "assigns the requested post as @post" do
-      Post.stub(:find).with('37') { mock_post }
-      get :edit, :id => '37'
-      assigns(:post).should be(mock_post)
+    context "not sign in" do
+      before { get :edit, :id => '37' }
+      subject { controller }
+      it { should respond_with(:redirect) }
+    end
+
+    context "sign in" do
+      before { sign_in Factory(:author) }
+
+      context "with invalid id" do
+        it "raises exception" do
+          expect { get :edit, :id => '0' }.should raise_error
+        end
+      end
+
+      context "with valid id" do
+        before do
+          Post.stub(:find).with('37') { mock_post }
+          get :edit, :id => '37'
+        end
+        subject { controller }
+        it { should assign_to(:post).with(mock_post) }
+        it { should render_template(:edit) }
+      end
     end
   end
 
   describe "POST create" do
-    before { sign_in Factory(:author) }
-
-    describe "with valid params" do
-      it "assigns a newly created post as @post" do
-        Post.stub(:new).with({'these' => 'params'}) { mock_post(:save => true) }
-        post :create, :post => {'these' => 'params'}
-        assigns(:post).should be(mock_post)
-      end
-
-      it "redirects to the created post" do
-        Post.stub(:new) { mock_post(:save => true) }
-        post :create, :post => {}
-        response.should redirect_to(post_url(mock_post))
-      end
+    context "not sign in" do
+      before { post :create }
+      subject { controller }
+      it { should respond_with(:redirect) }
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved post as @post" do
-        Post.stub(:new).with({'these' => 'params'}) { mock_post(:save => false) }
-        post :create, :post => {'these' => 'params'}
-        assigns(:post).should be(mock_post)
+    context "sign in" do
+      before { sign_in Factory(:author) }
+
+      context "create failure" do
+        before do
+          Post.stub(:new) { mock_post(:save => false) }
+          post :create, :post => {}
+        end
+
+        subject { controller }
+        it { should assign_to(:post).with(mock_post) }
+        it { should render_template(:new) }
       end
 
-      it "re-renders the 'new' template" do
-        Post.stub(:new) { mock_post(:save => false) }
-        post :create, :post => {}
-        response.should render_template("new")
+      context "successfully created" do
+        before do
+          Post.stub(:new) { mock_post(:save => true) }
+          post :create, :post => {}
+        end
+
+        subject { controller }
+        it { should assign_to(:post).with(mock_post) }
+        it { should redirect_to(post_url(mock_post)) }
+        it { should set_the_flash.to('Post was successfully created.') }
       end
     end
-
   end
 
   describe "PUT update" do
-    before { sign_in Factory(:author) }
-
-    describe "with valid params" do
-      it "updates the requested post" do
-        Post.should_receive(:find).with("37") { mock_post }
-        mock_post.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, :id => "37", :post => {'these' => 'params'}
-      end
-
-      it "assigns the requested post as @post" do
-        Post.stub(:find) { mock_post(:update_attributes => true) }
-        put :update, :id => "1"
-        assigns(:post).should be(mock_post)
-      end
-
-      it "redirects to the post" do
-        Post.stub(:find) { mock_post(:update_attributes => true) }
-        put :update, :id => "1"
-        response.should redirect_to(post_url(mock_post))
-      end
+    context "not sign in" do
+      before { put :update, :id => '1' }
+      subject { controller }
+      it { should respond_with(:redirect) }
     end
 
-    describe "with invalid params" do
-      it "assigns the post as @post" do
-        Post.stub(:find) { mock_post(:update_attributes => false) }
-        put :update, :id => "1"
-        assigns(:post).should be(mock_post)
+    context "sign in" do
+      before { sign_in Factory(:author) }
+
+      context "update failure" do
+        before do
+          Post.stub(:find) { mock_post(:update_attributes => false) }
+          put :update, :id => '1'
+        end
+
+        subject { controller }
+        it { should assign_to(:post).with(mock_post) }
+        it { should render_template(:edit) }
       end
 
-      it "re-renders the 'edit' template" do
-        Post.stub(:find) { mock_post(:update_attributes => false) }
-        put :update, :id => "1"
-        response.should render_template("edit")
+      context "successfully updated" do
+        before do
+          Post.should_receive(:find).with('37') { mock_post }
+          mock_post.should_receive(:update_attributes).and_return(true)
+          put :update, :id => '37', :post => {}
+        end
+
+        subject { controller }
+        it { should assign_to(:post).with(mock_post) }
+        it { should redirect_to(post_url(mock_post)) }
+        it { should set_the_flash.to('Post was successfully updated.') }
       end
     end
 
   end
 
   describe "DELETE destroy" do
-    before { sign_in Factory(:author) }
-
-    it "destroys the requested post" do
-      Post.should_receive(:find).with("37") { mock_post }
-      mock_post.should_receive(:destroy)
-      delete :destroy, :id => "37"
+    context "not sign in" do
+      before { delete :destroy, :id => '1' }
+      subject { controller }
+      it { should respond_with(:redirect) }
     end
 
-    it "redirects to the posts list" do
-      Post.stub(:find) { mock_post }
-      delete :destroy, :id => "1"
-      response.should redirect_to(posts_url)
+    context "sign in" do
+      before { sign_in Factory(:author) }
+
+      context "destroy failure" do
+        before do
+          Post.should_receive(:find).with('37') { mock_post }
+          mock_post.stub(:destroy).and_raise(RuntimeError)
+          expect { delete :destroy, :id => '37' }.should raise_error
+        end
+      end
+
+      context "successfully destroyed" do
+        before do
+          Post.should_receive(:find).with('37') { mock_post }
+          mock_post.should_receive(:destroy)
+          delete :destroy, :id => '37'
+        end
+
+        subject { controller }
+        it { should assign_to(:post).with(mock_post) }
+        it { should redirect_to(posts_url) }
+      end
     end
+  end
+
+  describe "GET monthly_archive" do
+    before { get :monthly_archive, :year => '2011', :month => '1' }
+    subject { controller }
+    it { should assign_to(:posts).with(@posts) }
+    it { should render_template(:index) }
   end
 
 end

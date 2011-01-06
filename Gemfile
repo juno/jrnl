@@ -14,6 +14,7 @@ group :test, :development do
   gem 'fuubar'
   gem 'rspec-core'
   gem 'rspec-rails'
+  gem 'shoulda'
   gem 'steak'
   gem 'capybara'
 end

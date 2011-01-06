@@ -10,6 +10,8 @@ describe Post do
     Factory(:post, :created_at => Time.new(2011, 2, 2), :content => 'newest one')
   end
 
+  it { should validate_presence_of :content }
+
   describe '.created_within' do
     before { setup_post_fixtures }
     let(:beginning_of_month) { Time.new(2011, 1, 10).beginning_of_month }
