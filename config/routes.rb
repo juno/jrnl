@@ -3,7 +3,7 @@ Jrnl::Application.routes.draw do
 
   devise_for :users
 
-  match '/posts' => redirect('/')
+  match '/posts' => redirect('/'), :constraints => { :method => 'get' }
   match '/posts/index' => redirect('/')
   resources :posts
 

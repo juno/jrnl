@@ -12,6 +12,7 @@ gem 'will_paginate', '~> 3.0.pre2'
 
 group :test, :development do
   gem 'fuubar'
+  gem 'rcov'
   gem 'rspec-core'
   gem 'rspec-rails'
   gem 'shoulda'
