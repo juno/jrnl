@@ -1,7 +1,12 @@
 Jrnl::Application.routes.draw do
+  root :to => 'posts#index'
+
   devise_for :users
+
+  match '/posts' => redirect('/')
+  match '/posts/index' => redirect('/')
   resources :posts
-  root :to => "posts#index"
+
   match '/:id' => 'posts#show', :constraints => { :id => /\d+/ }, :as => :permalink
   match '/archives/:year/:month' => 'posts#monthly_archive', :constraints => { :year => /\d{4}/, :month => /\d{1,2}/ }, :as => :monthly_archive
 end

@@ -11,7 +11,7 @@ describe PostsController do
 
   describe "GET index" do
     it "assigns all posts as @posts" do
-      Post.stub(:all) { [mock_post] }
+      Post.stub(:recent) { [mock_post] }
       get :index
       assigns(:posts).should eq([mock_post])
     end
@@ -26,6 +26,7 @@ describe PostsController do
   end
 
   describe "GET new" do
+    before { sign_in Factory(:author) }
     it "assigns a new post as @post" do
       Post.stub(:new) { mock_post }
       get :new
@@ -34,14 +35,16 @@ describe PostsController do
   end
 
   describe "GET edit" do
+    before { sign_in Factory(:author) }
     it "assigns the requested post as @post" do
-      Post.stub(:find).with("37") { mock_post }
-      get :edit, :id => "37"
+      Post.stub(:find).with('37') { mock_post }
+      get :edit, :id => '37'
       assigns(:post).should be(mock_post)
     end
   end
 
   describe "POST create" do
+    before { sign_in Factory(:author) }
 
     describe "with valid params" do
       it "assigns a newly created post as @post" do
@@ -74,6 +77,7 @@ describe PostsController do
   end
 
   describe "PUT update" do
+    before { sign_in Factory(:author) }
 
     describe "with valid params" do
       it "updates the requested post" do
@@ -112,6 +116,8 @@ describe PostsController do
   end
 
   describe "DELETE destroy" do
+    before { sign_in Factory(:author) }
+
     it "destroys the requested post" do
       Post.should_receive(:find).with("37") { mock_post }
       mock_post.should_receive(:destroy)
