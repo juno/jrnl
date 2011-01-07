@@ -51,19 +51,19 @@ describe Post do
   end
 
   describe '#title' do
-    context 'length of first line less than 31' do
+    context 'length of first line less than 71' do
       let(:content) { "*First* line\nSecond line." }
       subject { Post.new(:content => content).title }
       it { should match(/^First /) }
       it { should_not match(/\n/) }
     end
 
-    context 'length of first line greater than 30' do
-      let(:content) { '*a*' + ('b' * 30) }
+    context 'length of first line greater than 70' do
+      let(:content) { '*a*' + ('b' * 70) }
       subject { Post.new(:content => content).title }
       it { should match(%r|...$|) }
       it { should_not match(/<em>/) }
-      its(:length) { should eq(30 + 3) }
+      its(:length) { should eq(70 + 3) }
     end
   end
 
