@@ -138,11 +138,15 @@ article.post .content blockquote {
     padding: 0 1em;
 }
 
-article.post .content pre {
+article.post .content > pre {
     background: #333;
     color: #fff;
     margin-left: 0;
     padding: .5em;
+    width: auto;
+    _width: 90%;
+    overflow-x: auto;
+    font-family: monospace;
 }
 
 article.post .content p {
