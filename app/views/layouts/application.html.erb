@@ -16,8 +16,6 @@
     <div id="main">
       <%= render :partial => 'shared/flash', :locals => { :flash => flash } %>
 
-      <%= content_tag('div', link_to('Sign out', [ :destroy, current_user, :session ]), :class => 'sign-out') if current_user %>
-
       <header>
         <h1 id="logo" class="tk-daniel"><%= link_to 'Sooey', root_path %></h1>
       </header>
