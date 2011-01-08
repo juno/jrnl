@@ -1,3 +1,3 @@
 script type="text/javascript" src="http://www.observerapp.com/record.js"
 javascript:
-  try { Observerapp.record('<%= AppConfig.observer_app['code'] %>'); } catch(e) {};
+  try { Observerapp.record('#{AppConfig.observer_app['code']}'); } catch(e) {};
