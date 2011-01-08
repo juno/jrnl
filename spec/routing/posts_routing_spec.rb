@@ -1,35 +1,41 @@
 require "spec_helper"
 
 describe PostsController do
-  describe "routing" do
 
-    it "recognizes and generates #index" do
-      { :get => "/posts" }.should route_to(:controller => "posts", :action => "index")
-    end
-
-    it "recognizes and generates #new" do
-      { :get => "/posts/new" }.should route_to(:controller => "posts", :action => "new")
-    end
-
-    it "recognizes and generates #show" do
-      { :get => "/posts/1" }.should route_to(:controller => "posts", :action => "show", :id => "1")
-    end
-
-    it "recognizes and generates #edit" do
-      { :get => "/posts/1/edit" }.should route_to(:controller => "posts", :action => "edit", :id => "1")
-    end
-
-    it "recognizes and generates #create" do
-      { :post => "/posts" }.should route_to(:controller => "posts", :action => "create")
-    end
-
-    it "recognizes and generates #update" do
-      { :put => "/posts/1" }.should route_to(:controller => "posts", :action => "update", :id => "1")
-    end
-
-    it "recognizes and generates #destroy" do
-      { :delete => "/posts/1" }.should route_to(:controller => "posts", :action => "destroy", :id => "1")
-    end
-
+  describe 'GET /posts' do
+    it { { :get => "/posts" }.should route_to(:controller => "posts", :action => "index") }
   end
+
+  describe 'GET /posts/new' do
+    it { { :get => "/posts/new" }.should route_to(:controller => "posts", :action => "new") }
+  end
+
+  describe 'GET /posts/1' do
+    it { { :get => "/posts/1" }.should route_to(:controller => "posts", :action => "show", :id => "1") }
+  end
+
+  describe 'GET /posts/1/edit' do
+    it { { :get => "/posts/1/edit" }.should route_to(:controller => "posts", :action => "edit", :id => "1") }
+  end
+
+  describe 'POST /posts' do
+    it { { :post => "/posts" }.should route_to(:controller => "posts", :action => "create") }
+  end
+
+  describe 'PUT /posts/1' do
+    it { { :put => "/posts/1" }.should route_to(:controller => "posts", :action => "update", :id => "1") }
+  end
+
+  describe 'DELETE /posts/1' do
+    it { { :delete => "/posts/1" }.should route_to(:controller => "posts", :action => "destroy", :id => "1") }
+  end
+
+  describe 'GET /1' do
+    it { { :get => "/1" }.should route_to(:controller => "posts", :action => "show", :id => "1") }
+  end
+
+  describe 'GET /archives/2011/1' do
+    it { { :get => "/archives/2011/1" }.should route_to(:controller => "posts", :action => "monthly_archive", :year => "2011", :month => "1") }
+  end
+
 end

@@ -11,6 +11,11 @@ gem 'jquery-rails', '0.2.4'
 gem 'will_paginate', '~> 3.0.pre2'
 
 group :test, :development do
-  gem 'rspec'
+  gem 'fuubar'
+  gem 'rcov'
+  gem 'rspec-core'
   gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'steak'
+  gem 'capybara'
 end

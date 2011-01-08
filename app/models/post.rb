@@ -16,9 +16,10 @@ class Post < ActiveRecord::Base
 
   # @return [String]
   def title
+    max_length = 70
     first_line = ActionController::Base.helpers.strip_tags(html).split("\n").first
-    str = first_line.split(//).first(30).inject('') { |result, char| result += char }
-    str += '...' if first_line.length > 30
+    str = first_line.split(//).first(max_length).inject('') { |result, char| result += char }
+    str += '...' if first_line.length > max_length
     str
   end
 end
