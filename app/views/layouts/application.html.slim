@@ -1,0 +1,32 @@
+! doctype html
+head
+  html
+    meta charset="UTF-8"
+    meta name="viewport" content="initial-scale=1.0,user-scalable=yes"
+    = csrf_meta_tag
+    title = content_for?(:title) ? yield(:title) : 'Sooey'
+    link rel="shortcut icon" href="/favicon.ico"
+    = render :partial => 'shared/feedburner' if AppConfig.feedburner['use']
+    = include_stylesheets :common
+    = render :partial => 'shared/twitter_anywhere' if AppConfig.twitter_anywhere['use']
+  body
+    #main
+      = render :partial => 'shared/flash', :locals => { :flash => flash }
+      header
+        h1#logo.tk-daniel = link_to 'Sooey', root_path
+      nav.primary
+        = render :partial => 'shared/social'
+        = render :partial => 'shared/google_custom_search' if AppConfig.google_custom_search['use']
+      #content == yield
+      footer
+        address = "#{AppConfig.author['name']} <#{AppConfig.author['email']}>"
+        p.copyright
+          a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"
+            img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/80x15.png"
+      .autopagerize_insert_before
+      | <!-- This page rendered at #{Time.zone.now} -->
+    = include_javascripts :common
+    = render :partial => 'shared/google_analytics' if AppConfig.google_analytics['use']
+    = render :partial => 'shared/observer_app' if AppConfig.observer_app['use']
+    = render :partial => 'shared/typekit' if AppConfig.typekit['use']
+    = render :partial => 'shared/mixpanel' if AppConfig.mixpanel['use']

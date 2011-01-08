@@ -9,6 +9,8 @@ gem 'factory_girl_rails'
 gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'jquery-rails', '0.2.4'
 gem 'will_paginate', '~> 3.0.pre2'
+gem 'slim'
+gem 'slim-rails'
 
 group :test, :development do
   gem 'fuubar'
