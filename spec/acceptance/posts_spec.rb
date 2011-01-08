@@ -1,23 +1,19 @@
 require File.expand_path(File.dirname(__FILE__) + '/acceptance_helper')
 
-feature "Manage a post", %q{
-  In order to manage journal
-  As a author
-  I want to create, update, destroy a post
-} do
+feature "Manage a post" do
 
   background do
     setup_driver
+    author = Factory(:author)
+    sign_in
   end
 
   scenario "create a post" do
-    author = Factory(:author)
+    visit admin_index
+    click_link 'New post'
 
-    sign_in
-
-    visit post_new
     fill_in('Content', :with => 'Rule the world!')
-    click_button('Create Post')
+    click_button 'Create Post'
 
     visit homepage
     page.should have_content('Rule the world!')
@@ -25,11 +21,10 @@ feature "Manage a post", %q{
 
   scenario "update a post" do
     post = Post.create!(:content => 'Hacker and Painter')
-    author = Factory(:author)
 
-    sign_in
+    visit admin_index
+    find("#post_#{post.id}").click_link('Edit')
 
-    visit post_edit(post)
     fill_in('Content', :with => 'Photoshop and Painter')
     click_button('Update Post')
 
@@ -40,12 +35,9 @@ feature "Manage a post", %q{
 
   scenario "destroy a post" do
     post = Post.create!(:content => 'Deprecated content')
-    author = Factory(:author)
 
-    sign_in
-
-    visit post_show(post)
-    click_link('Delete')
+    visit admin_index
+    find("#post_#{post.id}").click_link('Delete')
 
     visit homepage
     page.should_not have_content('Deprecated content')

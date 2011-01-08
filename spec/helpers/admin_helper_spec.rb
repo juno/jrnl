@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe PostsHelper do
+describe AdminHelper do
 end

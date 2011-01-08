@@ -4,6 +4,10 @@ module NavigationHelpers
     "/"
   end
 
+  def admin_index
+    '/admin'
+  end
+
   def post_new
     '/posts/new'
   end
