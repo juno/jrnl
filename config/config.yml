@@ -42,7 +42,7 @@ common:
     id:
 
   twitter_anywhere:
-    use: true
+    use: false
     id: ua931JjzNdqgvz2B0S85jA
 
   mixpanel:
