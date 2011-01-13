@@ -4,5 +4,5 @@ $(document).ready(function() {
     $('.gsc-input').focus();
   });
 
-  $('#content article.post .content a.oembed').embedly({'maxWidth': 500, 'method':'replace', 'wrapElement':'div', 'className':'embedded'});
+  $('#content article.post .content a:not(.noembed)').embedly({'maxWidth': 500, 'method':'replace', 'wrapElement':'div', 'className':'embedded'});
 });
