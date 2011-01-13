@@ -1,4 +1,5 @@
 .bundle
+config/config.yml
 coverage
 db/*.sqlite3
 log/*.log
