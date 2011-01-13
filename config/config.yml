@@ -1,4 +1,7 @@
 common:
+  caching:
+    use: true
+
   author:
     name: Junya Ogura
     email: junyaogura at gmail.com

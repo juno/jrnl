@@ -9,6 +9,9 @@ ready,
 
 set,
 
+    $ cp config/config.example.yml config/config.yml
+    $ vi config/config.yml
+
     $ rails c
     > u = User.new
     > u.email = 'foo@example.com'

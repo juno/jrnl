@@ -6,13 +6,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.recent.paginate(:page => params[:page], :per_page => 5)
     respond_to do |format|
-      format.html { response.headers['Cache-Control'] = 'public, max-age=300' }
+      format.html { set_cache_control_header }
       format.rss { render(:layout => false) }  # index.rss.builder
     end
   end
 
   def show
-    response.headers['Cache-Control'] = 'public, max-age=300'
+    set_cache_control_header
     @post = Post.find(params[:id])
   end
 
@@ -28,7 +28,8 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     if @post.save
-      redirect_to(new_post_url, :notice => 'Post was successfully created.')
+      flash[:notice] = 'Post was successfully created.' unless AppConfig.caching['use']
+      redirect_to @post
     else
       render :action => 'new'
     end
@@ -38,7 +39,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      redirect_to(edit_post_url(@post), :notice => 'Post was successfully updated.')
+      flash[:notice] = 'Post was successfully updated.' unless AppConfig.caching['use']
+      redirect_to @post
     else
       render :action => 'edit'
     end
@@ -53,7 +55,14 @@ class PostsController < ApplicationController
   def monthly_archive
     t = Time.new(params[:year], params[:month], 1)
     @posts = Post.created_within(t.beginning_of_month, t.end_of_month).oldest.paginate(:page => params[:page], :per_page => 100)
-    response.headers['Cache-Control'] = 'public, max-age=300'
+    set_cache_control_header
     render :index
+  end
+
+
+  protected
+
+  def set_cache_control_header
+    response.headers['Cache-Control'] = 'public, max-age=300' if AppConfig.caching['use']
   end
 end

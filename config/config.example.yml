@@ -1,4 +1,7 @@
 common:
+  caching:
+    use: false
+
   author:
     name: YOUR NAME
     email: YOUR ADDRESS

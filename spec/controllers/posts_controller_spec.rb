@@ -14,6 +14,8 @@ describe PostsController do
     Post.stub(:recent) { @posts }
   end
 
+  before { AppConfig.stub(:caching).and_return({ 'use' => false }) }
+
   describe "GET index" do
     before do
       stub_recent_posts
