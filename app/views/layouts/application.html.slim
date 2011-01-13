@@ -19,7 +19,10 @@ head
         = render :partial => 'shared/google_custom_search' if AppConfig.google_custom_search['use']
       #content == yield
       footer
-        address = "#{AppConfig.author['name']} <#{AppConfig.author['email']}>"
+        address = "by #{AppConfig.author['name']} <#{AppConfig.author['email']}>"
+        p.powerd_by
+          = "Powered by the "
+          a href="http://heroku.com/" Heroku
         p.copyright
           a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/"
             img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/80x15.png"
