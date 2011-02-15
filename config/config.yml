@@ -58,7 +58,7 @@ production:
     code: UA-17293111-2
 
   observer_app:
-    use: true
+    use: false
     code: 4c8dd5f1e697483134009cba
 
   typekit:

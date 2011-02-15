@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe PostsController do
 
-  def mock_post(stubs={})
+  def mock_post(stubs = {})
     (@mock_post ||= mock_model(Post).as_null_object).tap do |post|
       post.stub(stubs) unless stubs.empty?
     end
