@@ -8,7 +8,7 @@ gem 'devise', '~> 1.1'
 gem 'factory_girl_rails'
 gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'jquery-rails', '~> 0.2'
-gem 'will_paginate', '~> 3.0.pre2'
+gem 'kaminari', '~> 0.9'
 gem 'slim'
 gem 'slim-rails'
 

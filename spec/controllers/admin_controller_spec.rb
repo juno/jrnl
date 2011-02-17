@@ -5,7 +5,7 @@ describe AdminController do
   def stub_posts(count = 10)
     @posts = []
     count.times { @posts << mock_model(Post) }
-    Post.stub(:recent) { @posts }
+    Post.stub_chain(:recent, :page, :per) { @posts }
   end
 
   describe "GET 'index'" do

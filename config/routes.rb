@@ -3,6 +3,7 @@ Jrnl::Application.routes.draw do
 
   devise_for :users
 
+  match '/posts/:id' => redirect('/%{id}'), :constraints => { :id => /\d+/ }, :via => :get
   match '/posts' => redirect('/'), :constraints => { :method => 'get' }
   match '/posts/index' => redirect('/')
   resources :posts
@@ -12,3 +13,4 @@ Jrnl::Application.routes.draw do
 
   get '/admin' => 'admin#index'
 end
+

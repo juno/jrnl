@@ -11,7 +11,7 @@ describe PostsController do
   def stub_recent_posts
     @posts = []
     5.times { @posts << mock_model(Post) }
-    Post.stub(:recent) { @posts }
+    Post.stub_chain(:recent, :page, :per) { @posts }
   end
 
   before { AppConfig.stub(:caching).and_return({ 'use' => false }) }
