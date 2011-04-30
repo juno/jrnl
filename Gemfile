@@ -1,23 +1,31 @@
 source :rubygems
 
-gem 'rails', '3.0.4'
-gem 'pg'
+gem 'rails', '3.0.7'
+gem 'pg', '~> 0.11'
 
-gem 'bluefeather', :require => 'bluefeather'
+gem 'bluefeather', '~> 0.40', :require => 'bluefeather'
 gem 'devise', '~> 1.1'
-gem 'factory_girl_rails'
-gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
+gem 'jammit', '~> 0.6', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'jquery-rails', '~> 0.2'
-gem 'kaminari', '~> 0.10.4'
-gem 'slim'
-gem 'slim-rails'
+gem 'kaminari', '~> 0.12'
+gem 'slim', '~> 0.9'
+gem 'slim-rails', '~> 0.2'
 
 group :test, :development do
-  gem 'fuubar'
-  gem 'rcov'
-  gem 'rspec-core'
-  gem 'rspec-rails'
-  gem 'shoulda'
-  gem 'steak'
-  gem 'capybara'
+  gem 'capybara', '~> 0.4'
+  gem 'factory_girl_rails', '~> 1.0'
+  gem 'fuubar', '~> 0.0.4'
+  gem 'rcov', '~> 0.9'
+  gem 'rspec-rails', '~> 2.5'
+  gem 'shoulda', '~> 2.11'
+  gem 'steak', '~> 1.1'
 end
+
+
+
+
+
+
+
+
+
