@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 source :rubygems
 
 gem 'rails', '3.0.7'
@@ -12,6 +14,7 @@ gem 'slim', '~> 0.9'
 gem 'slim-rails', '~> 0.2'
 
 group :development, :test do
+  gem 'itslog', '~> 0.1'
   gem 'rspec-rails', '~> 2.5'
 end
 
