@@ -20,5 +20,4 @@ group :test do
   gem 'factory_girl_rails', '~> 1.0'
   gem 'shoulda', '~> 2.11'
   gem 'simplecov', '~> 0.4', :require => false
-  gem 'steak', '~> 1.1'
 end
