@@ -1,6 +1,9 @@
 jrnl
 ====
 
+Getting Start
+-------------
+
 ready,
 
     $ bundle --path vendor/bundles install
@@ -23,8 +26,32 @@ go!
 
     $ bundle exec rails s
 
-and test.
+Documentation
+-------------
+
+Generate API documents.
+
+    $ bundle exec rake yard
+    $ open doc/index.html
+
+Generate ER document (requires Graphviz).
+
+    $ brew install graphviz
+    $ bundle exec rake erd
+    $ open ERD.pdf
+
+Testing
+-------
+
+Create test database.
 
     $ RAILS_ENV=test bundle exec rake db:create
+    $ RAILS_ENV=test bundle exec rake db:migrate
+
+Running tests.
+
     $ bundle exec rake spec
+
+View coverage report.
+
     $ open coverage/index.html

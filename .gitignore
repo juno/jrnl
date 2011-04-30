@@ -1,9 +1,11 @@
 .bundle
 .rvmrc
-config/config.yml
+.yardoc
+config/application.yml
 config/database.yml
 coverage
 db/*.sqlite3
+doc/*
 log/*.log
 tmp/**/*
 tmp/cache/*

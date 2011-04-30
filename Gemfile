@@ -19,6 +19,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.5'
 end
 
+group :development do
+  gem 'awesome_print'
+  gem "bluecloth", '~> 2.1'
+  gem 'hirb', '~> 0.4'
+  gem 'rails-erd', '~> 0.4'
+  gem 'yard', '~> 0.6'
+end
+
 group :test do
   gem 'capybara', '~> 0.4'
   gem 'factory_girl_rails', '~> 1.0'
