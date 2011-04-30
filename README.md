@@ -36,7 +36,7 @@ Generate API documents.
 
 Generate ER document (requires Graphviz).
 
-    $ brew install graphviz
+    $ brew install cairo pango graphviz
     $ bundle exec rake erd
     $ open ERD.pdf
 
