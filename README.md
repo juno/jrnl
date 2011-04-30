@@ -3,7 +3,7 @@ jrnl
 
 ready,
 
-    $ bundle install
+    $ bundle --path vendor/bundles install
     $ bundle exec rake db:create
     $ bundle exec rake db:migrate
 
@@ -26,4 +26,5 @@ go!
 and test.
 
     $ RAILS_ENV=test bundle exec rake db:create
-    $ rake spec
+    $ bundle exec rake spec
+    $ open coverage/index.html

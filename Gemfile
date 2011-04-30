@@ -15,17 +15,11 @@ group :test, :development do
   gem 'capybara', '~> 0.4'
   gem 'factory_girl_rails', '~> 1.0'
   gem 'fuubar', '~> 0.0.4'
-  gem 'rcov', '~> 0.9'
   gem 'rspec-rails', '~> 2.5'
   gem 'shoulda', '~> 2.11'
   gem 'steak', '~> 1.1'
 end
 
-
-
-
-
-
-
-
-
+group :test do
+  gem 'simplecov', '~> 0.4', :require => false
+end
