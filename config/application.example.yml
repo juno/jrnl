@@ -1,4 +1,4 @@
-common:
+defaults: &defaults
   caching:
     use: false
 
@@ -36,7 +36,15 @@ common:
     use: true
     id: TWITTER_APP_ID
 
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
 production:
+  <<: *defaults
+
   google_analytics:
     use: true
     code: UA-XXXXXXX-X

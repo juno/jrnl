@@ -1,0 +1,78 @@
+defaults: &defaults
+  caching:
+    use: false
+
+  author:
+    name: Junya Ogura
+    email: junyaogura at gmail.com
+
+  social:
+    - name: twitter
+      url: http://twitter.com/junya
+    - name: tumblr
+      url: http://sooey.tumblr.com/
+    - name: facebook
+      url: http://facebook.com/junya.ogura
+    - name: pinboard
+      url: http://pinboard.in/u:junya/
+    - name: flickr
+      url: http://www.flickr.com/photos/sooey/
+    - name: plancast
+      url: http://plancast.com/junya
+    - name: homescreen
+      url: http://homescreen.me/junya
+    - name: wishlist
+      url: http://www.amazon.co.jp/wishlist/2VFJWLLDJF03B/
+
+  feedburner:
+    use: true
+    url: http://feeds.feedburner.com/Sooey
+
+  google_analytics:
+    use: false
+    code:
+
+  google_custom_search:
+    use: true
+    code: 002120026113953543318:8wsc3jhy1fm
+
+  observer_app:
+    use: false
+    code:
+
+  typekit:
+    use: false
+    id:
+
+  twitter_anywhere:
+    use: false
+    id: ua931JjzNdqgvz2B0S85jA
+
+  mixpanel:
+    use: false
+    code:
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+  google_analytics:
+    use: true
+    code: UA-17293111-2
+
+  observer_app:
+    use: false
+    code: 4c8dd5f1e697483134009cba
+
+  typekit:
+    use: true
+    id: ock6krn
+
+  mixpanel:
+    use: true
+    code: 32f9c23f0217d2d45165cf2d2283f113

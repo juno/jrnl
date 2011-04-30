@@ -14,7 +14,7 @@ describe PostsController do
     Post.stub_chain(:recent, :page, :per) { @posts }
   end
 
-  before { AppConfig.stub(:caching).and_return({ 'use' => false }) }
+  before { Settings.stub(:caching).and_return({ 'use' => false }) }
 
   describe "GET index" do
     before do

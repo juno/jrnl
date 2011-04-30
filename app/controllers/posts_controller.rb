@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     if @post.save
-      flash[:notice] = 'Post was successfully created.' unless AppConfig.caching['use']
+      flash[:notice] = 'Post was successfully created.' unless Settings.caching['use']
       redirect_to @post
     else
       render :action => 'new'
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      flash[:notice] = 'Post was successfully updated.' unless AppConfig.caching['use']
+      flash[:notice] = 'Post was successfully updated.' unless Settings.caching['use']
       redirect_to @post
     else
       render :action => 'edit'
@@ -63,6 +63,14 @@ class PostsController < ApplicationController
   protected
 
   def set_cache_control_header
-    response.headers['Cache-Control'] = 'public, max-age=300' if AppConfig.caching['use']
+    response.headers['Cache-Control'] = 'public, max-age=300' if Settings.caching['use']
   end
 end
+
+
+
+
+
+
+
+

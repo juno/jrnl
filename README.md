@@ -9,8 +9,8 @@ ready,
 
 set,
 
-    $ cp config/config.example.yml config/config.yml
-    $ vi config/config.yml
+    $ cp config/application.example.yml config/application.yml
+    $ vi config/application.yml
 
     $ bundle exec rails c
     > u = User.new

@@ -6,9 +6,9 @@ head
     = csrf_meta_tag
     title = content_for?(:title) ? yield(:title) : 'Sooey'
     link rel="shortcut icon" href="/favicon.ico"
-    = render :partial => 'shared/feedburner' if AppConfig.feedburner['use']
+    = render :partial => 'shared/feedburner' if Settings.feedburner['use']
     = include_stylesheets :common
-    = render :partial => 'shared/twitter_anywhere' if AppConfig.twitter_anywhere['use']
+    = render :partial => 'shared/twitter_anywhere' if Settings.twitter_anywhere['use']
   body
     #main
       = render :partial => 'shared/flash', :locals => { :flash => flash }
@@ -16,10 +16,10 @@ head
         h1#logo.tk-daniel = link_to 'Sooey', root_path
       nav.primary
         = render :partial => 'shared/social'
-        = render :partial => 'shared/google_custom_search' if AppConfig.google_custom_search['use']
+        = render :partial => 'shared/google_custom_search' if Settings.google_custom_search['use']
       #content == yield
       footer
-        address = "by #{AppConfig.author['name']} <#{AppConfig.author['email']}>"
+        address = "by #{Settings.author['name']} <#{Settings.author['email']}>"
         p.powerd_by
           = "Powered by the "
           a href="http://heroku.com/" Heroku
@@ -29,7 +29,7 @@ head
       .autopagerize_insert_before
       | <!-- This page rendered at #{Time.zone.now} -->
     = include_javascripts :common
-    = render :partial => 'shared/google_analytics' if AppConfig.google_analytics['use']
-    = render :partial => 'shared/observer_app' if AppConfig.observer_app['use']
-    = render :partial => 'shared/typekit' if AppConfig.typekit['use']
-    = render :partial => 'shared/mixpanel' if AppConfig.mixpanel['use']
+    = render :partial => 'shared/google_analytics' if Settings.google_analytics['use']
+    = render :partial => 'shared/observer_app' if Settings.observer_app['use']
+    = render :partial => 'shared/typekit' if Settings.typekit['use']
+    = render :partial => 'shared/mixpanel' if Settings.mixpanel['use']

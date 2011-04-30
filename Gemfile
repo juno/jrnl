@@ -10,6 +10,7 @@ gem 'jammit', '~> 0.6', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'jquery-rails', '~> 0.2'
 gem 'kaminari', '~> 0.12'
 gem 'redcarpet', '~> 1.12'
+gem 'settingslogic', '~> 2.0'
 gem 'slim', '~> 0.9'
 gem 'slim-rails', '~> 0.2'
 

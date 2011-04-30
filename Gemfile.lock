@@ -126,6 +126,7 @@ GEM
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    settingslogic (2.0.6)
     shoulda (2.11.3)
     simplecov (0.4.2)
       simplecov-html (~> 0.4.4)
@@ -163,6 +164,7 @@ DEPENDENCIES
   rails (= 3.0.7)
   redcarpet (~> 1.12)
   rspec-rails (~> 2.5)
+  settingslogic (~> 2.0)
   shoulda (~> 2.11)
   simplecov (~> 0.4)
   slim (~> 0.9)
