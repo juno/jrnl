@@ -4,12 +4,12 @@ class Post < ActiveRecord::Base
   scope :created_within, lambda { |from, to|
     where(:created_at => from..to)
   }
-  scope :oldest, order("posts.created_at ASC")
-  scope :recent, order("posts.created_at DESC")
+  scope :oldest, order("created_at")
+  scope :recent, order("created_at DESC")
 
   # @return [String]
   def html
-    BlueFeather.parse(self.content)
+    Redcarpet.new(self.content).to_html
   rescue => e
     "Couldn't parse content as HTML: #{e}"
   end

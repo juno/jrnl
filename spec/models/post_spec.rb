@@ -40,7 +40,7 @@ describe Post do
     context 'content contains valid Markdown' do
       let(:content) { '[Example](http://example.com/)' }
       subject { Post.new(:content => content).html }
-      it { should eq('<p><a href="http://example.com/">Example</a></p>') }
+      it { should eq("<p><a href=\"http://example.com/\">Example</a></p>\n") }
     end
 
     context 'content contains invalid Markdown' do
