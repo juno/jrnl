@@ -1,4 +1,7 @@
 .bundle
+.rvmrc
+config/config.yml
+config/database.yml
 coverage
 db/*.sqlite3
 log/*.log
@@ -6,5 +9,4 @@ tmp/**/*
 tmp/cache/*
 tmp/sessions/*
 tmp/sockets/*
-config/database.yml
-.rvmrc
+vendor/bundles
