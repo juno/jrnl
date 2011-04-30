@@ -12,7 +12,7 @@ set,
     $ cp config/config.example.yml config/config.yml
     $ vi config/config.yml
 
-    $ rails c
+    $ bundle exec rails c
     > u = User.new
     > u.email = 'foo@example.com'
     > u.password = '*****'
@@ -21,7 +21,7 @@ set,
 
 go!
 
-    $ rails s
+    $ bundle exec rails s
 
 and test.
 

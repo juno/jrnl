@@ -11,15 +11,14 @@ gem 'kaminari', '~> 0.12'
 gem 'slim', '~> 0.9'
 gem 'slim-rails', '~> 0.2'
 
-group :test, :development do
-  gem 'capybara', '~> 0.4'
-  gem 'factory_girl_rails', '~> 1.0'
-  gem 'fuubar', '~> 0.0.4'
+group :development, :test do
   gem 'rspec-rails', '~> 2.5'
-  gem 'shoulda', '~> 2.11'
-  gem 'steak', '~> 1.1'
 end
 
 group :test do
+  gem 'capybara', '~> 0.4'
+  gem 'factory_girl_rails', '~> 1.0'
+  gem 'shoulda', '~> 2.11'
   gem 'simplecov', '~> 0.4', :require => false
+  gem 'steak', '~> 1.1'
 end
