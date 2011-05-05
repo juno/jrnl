@@ -1,10 +1,8 @@
 body {
     background-color: #fff;
     color: #333;
-    font: 18px/1.5 Helvetica,Arial,sans-serif;
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
 }
 
 a,
@@ -25,7 +23,6 @@ textarea {
     padding: .5em;
     width: 100%;
 }
-
 
 #main {
     margin: 2em auto;
@@ -98,13 +95,14 @@ nav.primary .search-form {
 }
 
 article.post {
-    margin: 2em 0 3em;
+    margin: 5em 0;
     padding: 0;
 }
 
 article.post header h1 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: normal;
+    margin-bottom: 2em;
 }
 article.post header h1 a {
     color: #333;
@@ -114,16 +112,14 @@ article.post .content {
 }
 
 article.post .content a {
-    /* background-color: rgba(0, 0, 0, 0.046875); */
     color: #32abc9;
-    font-weight: bold;
     padding: 0px 0.2em;
     -webkit-transition-duration: 0.33s;
     -webkit-transition-property: color, background;
 }
 article.post .content a:link,
 article.post .content a:visited {
-    border-radius: 3px;
+    border-radius: 1px;
 }
 article.post .content a:hover {
     background-color: #32abc9;
@@ -213,19 +209,3 @@ table.posts td {
     margin: 0;
     vertical-align: top;
 }
-
-/* for iPhone */
-/*
-@media screen and (max-device-width: 480px) {
-    * { margin: 0; border: 0; padding: 0; }
-    body { -webkit-text-size-adjust: none; }
-    div {
-        clear: both !important;
-        float: none !important;
-        width: 320px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    article.post { margin-left: 0; }
-}
-*/
