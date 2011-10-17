@@ -1,4 +1,5 @@
 .bundle
+.rbenv-version
 .rvmrc
 .yardoc
 config/database.yml
