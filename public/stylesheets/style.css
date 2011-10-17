@@ -1,6 +1,7 @@
 body {
     background: #fff;
     color: #333;
+    font-family: menlo,'andale mono',consolas,"Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "Osaka", "MS PGothic", 'ＭＳ Ｐゴシック', sans-serif;
     margin: 0;
     padding: 0;
 }
