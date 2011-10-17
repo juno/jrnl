@@ -6,7 +6,7 @@ Getting Start
 
 ready,
 
-    $ bundle --path vendor/bundles install
+    $ bundle --path vendor/bundles
     $ bundle exec rake db:create
     $ bundle exec rake db:migrate
 
