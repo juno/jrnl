@@ -2,7 +2,7 @@
 
 source :rubygems
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.1.3'
 gem 'pg', '~> 0.11'
 
 gem 'devise', '~> 1.1'

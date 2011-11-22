@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 Jrnl::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
@@ -11,7 +13,6 @@ Jrnl::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
@@ -26,4 +27,10 @@ Jrnl::Application.configure do
 
   # Indent html for pretty debugging
   Slim::Engine.set_default_options :pretty => true
+
+  # アセットの圧縮をしない
+  config.assets.compress = false
+
+  # デバッグ用にアセットを構成する
+  config.assets.debug = true
 end

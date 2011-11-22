@@ -1,3 +1,4 @@
+# -*- coding: undecided -*-
 Jrnl::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
@@ -47,4 +48,17 @@ Jrnl::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Disable Rails's static asset server
+  # In production, Apache or nginx will already do this
+  config.serve_static_assets = true
+
+  # アセットを圧縮する
+  config.assets.compress = true
+
+  # プリコンパイルされたアセットが見つからない場合にアセットパイプラインへのフォールバックをする
+  config.assets.compile = false
+
+  # アセットURL用にダイジェストを生成する
+  config.assets.digest = true
 end
