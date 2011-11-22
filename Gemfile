@@ -4,10 +4,16 @@ source :rubygems
 
 gem 'rails', '3.1.3'
 gem 'pg', '~> 0.11'
+gem 'jquery-rails', '~> 1.0.0'
+
+group :assets do
+  gem 'sass-rails', '3.1.5'
+  gem 'coffee-rails', '3.1.1'
+  gem 'uglifier', '1.1.0'
+end
 
 gem 'devise', '~> 1.1'
 gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
-gem 'jquery-rails', '~> 0.2'
 gem 'kaminari', '~> 0.12'
 gem 'redcarpet', '~> 1.12'
 gem 'settingslogic', '~> 2.0'

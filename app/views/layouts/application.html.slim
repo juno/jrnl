@@ -7,7 +7,7 @@ head
     title = content_for?(:title) ? yield(:title) : 'Sooey'
     link rel="shortcut icon" href="/favicon.ico"
     = render :partial => 'shared/feedburner' if Settings.feedburner['use']
-    = include_stylesheets :common
+    = stylesheet_link_tag 'application'
     = render :partial => 'shared/twitter_anywhere' if Settings.twitter_anywhere['use']
   body
     #main
@@ -28,7 +28,7 @@ head
             img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/80x15.png"
       .autopagerize_insert_before
       | <!-- This page rendered at #{Time.zone.now} -->
-    = include_javascripts :common
+    = javascript_include_tag 'application'
     = render :partial => 'shared/google_analytics' if Settings.google_analytics['use']
     = render :partial => 'shared/observer_app' if Settings.observer_app['use']
     = render :partial => 'shared/typekit' if Settings.typekit['use']
