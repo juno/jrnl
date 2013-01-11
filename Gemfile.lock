@@ -212,7 +212,7 @@ DEPENDENCIES
   hirb (~> 0.4)
   jammit!
   jquery-rails (= 2.1.4)
-  kaminari (~> 0.12)
+  kaminari (= 0.14.1)
   pg (= 0.14.1)
   rails (= 3.2.11)
   rails-erd (~> 0.4)
