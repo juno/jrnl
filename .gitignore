@@ -1,5 +1,6 @@
 .bundle
 .rbenv-version
+.ruby-version
 .rvmrc
 .yardoc
 config/database.yml
@@ -11,4 +12,5 @@ tmp/**/*
 tmp/cache/*
 tmp/sessions/*
 tmp/sockets/*
+vendor/bundle
 vendor/bundles
