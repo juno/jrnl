@@ -33,7 +33,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 0.4'
+  gem 'capybara', '2.0.2'
   gem 'factory_girl_rails', '4.1.0'
   gem 'shoulda', '3.3.2'
   gem 'simplecov', '~> 0.4', :require => false
