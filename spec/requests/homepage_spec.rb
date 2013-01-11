@@ -6,7 +6,7 @@ describe "Homepage" do
 
   describe "Show recent 5 posts" do
     before do
-      (1..6).each { |i| Factory(:post, :content => "Post #{i}") }
+      (1..6).each { |i| FactoryGirl.create(:post, :content => "Post #{i}") }
       visit root_path
     end
     subject { page }
@@ -17,7 +17,7 @@ describe "Homepage" do
   end
 
   describe "Show particular post" do
-    let(:post) { Factory(:post, :content => 'Red, Green, Blue') }
+    let(:post) { FactoryGirl.create(:post, :content => 'Red, Green, Blue') }
     before { visit post_path(post) }
     subject { page }
     it { should have_content('Red, Green, Blue') }

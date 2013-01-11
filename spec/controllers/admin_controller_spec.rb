@@ -18,7 +18,7 @@ describe AdminController do
     context "sign in" do
       before do
         stub_posts(10)
-        sign_in Factory(:author)
+        sign_in FactoryGirl.create(:author)
         get :index
       end
 

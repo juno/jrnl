@@ -2,14 +2,14 @@
 
 source :rubygems
 
-gem 'rails', '3.1.3'
-gem 'pg', '~> 0.11'
-gem 'jquery-rails', '~> 1.0.0'
+gem 'rails', '3.2.11'
+gem 'pg', '0.14.1'
+gem 'jquery-rails', '2.1.4'
 
 group :assets do
-  gem 'sass-rails', '3.1.5'
-  gem 'coffee-rails', '3.1.1'
-  gem 'uglifier', '1.1.0'
+  gem 'sass-rails', '3.2.5'
+  gem 'coffee-rails', '3.2.2'
+  gem 'uglifier', '1.3.0'
 end
 
 gem 'devise', '~> 1.1'
@@ -21,7 +21,6 @@ gem 'slim', '~> 0.9'
 gem 'slim-rails', '~> 0.2'
 
 group :development, :test do
-  gem 'itslog', '~> 0.1'
   gem 'rspec-rails', '~> 2.5'
 end
 
@@ -35,7 +34,7 @@ end
 
 group :test do
   gem 'capybara', '~> 0.4'
-  gem 'factory_girl_rails', '~> 1.0'
-  gem 'shoulda', '~> 2.11'
+  gem 'factory_girl_rails', '4.1.0'
+  gem 'shoulda', '3.3.2'
   gem 'simplecov', '~> 0.4', :require => false
 end

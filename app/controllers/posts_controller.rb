@@ -66,11 +66,3 @@ class PostsController < ApplicationController
     response.headers['Cache-Control'] = 'public, max-age=300' if Settings.caching['use']
   end
 end
-
-
-
-
-
-
-
-

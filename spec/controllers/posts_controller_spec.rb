@@ -62,7 +62,7 @@ describe PostsController do
 
     context "sign in" do
       before do
-        sign_in Factory(:author)
+        sign_in FactoryGirl.create(:author)
         get :new
       end
 
@@ -80,11 +80,11 @@ describe PostsController do
     end
 
     context "sign in" do
-      before { sign_in Factory(:author) }
+      before { sign_in FactoryGirl.create(:author) }
 
       context "with invalid id" do
         it "raises exception" do
-          expect { get :edit, :id => '0' }.should raise_error
+          expect { get :edit, :id => '0' }.to raise_error
         end
       end
 
@@ -108,7 +108,7 @@ describe PostsController do
     end
 
     context "sign in" do
-      before { sign_in Factory(:author) }
+      before { sign_in FactoryGirl.create(:author) }
 
       context "create failure" do
         before do
@@ -143,7 +143,7 @@ describe PostsController do
     end
 
     context "sign in" do
-      before { sign_in Factory(:author) }
+      before { sign_in FactoryGirl.create(:author) }
 
       context "update failure" do
         before do
@@ -180,7 +180,7 @@ describe PostsController do
     end
 
     context "sign in" do
-      before { sign_in Factory(:author) }
+      before { sign_in FactoryGirl.create(:author) }
 
       context "destroy failure" do
         before do
@@ -205,7 +205,15 @@ describe PostsController do
   end
 
   describe "GET monthly_archive" do
-    before { get :monthly_archive, :year => '2011', :month => '1' }
+    before do
+      # stub posts
+      @posts = []
+      5.times { @posts << mock_model(Post) }
+      Post.stub_chain(:created_within, :oldest, :page, :per) { @posts }
+
+      get :monthly_archive, :year => '2011', :month => '1'
+    end
+
     subject { controller }
     it { should assign_to(:posts).with(@posts) }
     it { should render_template(:index) }

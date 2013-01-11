@@ -16,7 +16,7 @@ describe "Manage posts" do
     end
 
     describe "Can't update an article" do
-      let(:post) { Factory(:post) }
+      let(:post) { FactoryGirl.create(:post) }
       before { visit edit_post_path(post) }
       subject { page }
       its(:current_path) { should eq(new_user_session_path) }
@@ -24,7 +24,7 @@ describe "Manage posts" do
   end
 
   context "Signed in" do
-    let!(:author) { Factory(:author) }
+    let!(:author) { FactoryGirl.create(:author) }
     before { sign_in(author.email, 'secret-phrase') }
 
     describe "Can post an article" do
@@ -40,7 +40,7 @@ describe "Manage posts" do
     end
 
     describe "Can update an article" do
-      let!(:post) { Factory(:post, :content => 'Hacker and Painter') }
+      let!(:post) { FactoryGirl.create(:post, :content => 'Hacker and Painter') }
       before do
         visit admin_path
         find("#post_#{post.id}").click_link('Edit')
@@ -54,7 +54,7 @@ describe "Manage posts" do
     end
 
     describe "Can destroy an article" do
-      let!(:post) { Factory(:post, :content => 'Deprecated content') }
+      let!(:post) { FactoryGirl.create(:post, :content => 'Deprecated content') }
       before do
         visit admin_path
         find("#post_#{post.id}").click_link('Delete')
