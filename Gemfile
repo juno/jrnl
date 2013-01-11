@@ -27,7 +27,7 @@ end
 group :development do
   gem 'awesome_print'
   gem 'hirb', '~> 0.4'
-  gem 'rails-erd', '~> 0.4'
+  gem 'rails-erd', '1.0.0'
 end
 
 group :test do
