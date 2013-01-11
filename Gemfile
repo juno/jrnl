@@ -13,7 +13,6 @@ group :assets do
 end
 
 gem 'devise', '1.5.3'
-gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
 gem 'settingslogic', '2.0.9'
