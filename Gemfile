@@ -16,7 +16,7 @@ gem 'devise', '~> 1.1'
 gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
-gem 'settingslogic', '~> 2.0'
+gem 'settingslogic', '2.0.9'
 gem 'slim', '~> 0.9'
 gem 'slim-rails', '~> 0.2'
 

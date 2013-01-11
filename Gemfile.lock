@@ -219,7 +219,7 @@ DEPENDENCIES
   redcarpet (= 2.2.2)
   rspec-rails (~> 2.5)
   sass-rails (= 3.2.5)
-  settingslogic (~> 2.0)
+  settingslogic (= 2.0.9)
   shoulda (= 3.3.2)
   simplecov (~> 0.4)
   slim (~> 0.9)
