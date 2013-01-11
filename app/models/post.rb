@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   # @return [String]
   def html
-    Redcarpet.new(self.content).to_html
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(self.content)
   rescue => e
     "Couldn't parse content as HTML: #{e}"
   end
