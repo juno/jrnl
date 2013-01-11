@@ -220,7 +220,7 @@ DEPENDENCIES
   rails (= 3.2.11)
   rails-erd (~> 0.4)
   redcarpet (= 2.2.2)
-  rspec-rails (~> 2.5)
+  rspec-rails (= 2.12.1)
   sass-rails (= 3.2.5)
   settingslogic (= 2.0.9)
   shoulda (= 3.3.2)
