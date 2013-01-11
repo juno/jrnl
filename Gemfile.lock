@@ -204,7 +204,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 2.0.2)
   coffee-rails (= 3.2.2)
-  devise (~> 1.1)
+  devise (= 1.5.3)
   factory_girl_rails (= 4.1.0)
   jammit!
   jquery-rails (= 2.1.4)

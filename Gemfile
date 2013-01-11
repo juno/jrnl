@@ -12,7 +12,7 @@ group :assets do
   gem 'uglifier', '1.3.0'
 end
 
-gem 'devise', '~> 1.1'
+gem 'devise', '1.5.3'
 gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
