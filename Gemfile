@@ -17,8 +17,8 @@ gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
 gem 'settingslogic', '2.0.9'
-gem 'slim', '~> 0.9'
-gem 'slim-rails', '~> 0.2'
+gem 'slim', '1.3.6'
+gem 'slim-rails', '1.1.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.5'
