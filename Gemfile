@@ -20,7 +20,7 @@ gem 'slim', '1.3.6'
 gem 'slim-rails', '1.1.0'
 
 group :development, :test do
-  gem 'rspec-rails', '2.12.1'
+  gem 'rspec-rails', '2.12.2'
 end
 
 group :development do
