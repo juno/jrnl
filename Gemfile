@@ -7,7 +7,7 @@ gem 'pg', '0.14.1'
 gem 'jquery-rails', '2.1.4'
 
 group :assets do
-  gem 'sass-rails', '3.2.5'
+  gem 'sass-rails', '3.2.6'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.3.0'
 end
