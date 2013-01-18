@@ -24,7 +24,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rails-erd', '1.0.0'
+  gem 'rails-erd', '1.1.0'
 end
 
 group :test do
