@@ -29,7 +29,4 @@ head
       .autopagerize_insert_before
       | <!-- This page rendered at #{Time.zone.now} -->
     = javascript_include_tag 'application'
-    = render :partial => 'shared/google_analytics' if Settings.google_analytics['use']
-    = render :partial => 'shared/observer_app' if Settings.observer_app['use']
     = render :partial => 'shared/typekit' if Settings.typekit['use']
-    = render :partial => 'shared/mixpanel' if Settings.mixpanel['use']
