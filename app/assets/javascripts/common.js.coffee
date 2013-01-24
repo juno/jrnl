@@ -9,5 +9,3 @@ jQuery ->
     'method':'replace'
     'wrapElement':'div'
     'className':'embedded'
-
-  mpmetrics.track 'page-view', { 'location' : location.href }
