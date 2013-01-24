@@ -29,4 +29,5 @@ head
       .autopagerize_insert_before
       | <!-- This page rendered at #{Time.zone.now} -->
     = javascript_include_tag 'application'
+    = render :partial => 'shared/analytics'
     = render :partial => 'shared/typekit' if Settings.typekit['use']

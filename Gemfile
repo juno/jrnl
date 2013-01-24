@@ -12,7 +12,6 @@ group :assets do
   gem 'uglifier', '1.3.0'
 end
 
-gem 'analytics-ruby', '0.1.0'
 gem 'devise', '1.5.3'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
