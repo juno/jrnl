@@ -4,7 +4,7 @@ source :rubygems
 
 gem 'rails', '3.2.11'
 gem 'pg', '0.14.1'
-gem 'jquery-rails', '2.2.0'
+gem 'jquery-rails', '2.2.1'
 
 group :assets do
   gem 'sass-rails', '3.2.6'
