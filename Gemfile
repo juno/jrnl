@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'pg', '0.14.1'
@@ -20,7 +20,7 @@ gem 'slim', '1.3.6'
 gem 'slim-rails', '1.1.0'
 
 group :development, :test do
-  gem 'rspec-rails', '2.12.2'
+  gem 'rspec-rails', '2.13.0'
 end
 
 group :development do
