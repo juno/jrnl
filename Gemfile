@@ -17,7 +17,7 @@ gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
 gem 'settingslogic', '2.0.9'
 gem 'slim', '1.3.6'
-gem 'slim-rails', '1.1.0'
+gem 'slim-rails', '1.1.1'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.0'
