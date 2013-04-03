@@ -23,9 +23,13 @@ describe AdminController do
       end
 
       subject { controller }
-      it { should assign_to(:posts).with(@posts) }
       it { should respond_with(:success) }
       it { should render_template(:index) }
+
+      describe '@posts' do
+        subject { assigns(:posts) }
+        it { should eq(@posts) }
+      end
     end
   end
 

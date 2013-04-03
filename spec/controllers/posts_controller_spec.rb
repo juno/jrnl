@@ -23,9 +23,13 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should assign_to(:posts).with(@posts) }
     it { should respond_with_content_type(:html) }
     it { should render_template(:index) }
+
+    describe '@posts' do
+      subject { assigns(:posts) }
+      it { should eq(@posts) }
+    end
   end
 
   describe "GET index.rss" do
@@ -35,9 +39,13 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should assign_to(:posts).with(@posts) }
     it { should respond_with_content_type(:rss) }
     it { should render_template(:index) }
+
+    describe '@posts' do
+      subject { assigns(:posts) }
+      it { should eq(@posts) }
+    end
   end
 
   describe "GET show" do
@@ -48,7 +56,11 @@ describe PostsController do
 
     subject { controller }
     it { should render_template(:show) }
-    it { should assign_to(:post).with(mock_post) }
+
+    describe '@post' do
+      subject { assigns(:post) }
+      it { should eq(mock_post) }
+    end
   end
 
   describe "GET new" do
@@ -68,7 +80,11 @@ describe PostsController do
 
       subject { controller }
       it { should render_template(:new) }
-      it { should assign_to(:post).with(mock_post) }
+
+      describe '@post' do
+        subject { assigns(:post) }
+        it { should eq(mock_post) }
+      end
     end
   end
 
@@ -94,8 +110,12 @@ describe PostsController do
           get :edit, :id => '37'
         end
         subject { controller }
-        it { should assign_to(:post).with(mock_post) }
         it { should render_template(:edit) }
+
+        describe '@post' do
+          subject { assigns(:post) }
+          it { should eq(mock_post) }
+        end
       end
     end
   end
@@ -117,8 +137,12 @@ describe PostsController do
         end
 
         subject { controller }
-        it { should assign_to(:post).with(mock_post) }
         it { should render_template(:new) }
+
+        describe '@post' do
+          subject { assigns(:post) }
+          it { should eq(mock_post) }
+        end
       end
 
       context "successfully created" do
@@ -128,9 +152,13 @@ describe PostsController do
         end
 
         subject { controller }
-        it { should assign_to(:post).with(mock_post) }
         it { should redirect_to(post_url(mock_post)) }
         it { should set_the_flash.to('Post was successfully created.') }
+
+        describe '@post' do
+          subject { assigns(:post) }
+          it { should eq(mock_post) }
+        end
       end
     end
   end
@@ -152,8 +180,12 @@ describe PostsController do
         end
 
         subject { controller }
-        it { should assign_to(:post).with(mock_post) }
         it { should render_template(:edit) }
+
+        describe '@post' do
+          subject { assigns(:post) }
+          it { should eq(mock_post) }
+        end
       end
 
       context "successfully updated" do
@@ -164,9 +196,13 @@ describe PostsController do
         end
 
         subject { controller }
-        it { should assign_to(:post).with(mock_post) }
         it { should redirect_to(post_url(mock_post)) }
         it { should set_the_flash.to('Post was successfully updated.') }
+
+        describe '@post' do
+          subject { assigns(:post) }
+          it { should eq(mock_post) }
+        end
       end
     end
 
@@ -198,8 +234,12 @@ describe PostsController do
         end
 
         subject { controller }
-        it { should assign_to(:post).with(mock_post) }
         it { should redirect_to(posts_url) }
+
+        describe '@post' do
+          subject { assigns(:post) }
+          it { should eq(mock_post) }
+        end
       end
     end
   end
@@ -215,8 +255,12 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should assign_to(:posts).with(@posts) }
     it { should render_template(:index) }
+
+    describe '@posts' do
+      subject { assigns(:posts) }
+      it { should eq(@posts) }
+    end
   end
 
 end
