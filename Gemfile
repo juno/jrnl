@@ -30,7 +30,7 @@ end
 group :test do
   gem 'capybara', '2.0.2'
   gem 'factory_girl_rails', '4.2.1'
-  gem 'shoulda', '3.3.2'
+  gem 'shoulda', '3.4.0'
   gem 'simplecov', '0.7.1', :require => false
   gem 'simplecov-rcov', '0.2.3'
 end
