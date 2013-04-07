@@ -9,7 +9,7 @@ gem 'jquery-rails', '2.2.1'
 group :assets do
   gem 'sass-rails', '3.2.6'
   gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '1.3.0'
+  gem 'uglifier', '2.0.1'
 end
 
 gem 'devise', '1.5.3'
