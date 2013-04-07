@@ -23,7 +23,6 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should respond_with_content_type(:html) }
     it { should render_template(:index) }
 
     describe '@posts' do
@@ -39,7 +38,6 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should respond_with_content_type(:rss) }
     it { should render_template(:index) }
 
     describe '@posts' do
