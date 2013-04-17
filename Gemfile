@@ -16,7 +16,7 @@ gem 'devise', '2.2.3'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
 gem 'settingslogic', '2.0.9'
-gem 'slim', '1.3.6'
+gem 'slim', '1.3.8'
 gem 'slim-rails', '1.1.1'
 
 group :development, :test do
