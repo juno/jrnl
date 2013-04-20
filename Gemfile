@@ -13,6 +13,7 @@ group :assets do
 end
 
 gem 'devise', '2.2.3'
+gem 'devise-encryptable', '0.1.1'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
 gem 'settingslogic', '2.0.9'
