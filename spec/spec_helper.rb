@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+require 'coveralls'
+Coveralls.wear!
+
 ENV["RAILS_ENV"] ||= 'test'
 
 require 'simplecov'

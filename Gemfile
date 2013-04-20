@@ -29,8 +29,9 @@ end
 
 group :test do
   gem 'capybara', '2.1.0'
+  gem 'coveralls', '0.6.6', require: false
   gem 'factory_girl_rails', '4.2.1'
   gem 'shoulda', '3.4.0'
-  gem 'simplecov', '0.7.1', :require => false
+  gem 'simplecov', '0.7.1', require: false
   gem 'simplecov-rcov', '0.2.3'
 end
