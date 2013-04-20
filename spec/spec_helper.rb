@@ -6,10 +6,9 @@ require 'simplecov'
 require 'coveralls'
 require 'simplecov-rcov'
 SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-SimpleCov.start 'rails' do
+Coveralls.wear!('rails') do
   add_filter 'spec/'
 end
-Coveralls.wear!
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
