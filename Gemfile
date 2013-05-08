@@ -12,7 +12,7 @@ group :assets do
   gem 'uglifier', '2.0.1'
 end
 
-gem 'devise', '2.2.3'
+gem 'devise', '2.2.4'
 gem 'devise-encryptable', '0.1.1'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.2.2'
@@ -32,7 +32,7 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'coveralls', '0.6.6', require: false
   gem 'factory_girl_rails', '4.2.1'
-  gem 'shoulda', '3.4.0'
+  gem 'shoulda', '3.5.0'
   gem 'simplecov', '0.7.1', require: false
   gem 'simplecov-rcov', '0.2.3'
 end
