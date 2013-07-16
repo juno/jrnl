@@ -17,8 +17,8 @@ gem 'devise-encryptable', '0.1.1'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.3.0'
 gem 'settingslogic', '2.0.9'
-gem 'slim', '1.3.8'
-gem 'slim-rails', '1.1.1'
+gem 'slim', '2.0.0'
+gem 'slim-rails', '2.0.1'
 
 group :development, :test do
   gem 'rspec-rails', '2.14.0'
