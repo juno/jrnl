@@ -21,7 +21,7 @@ gem 'slim', '1.3.8'
 gem 'slim-rails', '1.1.1'
 
 group :development, :test do
-  gem 'rspec-rails', '2.13.2'
+  gem 'rspec-rails', '2.14.0'
 end
 
 group :development do
