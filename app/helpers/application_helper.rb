@@ -1,3 +1,4 @@
+# Application helper
 module ApplicationHelper
   # @param [String] title
   # @param [String] prefix
