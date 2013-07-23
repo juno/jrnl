@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Jrnl::Application.config.secret_key_base = '8d89254da54fa190367e61233e8309644d97c8c38b7f37f155e32ec3dd86b315efbe2a2548d857db36f51d86f7ef149169ef5586f113645a5a53fafed691c215'
+Jrnl::Application.config.secret_key_base = ENV['SECRET_TOKEN'] || '8d89254da54fa190367e61233e8309644d97c8c38b7f37f155e32ec3dd86b315efbe2a2548d857db36f51d86f7ef149169ef5586f113645a5a53fafed691c215'
