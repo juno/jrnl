@@ -20,6 +20,10 @@ gem 'settingslogic', '2.0.9'
 gem 'slim', '2.0.0'
 gem 'slim-rails', '2.0.1'
 
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
+
 group :development, :test do
   gem 'rspec-rails', '2.14.0'
 end
