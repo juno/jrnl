@@ -2,18 +2,16 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 gem 'pg', '0.15.1'
-gem 'jquery-rails', '2.2.1'
+gem 'jquery-rails', '3.0.4'
 
-group :assets do
-  gem 'sass-rails', '3.2.6'
-  gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '2.1.2'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier', '2.1.2'
 
-gem 'devise', '2.2.4'
-gem 'devise-encryptable', '0.1.1'
+gem 'devise', '3.0.0'
+gem 'devise-encryptable', '0.1.2'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.3.0'
 gem 'settingslogic', '2.0.9'

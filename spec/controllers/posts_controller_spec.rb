@@ -131,7 +131,7 @@ describe PostsController do
       context "create failure" do
         before do
           Post.stub(:new) { mock_post(:save => false) }
-          post :create, :post => {}
+          post :create, post: { body: 'This is a test post.'}
         end
 
         subject { controller }
@@ -146,12 +146,14 @@ describe PostsController do
       context "successfully created" do
         before do
           Post.stub(:new) { mock_post(:save => true) }
-          post :create, :post => {}
+          post :create, post: { body: 'This is a test post.'}
         end
 
         subject { controller }
         it { should redirect_to(post_url(mock_post)) }
-        it { should set_the_flash.to('Post was successfully created.') }
+        it 'sets notice to flash' do
+          expect(flash[:notice]).to eq('Post was successfully created.')
+        end
 
         describe '@post' do
           subject { assigns(:post) }
@@ -174,7 +176,7 @@ describe PostsController do
       context "update failure" do
         before do
           Post.stub(:find) { mock_post(:update_attributes => false) }
-          put :update, :id => '1'
+          put :update, :id => '1', :post => { content: 'Updated content.' }
         end
 
         subject { controller }
@@ -190,12 +192,14 @@ describe PostsController do
         before do
           Post.should_receive(:find).with('37') { mock_post }
           mock_post.should_receive(:update_attributes).and_return(true)
-          put :update, :id => '37', :post => {}
+          put :update, :id => '37', :post => { content: 'Updated content.' }
         end
 
         subject { controller }
         it { should redirect_to(post_url(mock_post)) }
-        it { should set_the_flash.to('Post was successfully updated.') }
+        it 'sets notice to flash' do
+          expect(flash[:notice]).to eq('Post was successfully updated.')
+        end
 
         describe '@post' do
           subject { assigns(:post) }

@@ -1,16 +1,10 @@
-# -*- coding: utf-8 -*-
 require File.expand_path('../boot', __FILE__)
 
-require 'active_record/railtie'
-require 'action_controller/railtie'
-require 'action_mailer/railtie'
-require 'active_resource/railtie'
-require 'sprockets/railtie'
-# require 'rails/test_unit/railtie'
+require 'rails/all'
 
-if defined?(Bundler)
-  Bundler.require *Rails.groups(:assets => %w(development test))
-end
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(:default, Rails.env)
 
 module Jrnl
   class Application < Rails::Application
@@ -39,8 +33,5 @@ module Jrnl
     config.i18n.default_locale = :ja
 
     config.time_zone = 'Tokyo'
-
-    # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery.min rails jquery.embedly.min)
   end
 end
