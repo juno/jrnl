@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
-
+# Posts controller
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show, :monthly_archive]
+  before_filter :authenticate_user!, except: [:index, :show, :monthly_archive]
 
   def index
     @posts = Post.recent.page(params[:page]).per(5)
     respond_to do |format|
       format.html { set_cache_control_header }
-      format.rss { render(:layout => false) }  # index.rss.builder
+      format.rss { render(layout: false) }  # index.rss.builder
     end
   end
 
@@ -28,10 +27,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      flash[:notice] = 'Post was successfully created.' unless Settings.caching['use']
+      unless Settings.caching['use']
+        flash[:notice] = 'Post was successfully created.'
+      end
       redirect_to @post
     else
-      render :action => 'new'
+      render action: 'new'
     end
   end
 
@@ -39,10 +40,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(post_params)
-      flash[:notice] = 'Post was successfully updated.' unless Settings.caching['use']
+      unless Settings.caching['use']
+        flash[:notice] = 'Post was successfully updated.'
+      end
       redirect_to @post
     else
-      render :action => 'edit'
+      render action: 'edit'
     end
   end
 
@@ -54,7 +57,10 @@ class PostsController < ApplicationController
 
   def monthly_archive
     t = Time.new(params[:year], params[:month], 1)
-    @posts = Post.created_within(t.beginning_of_month, t.end_of_month).oldest.page(params[:page]).per(100)
+    @posts = Post.created_within(t.beginning_of_month, t.end_of_month)
+      .oldest
+      .page(params[:page])
+      .per(100)
     set_cache_control_header
     render :index
   end
@@ -62,7 +68,8 @@ class PostsController < ApplicationController
   private
 
   def set_cache_control_header
-    response.headers['Cache-Control'] = 'public, max-age=300' if Settings.caching['use']
+    return unless Settings.caching['use']
+    response.headers['Cache-Control'] = 'public, max-age=300'
   end
 
   def post_params
