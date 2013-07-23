@@ -16,5 +16,5 @@ table.posts
           | -
           = link_to('Edit', edit_post_path(post))
           | -
-          = link_to('Delete', post, :confirm => 'Are you ok?', :method => :delete)
+          = link_to('Delete', post, :method => :delete, data: { confirm: 'Are you ok?' })
 = paginate @posts

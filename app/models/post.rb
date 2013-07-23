@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
   scope :created_within, lambda { |from, to|
     where(:created_at => from..to)
   }
-  scope :oldest, order("created_at")
-  scope :recent, order("created_at DESC")
+  scope :oldest, -> { order("created_at") }
+  scope :recent, -> { order("created_at DESC") }
 
   # @return [String]
   def html
