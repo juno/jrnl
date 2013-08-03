@@ -12,7 +12,7 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier', '2.1.2'
 
-gem 'devise', '3.0.0'
+gem 'devise', '3.0.1'
 gem 'devise-encryptable', '0.1.2'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '2.3.0'
