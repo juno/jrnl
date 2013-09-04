@@ -28,7 +28,7 @@ end
 
 group :development do
   gem 'cane', '2.6.0'
-  gem 'rubocop', '0.10.0'
+  gem 'rubocop', '0.12.0'
 end
 
 group :test do
