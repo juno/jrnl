@@ -17,6 +17,7 @@ gem 'redcarpet', '3.0.0'
 gem 'settingslogic', '2.0.9'
 gem 'slim', '2.0.1'
 gem 'slim-rails', '2.0.1'
+gem 'unicorn', '4.6.3'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
