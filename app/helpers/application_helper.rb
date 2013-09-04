@@ -6,9 +6,3 @@ module ApplicationHelper
     content_for(:title) { "#{title}#{suffix}" }
   end
 end
-
-
-
-
-
-

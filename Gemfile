@@ -10,13 +10,12 @@ gem 'sass-rails', '4.0.0'
 gem 'coffee-rails', '4.0.0'
 gem 'uglifier', '2.2.1'
 
+gem 'curly-templates', '0.11.0'
 gem 'devise', '3.0.1'
 gem 'devise-encryptable', '0.1.2'
 gem 'kaminari', '0.14.1'
 gem 'redcarpet', '3.0.0'
 gem 'settingslogic', '2.0.9'
-gem 'slim', '2.0.1'
-gem 'slim-rails', '2.0.1'
 gem 'unicorn', '4.6.3'
 
 group :production do
