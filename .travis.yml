@@ -1,8 +1,6 @@
 language: ruby
 rvm:
   - 2.0.0
-bundler_args: --without development --path vendor/bundle
-before_install: gem update bundler
 before_script:
   - psql -c 'create database jrnl_test;' -U postgres
   - 'cp config/database.travis.yml config/database.yml'
