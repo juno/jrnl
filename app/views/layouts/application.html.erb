@@ -42,7 +42,7 @@
       <!-- This page rendered at <%= Time.zone.now %> -->
     </div>
     <%= javascript_include_tag 'application' %>
-    <%= render(partial: 'shared/analytics') %>
+    <%= render(partial: 'shared/google_analytics') %>
     <%= render(partial: 'shared/typekit') if Settings.typekit['use'] %>
   </body>
 </html>
