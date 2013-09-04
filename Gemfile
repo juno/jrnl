@@ -36,5 +36,5 @@ group :test do
   gem 'factory_girl_rails', '4.2.1'
   gem 'shoulda', '3.5.0'
   gem 'simplecov', '0.7.1', require: false
-  gem 'simplecov-rcov', '0.2.3'
+  gem 'simplecov-rcov', '0.2.3', require: false
 end
