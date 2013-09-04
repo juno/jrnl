@@ -34,12 +34,6 @@ Generate API documents.
     $ bundle exec rake yard
     $ open doc/index.html
 
-Generate ER document (requires Graphviz).
-
-    $ brew install cairo pango graphviz
-    $ bundle exec rake erd
-    $ open ERD.pdf
-
 Testing
 -------
 
