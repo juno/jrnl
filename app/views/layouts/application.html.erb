@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=yes">
+    <%= csrf_meta_tag %>
+    <title><%= content_for?(:title) ? yield(:title) : 'Sooey' %></title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <%= render(partial: 'shared/feedburner') if Settings.feedburner['use'] %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= render(partial: 'shared/twitter_anywhere') if Settings.twitter_anywhere['use'] %>
+  </head>
+  <body>
+    <div id="main">
+      <%= render(partial: 'shared/flash', locals: { flash: flash }) %>
+      <header>
+        <h1 id="logo" class="tk-daniel">
+          <%= link_to('Sooey', root_path) %>
+        </h1>
+      </header>
+      <nav class="primary">
+        <%= render(partial: 'shared/social') %>
+        <%= render(partial: 'shared/google_custom_search') if Settings.google_custom_search['use'] %>
+      </nav>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <footer>
+        <address>
+          by <%= Settings.author['name'] %> <<%= Settings.author['email'] %>>
+        </address>
+        <p class="powerd_by">
+          Hosted at the <a href="http://heroku.com/">Heroku</a>
+        </p>
+        <p class="copyright">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nd/3.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nd/3.0/80x15.png">
+          </a>
+        </p>
+      </footer>
+      <div class="autopagerize_insert_before"></div>
+      <!-- This page rendered at <%= Time.zone.now %> -->
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= render(partial: 'shared/analytics') %>
+    <%= render(partial: 'shared/typekit') if Settings.typekit['use'] %>
+  </body>
+</html>
