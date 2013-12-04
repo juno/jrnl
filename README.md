@@ -1,6 +1,9 @@
 jrnl
 ====
 
+[![Travis](https://travis-ci.org/juno/jrnl.png)](https://travis-ci.org/juno/jrnl)
+[![Gemnasium](https://gemnasium.com/juno/jrnl.png)](https://gemnasium.com/juno/jrnl/)
+
 Getting Start
 -------------
 
