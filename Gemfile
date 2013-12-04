@@ -3,20 +3,20 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '4.0.2'
-gem 'pg', '0.16.0'
+gem 'pg', '0.17.0'
 gem 'jquery-rails', '3.0.4'
 
-gem 'sass-rails', '4.0.0'
-gem 'coffee-rails', '4.0.0'
-gem 'uglifier', '2.2.1'
+gem 'sass-rails', '4.0.1'
+gem 'coffee-rails', '4.0.1'
+gem 'uglifier', '2.3.2'
 
-gem 'curly-templates', '0.11.0'
-gem 'devise', '3.1.0'
+gem 'curly-templates', '0.12.0'
+gem 'devise', '3.2.2'
 gem 'devise-encryptable', '0.1.2'
-gem 'kaminari', '0.14.1'
+gem 'kaminari', '0.15.0'
 gem 'redcarpet', '3.0.0'
 gem 'settingslogic', '2.0.9'
-gem 'unicorn', '4.6.3'
+gem 'unicorn', '4.7.0'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
