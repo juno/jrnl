@@ -8,7 +8,7 @@ gem 'jquery-rails', '3.0.4'
 
 gem 'sass-rails', '4.0.1'
 gem 'coffee-rails', '4.0.1'
-gem 'uglifier', '2.3.2'
+gem 'uglifier', '2.3.3'
 
 gem 'curly-templates', '0.12.0'
 gem 'devise', '3.2.2'
