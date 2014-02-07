@@ -7,6 +7,8 @@ defaults: &defaults
     email: junyaogura at gmail.com
 
   social:
+    - name: qnyp
+      url: https://qnyp.com/junya
     - name: twitter
       url: http://twitter.com/junya
     - name: tumblr
@@ -17,12 +19,6 @@ defaults: &defaults
       url: http://pinboard.in/u:junya/
     - name: flickr
       url: http://www.flickr.com/photos/sooey/
-    - name: plancast
-      url: http://plancast.com/junya
-    - name: homescreen
-      url: http://homescreen.me/junya
-    - name: wishlist
-      url: http://www.amazon.co.jp/wishlist/2VFJWLLDJF03B/
 
   feedburner:
     use: true
