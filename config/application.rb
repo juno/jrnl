@@ -8,6 +8,10 @@ Bundler.require(:default, Rails.env)
 
 module Jrnl
   class Application < Rails::Application
+    # TODO: i18n.gemが0.7.0になって以下の設定がデフォルト値になったら除去する
+    # http://blog.n-z.jp/blog/2013-12-04-rails-i18n-deprecated-warning.html
+    I18n.enforce_available_locales = true
+
     config.assets.enabled = true
 
     # アセットのプリコンパイル時にデータベースアクセスやモデルのロードを行わない
