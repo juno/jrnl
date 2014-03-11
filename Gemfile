@@ -10,7 +10,6 @@ gem 'sass-rails', '4.0.1'
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier', '2.4.0'
 
-gem 'curly-templates', '0.12.0'
 gem 'devise', '3.2.3'
 gem 'devise-encryptable', '0.1.2'
 gem 'kaminari', '0.15.1'

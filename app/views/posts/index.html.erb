@@ -1,4 +1,4 @@
 <div class="autopagerize_page_element">
-  <%= render(partial: 'post', collection: @posts) %>
+  <%= render(partial: 'post', collection: @posts, locals: { show_comments: @show_comments }) %>
 </div>
 <%= paginate(@posts) %>
