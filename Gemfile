@@ -32,7 +32,7 @@ end
 
 group :test do
   gem 'capybara', '2.2.1'
-  gem 'factory_girl_rails', '4.4.0'
+  gem 'factory_girl_rails', '4.4.1'
   gem 'minitest', '5.3.1'
   gem 'shoulda-matchers', '2.5.0'
   gem 'simplecov', '0.8.2', require: false
