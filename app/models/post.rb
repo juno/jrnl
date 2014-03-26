@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
       .strip_tags(html)
       .split("\n")
       .first
-    str = first_line.split(//).first(max_length).reduce('') { |a, e| a += e }
+    str = first_line.split(//).first(max_length).reduce('') { |a, e| a + e }
     str += '...' if first_line.length > max_length
     str
   end

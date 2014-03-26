@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-
+# Administrator controller
 class AdminController < ApplicationController
   before_filter :authenticate_user!
 
@@ -7,11 +6,3 @@ class AdminController < ApplicationController
     @posts = Post.recent.page(params[:page]).per(10)
   end
 end
-
-
-
-
-
-
-
-
