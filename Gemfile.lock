@@ -194,7 +194,7 @@ DEPENDENCIES
   factory_girl_rails (= 4.4.0)
   jquery-rails (= 3.1.0)
   kaminari (= 0.15.1)
-  minitest
+  minitest (= 5.3.1)
   pg (= 0.17.1)
   rails (= 4.1.0.rc2)
   rails_12factor (= 0.0.2)
