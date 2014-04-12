@@ -1,4 +1,4 @@
-Jrnl::Application.routes.draw do
+Rails.application.routes.draw do
   root to: 'posts#index'
 
   devise_for :users
@@ -6,6 +6,7 @@ Jrnl::Application.routes.draw do
   get '/posts/:id' => redirect('/%{id}'), constraints: { id: /\d+/ }
   get '/posts' => redirect('/')
   get '/posts/index' => redirect('/')
+
   resources :posts
 
   get '/:id' => 'posts#show', constraints: { id: /\d+/ }, as: :permalink

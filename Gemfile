@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 ruby '2.1.1'
 
-gem 'rails', '4.1.0.rc2'
+gem 'rails', '4.1.0'
 gem 'pg', '0.17.1'
 gem 'jquery-rails', '3.1.0'
 
-gem 'sass-rails', '4.0.2'
+gem 'sass-rails', '4.0.3'
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier', '2.5.0'
 
@@ -28,6 +28,8 @@ end
 group :development do
   gem 'cane', '2.6.1'
   gem 'rubocop', '0.19.1'
+  gem 'spring', '1.1.2'
+  gem 'spring-commands-rspec', '1.0.1'
 end
 
 group :test do
