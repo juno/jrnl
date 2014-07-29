@@ -3,6 +3,7 @@ jrnl
 
 [![Travis](https://travis-ci.org/juno/jrnl.png)](https://travis-ci.org/juno/jrnl)
 [![Gemnasium](https://gemnasium.com/juno/jrnl.png)](https://gemnasium.com/juno/jrnl/)
+[![security](https://hakiri.io/github/juno/jrnl/master.svg)](https://hakiri.io/github/juno/jrnl/master)
 
 Getting Start
 -------------
