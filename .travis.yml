@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.1.1
+  - 2.1.2
 before_script:
   - psql -c 'create database jrnl_test;' -U postgres
   - 'cp config/database.travis.yml config/database.yml'
