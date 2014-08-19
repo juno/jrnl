@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe "Homepage" do
+describe "Homepage", :type => :feature do
 
   describe "Show recent 5 posts" do
     before do
@@ -10,9 +10,9 @@ describe "Homepage" do
       visit root_path
     end
     subject { page }
-    it { should_not have_content('Post 1') }
+    it { is_expected.not_to have_content('Post 1') }
     (2..6).each { |i|
-      it { should have_content("Post #{i}") }
+      it { is_expected.to have_content("Post #{i}") }
     }
   end
 
@@ -20,7 +20,7 @@ describe "Homepage" do
     let(:post) { FactoryGirl.create(:post, :content => 'Red, Green, Blue') }
     before { visit post_path(post) }
     subject { page }
-    it { should have_content('Red, Green, Blue') }
+    it { is_expected.to have_content('Red, Green, Blue') }
   end
 
 end

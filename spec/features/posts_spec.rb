@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe "Manage posts" do
+describe "Manage posts", :type => :feature do
 
   include RequestSpecHelper
 
@@ -12,14 +12,22 @@ describe "Manage posts" do
     describe "Can't post an article" do
       before { visit new_post_path }
       subject { page }
-      its(:current_path) { should eq(new_user_session_path) }
+
+      describe '#current_path' do
+        subject { super().current_path }
+        it { is_expected.to eq(new_user_session_path) }
+      end
     end
 
     describe "Can't update an article" do
       let(:post) { FactoryGirl.create(:post) }
       before { visit edit_post_path(post) }
       subject { page }
-      its(:current_path) { should eq(new_user_session_path) }
+
+      describe '#current_path' do
+        subject { super().current_path }
+        it { is_expected.to eq(new_user_session_path) }
+      end
     end
   end
 
@@ -36,7 +44,7 @@ describe "Manage posts" do
         visit root_path
       end
       subject { page }
-      it { should have_content('Rule the world!') }
+      it { is_expected.to have_content('Rule the world!') }
     end
 
     describe "Can update an article" do
@@ -49,8 +57,8 @@ describe "Manage posts" do
         visit post_path(post)
       end
       subject { page }
-      it { should have_content('Photoshop and Painter') }
-      it { should_not have_content('Hacker and Painter') }
+      it { is_expected.to have_content('Photoshop and Painter') }
+      it { is_expected.not_to have_content('Hacker and Painter') }
     end
 
     describe "Can destroy an article" do
@@ -61,7 +69,7 @@ describe "Manage posts" do
         visit root_path
       end
       subject { page }
-      it { should_not have_content('Deprecated content') }
+      it { is_expected.not_to have_content('Deprecated content') }
     end
   end
 

@@ -1,18 +1,18 @@
 require 'spec_helper'
 
-describe AdminController do
+describe AdminController, :type => :controller do
 
   def stub_posts(count = 10)
     @posts = []
-    count.times { @posts << mock_model(Post) }
-    Post.stub_chain(:recent, :page, :per) { @posts }
+    count.times { @posts << FactoryGirl.build(:post) }
+    allow(Post).to receive_message_chain(:recent, :page, :per) { @posts }
   end
 
   describe "GET 'index'" do
     context "not sign in" do
       before { get :index }
       subject { controller }
-      it { should respond_with(:redirect) }
+      it { is_expected.to respond_with(:redirect) }
     end
 
     context "sign in" do
@@ -23,12 +23,12 @@ describe AdminController do
       end
 
       subject { controller }
-      it { should respond_with(:success) }
-      it { should render_template(:index) }
+      it { is_expected.to respond_with(:success) }
+      it { is_expected.to render_template(:index) }
 
       describe '@posts' do
         subject { assigns(:posts) }
-        it { should eq(@posts) }
+        it { is_expected.to eq(@posts) }
       end
     end
   end

@@ -1,20 +1,14 @@
 require 'spec_helper'
 
-describe PostsController do
-
-  def mock_post(stubs = {})
-    (@mock_post ||= mock_model(Post).as_null_object).tap do |post|
-      post.stub(stubs) unless stubs.empty?
-    end
-  end
+describe PostsController, :type => :controller do
 
   def stub_recent_posts
     @posts = []
-    5.times { @posts << mock_model(Post) }
-    Post.stub_chain(:recent, :page, :per) { @posts }
+    5.times { @posts << FactoryGirl.build(:post) }
+    allow(Post).to receive_message_chain(:recent, :page, :per) { @posts }
   end
 
-  before { Settings.stub(:caching).and_return({ 'use' => false }) }
+  before { allow(Settings).to receive(:caching).and_return({ 'use' => false }) }
 
   describe "GET index" do
     before do
@@ -23,11 +17,11 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should render_template(:index) }
+    it { is_expected.to render_template(:index) }
 
     describe '@posts' do
       subject { assigns(:posts) }
-      it { should eq(@posts) }
+      it { is_expected.to eq(@posts) }
     end
   end
 
@@ -38,50 +32,52 @@ describe PostsController do
     end
 
     subject { controller }
-    it { should render_template(:index) }
+    it { is_expected.to render_template(:index) }
 
     describe '@posts' do
       subject { assigns(:posts) }
-      it { should eq(@posts) }
+      it { is_expected.to eq(@posts) }
     end
   end
 
   describe "GET show" do
     before do
-      Post.stub(:find).with('37') { mock_post }
+      @post = FactoryGirl.build_stubbed(:post)
+      expect(Post).to receive(:find).with('37').and_return(@post)
       get :show, :id => '37'
     end
 
     subject { controller }
-    it { should render_template(:show) }
+    it { is_expected.to render_template(:show) }
 
     describe '@post' do
       subject { assigns(:post) }
-      it { should eq(mock_post) }
+      it { is_expected.to eq(@post) }
     end
   end
 
   describe "GET new" do
-    before { Post.stub(:new) { mock_post} }
-
     context "not sign in" do
       before { get :new }
       subject { controller }
-      it { should respond_with(:redirect) }
+      it { is_expected.to respond_with(:redirect) }
     end
 
     context "sign in" do
       before do
+        @post = FactoryGirl.build_stubbed(:post)
+        expect(Post).to receive(:new).and_return(@post)
+
         sign_in FactoryGirl.create(:author)
         get :new
       end
 
-      subject { controller }
-      it { should render_template(:new) }
+      subject { controller.response }
+      it { is_expected.to render_template(:new) }
 
       describe '@post' do
         subject { assigns(:post) }
-        it { should eq(mock_post) }
+        it { is_expected.to eq(@post) }
       end
     end
   end
@@ -90,7 +86,7 @@ describe PostsController do
     context "not sign in" do
       before { get :edit, :id => '37' }
       subject { controller }
-      it { should respond_with(:redirect) }
+      it { is_expected.to respond_with(:redirect) }
     end
 
     context "sign in" do
@@ -104,15 +100,16 @@ describe PostsController do
 
       context "with valid id" do
         before do
-          Post.stub(:find).with('37') { mock_post }
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(Post).to receive(:find).with('37').and_return(@post)
           get :edit, :id => '37'
         end
         subject { controller }
-        it { should render_template(:edit) }
+        it { is_expected.to render_template(:edit) }
 
         describe '@post' do
           subject { assigns(:post) }
-          it { should eq(mock_post) }
+          it { is_expected.to eq(@post) }
         end
       end
     end
@@ -122,7 +119,7 @@ describe PostsController do
     context "not sign in" do
       before { post :create }
       subject { controller }
-      it { should respond_with(:redirect) }
+      it { is_expected.to respond_with(:redirect) }
     end
 
     context "sign in" do
@@ -130,34 +127,38 @@ describe PostsController do
 
       context "create failure" do
         before do
-          Post.stub(:new) { mock_post(:save => false) }
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(@post).to receive(:save).and_return(false)
+          expect(Post).to receive(:new).and_return(@post)
           post :create, post: { body: 'This is a test post.'}
         end
 
         subject { controller }
-        it { should render_template(:new) }
+        it { is_expected.to render_template(:new) }
 
         describe '@post' do
           subject { assigns(:post) }
-          it { should eq(mock_post) }
+          it { is_expected.to eq(@post) }
         end
       end
 
       context "successfully created" do
         before do
-          Post.stub(:new) { mock_post(:save => true) }
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(@post).to receive(:save).and_return(true)
+          expect(Post).to receive(:new).and_return(@post)
           post :create, post: { body: 'This is a test post.'}
         end
 
         subject { controller }
-        it { should redirect_to(post_url(mock_post)) }
+        it { is_expected.to redirect_to(post_url(@post)) }
         it 'sets notice to flash' do
           expect(flash[:notice]).to eq('Post was successfully created.')
         end
 
         describe '@post' do
           subject { assigns(:post) }
-          it { should eq(mock_post) }
+          it { is_expected.to eq(@post) }
         end
       end
     end
@@ -167,7 +168,7 @@ describe PostsController do
     context "not sign in" do
       before { put :update, :id => '1' }
       subject { controller }
-      it { should respond_with(:redirect) }
+      it { is_expected.to respond_with(:redirect) }
     end
 
     context "sign in" do
@@ -175,46 +176,48 @@ describe PostsController do
 
       context "update failure" do
         before do
-          Post.stub(:find) { mock_post(:update_attributes => false) }
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(@post).to receive(:update_attributes).and_return(false)
+          expect(Post).to receive(:find).and_return(@post)
           put :update, :id => '1', :post => { content: 'Updated content.' }
         end
 
         subject { controller }
-        it { should render_template(:edit) }
+        it { is_expected.to render_template(:edit) }
 
         describe '@post' do
           subject { assigns(:post) }
-          it { should eq(mock_post) }
+          it { is_expected.to eq(@post) }
         end
       end
 
       context "successfully updated" do
         before do
-          Post.should_receive(:find).with('37') { mock_post }
-          mock_post.should_receive(:update_attributes).and_return(true)
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(@post).to receive(:update_attributes).and_return(true)
+          expect(Post).to receive(:find).with('37').and_return(@post)
           put :update, :id => '37', :post => { content: 'Updated content.' }
         end
 
         subject { controller }
-        it { should redirect_to(post_url(mock_post)) }
+        it { is_expected.to redirect_to(post_url(@post)) }
         it 'sets notice to flash' do
           expect(flash[:notice]).to eq('Post was successfully updated.')
         end
 
         describe '@post' do
           subject { assigns(:post) }
-          it { should eq(mock_post) }
+          it { is_expected.to eq(@post) }
         end
       end
     end
-
   end
 
   describe "DELETE destroy" do
     context "not sign in" do
       before { delete :destroy, :id => '1' }
       subject { controller }
-      it { should respond_with(:redirect) }
+      it { is_expected.to respond_with(:redirect) }
     end
 
     context "sign in" do
@@ -222,25 +225,27 @@ describe PostsController do
 
       context "destroy failure" do
         before do
-          Post.should_receive(:find).with('37') { mock_post }
-          mock_post.stub(:destroy).and_raise(RuntimeError)
-          expect { delete :destroy, :id => '37' }.should raise_error
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(@post).to receive(:destroy).and_raise(RuntimeError)
+          expect(Post).to receive(:find).with('37').and_return(@post)
+          expect { delete :destroy, :id => '37' }.to raise_error
         end
       end
 
       context "successfully destroyed" do
         before do
-          Post.should_receive(:find).with('37') { mock_post }
-          mock_post.should_receive(:destroy)
+          @post = FactoryGirl.build_stubbed(:post)
+          expect(@post).to receive(:destroy)
+          expect(Post).to receive(:find).with('37').and_return(@post)
           delete :destroy, :id => '37'
         end
 
         subject { controller }
-        it { should redirect_to(posts_url) }
+        it { is_expected.to redirect_to(posts_url) }
 
         describe '@post' do
           subject { assigns(:post) }
-          it { should eq(mock_post) }
+          it { is_expected.to eq(@post) }
         end
       end
     end
@@ -250,18 +255,18 @@ describe PostsController do
     before do
       # stub posts
       @posts = []
-      5.times { @posts << mock_model(Post) }
-      Post.stub_chain(:created_within, :oldest, :page, :per) { @posts }
+      5.times { @posts << FactoryGirl.build(:post) }
+      allow(Post).to receive_message_chain(:created_within, :oldest, :page, :per) { @posts }
 
       get :monthly_archive, :year => '2011', :month => '1'
     end
 
     subject { controller }
-    it { should render_template(:index) }
+    it { is_expected.to render_template(:index) }
 
     describe '@posts' do
       subject { assigns(:posts) }
-      it { should eq(@posts) }
+      it { is_expected.to eq(@posts) }
     end
   end
 
