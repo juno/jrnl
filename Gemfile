@@ -15,7 +15,7 @@ gem 'devise-encryptable', '0.2.0'
 gem 'kaminari', '0.16.1'
 gem 'redcarpet', '3.1.2'
 gem 'settingslogic', '2.0.9'
-gem 'unicorn', '4.8.2'
+gem 'unicorn', '4.8.3'
 
 group :production do
   gem 'rails_12factor', '0.0.2'
