@@ -27,8 +27,8 @@ end
 
 group :development do
   gem 'rubocop', '0.25.0'
-  gem 'spring', '1.1.2'
-  gem 'spring-commands-rspec', '1.0.1'
+  gem 'spring', '1.1.3'
+  gem 'spring-commands-rspec', '1.0.2'
 end
 
 group :test do
