@@ -26,7 +26,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'cane', '2.6.1'
   gem 'rubocop', '0.19.1'
   gem 'spring', '1.1.2'
   gem 'spring-commands-rspec', '1.0.1'
