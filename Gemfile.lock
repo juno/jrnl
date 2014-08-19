@@ -46,7 +46,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
-    devise (3.2.4)
+    devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -192,7 +192,7 @@ DEPENDENCIES
   cane (= 2.6.1)
   capybara (= 2.2.1)
   coffee-rails (= 4.0.1)
-  devise (= 3.2.4)
+  devise (= 3.3.0)
   devise-encryptable (= 0.2.0)
   factory_girl_rails (= 4.4.1)
   jquery-rails (= 3.1.1)
