@@ -6,7 +6,7 @@ gem 'rails', '4.1.8'
 gem 'pg', '0.17.1'
 gem 'jquery-rails', '3.1.2'
 
-gem 'sass-rails', '4.0.3'
+gem 'sass-rails', '4.0.5'
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier', '2.5.3'
 
