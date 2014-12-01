@@ -29,7 +29,7 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     ast (2.0.0)
-    bcrypt (3.1.7)
+    bcrypt (3.1.9)
     builder (3.2.2)
     capybara (2.4.1)
       mime-types (>= 1.16)
@@ -44,10 +44,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    devise (3.3.0)
+    devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
@@ -112,6 +113,8 @@ GEM
     raindrops (0.13.0)
     rake (10.4.0)
     redcarpet (3.1.2)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rspec-core (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.4)
@@ -186,7 +189,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 2.4.1)
   coffee-rails (= 4.1.0)
-  devise (= 3.3.0)
+  devise (= 3.4.1)
   devise-encryptable (= 0.2.0)
   factory_girl_rails (= 4.4.1)
   jquery-rails (= 3.1.2)
