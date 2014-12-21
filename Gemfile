@@ -14,7 +14,7 @@ gem 'uglifier', '2.6.0'
 gem 'devise', '3.4.1'
 gem 'devise-encryptable', '0.2.0'
 gem 'kaminari', '0.16.1'
-gem 'redcarpet', '3.2.1'
+gem 'redcarpet', '3.2.2'
 gem 'settingslogic', '2.0.9'
 gem 'unicorn', '4.8.3'
 
