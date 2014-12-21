@@ -5,7 +5,7 @@ ruby '2.1.5'
 gem 'rails', '4.2.0'
 gem 'responders', '2.0.0'
 gem 'pg', '0.17.1'
-gem 'jquery-rails', '3.1.2'
+gem 'jquery-rails', '4.0.2'
 
 gem 'sass-rails', '4.0.5'
 gem 'coffee-rails', '4.1.0'
