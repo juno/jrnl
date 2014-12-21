@@ -1,7 +1,7 @@
 jrnl
 ====
 
-[![Travis](https://travis-ci.org/juno/jrnl.png)](https://travis-ci.org/juno/jrnl)
+[![Circle CI](https://circleci.com/gh/juno/jrnl.svg?style=svg)](https://circleci.com/gh/juno/jrnl)
 [![Gemnasium](https://gemnasium.com/juno/jrnl.png)](https://gemnasium.com/juno/jrnl/)
 [![security](https://hakiri.io/github/juno/jrnl/master.svg)](https://hakiri.io/github/juno/jrnl/master)
 
