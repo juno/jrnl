@@ -225,7 +225,6 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor (= 0.0.3)
   redcarpet (= 3.2.2)
-  responders (= 2.0.2)
   rspec-rails (= 3.1.0)
   rubocop (= 0.28.0)
   sass-rails (= 5.0.0)
