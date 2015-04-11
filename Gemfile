@@ -23,7 +23,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '3.1.0'
+  gem 'rspec-rails', '3.2.1'
 end
 
 group :development do
