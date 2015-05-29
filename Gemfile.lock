@@ -55,7 +55,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    devise (3.5.0)
+    devise (3.5.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -93,7 +93,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.2)
-    minitest (5.6.1)
+    minitest (5.7.0)
     multi_json (1.11.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -213,7 +213,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 2.4.4)
   coffee-rails (= 4.1.0)
-  devise (= 3.5.0)
+  devise (= 3.5.1)
   devise-encryptable (= 0.2.0)
   factory_girl_rails (= 4.5.0)
   heroku-deflater (= 0.5.3)
