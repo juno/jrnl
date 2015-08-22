@@ -15,11 +15,11 @@ gem 'devise-encryptable', '0.2.0'
 gem 'kaminari', '0.16.3'
 gem 'redcarpet', '3.3.2'
 gem 'settingslogic', '2.0.9'
-gem 'puma', '2.11.3'
+gem 'puma', '2.13.4'
 
 group :production do
-  gem 'heroku-deflater', '0.5.3'
-  gem 'rails_12factor', '0.0.3'
+  gem 'heroku-deflater'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
