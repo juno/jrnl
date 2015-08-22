@@ -94,7 +94,7 @@ describe PostsController, :type => :controller do
 
       context "with invalid id" do
         it "raises exception" do
-          expect { get :edit, :id => '0' }.to raise_error
+          expect { get :edit, :id => '0' }.to raise_error(ActiveRecord::RecordNotFound)
         end
       end
 
@@ -228,7 +228,7 @@ describe PostsController, :type => :controller do
           @post = FactoryGirl.build_stubbed(:post)
           expect(@post).to receive(:destroy).and_raise(RuntimeError)
           expect(Post).to receive(:find).with('37').and_return(@post)
-          expect { delete :destroy, :id => '37' }.to raise_error
+          expect { delete :destroy, :id => '37' }.to raise_error(ActiveRecord::RecordNotFound)
         end
       end
 
