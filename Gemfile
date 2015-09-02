@@ -23,7 +23,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '3.3.2'
+  gem 'rspec-rails', '3.3.3'
 end
 
 group :development do
@@ -32,7 +32,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '2.4.4'
+  gem 'capybara', '2.5.0'
   gem 'factory_girl_rails', '4.5.0'
   gem 'shoulda-matchers', '2.8.0', require: false
   gem 'simplecov', '0.10.0', require: false
