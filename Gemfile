@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.4'
 gem 'pg', '0.18.2'
-gem 'jquery-rails', '4.0.4'
+gem 'jquery-rails', '4.0.5'
 
 gem 'sass-rails', '5.0.3'
 gem 'coffee-rails', '4.1.0'
