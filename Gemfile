@@ -34,7 +34,7 @@ end
 group :test do
   gem 'capybara', '~> 2.5.0'
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'shoulda-matchers', '~> 3.0.1', require: false
+  gem 'shoulda-matchers', '~> 3.0.1'
   gem 'simplecov', '~> 0.11.1', require: false
   gem 'simplecov-rcov', '~> 0.2.3', require: false
 end
