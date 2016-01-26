@@ -4,7 +4,7 @@ ruby '2.3.0'
 
 gem 'rails', '~> 4.2.5.1'
 gem 'pg', '~> 0.18.2'
-gem 'jquery-rails', '~> 4.0.5'
+gem 'jquery-rails', '~> 4.1.0'
 
 gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.1.0'
@@ -27,14 +27,14 @@ group :development, :test do
 end
 
 group :development do
-  gem 'spring', '~> 1.4.4'
+  gem 'spring', '~> 1.6.0'
   gem 'spring-commands-rspec', '~> 1.0.4'
 end
 
 group :test do
-  gem 'capybara', '~> 2.5.0'
+  gem 'capybara', '~> 2.6.0'
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'shoulda-matchers', '~> 3.0.1'
+  gem 'shoulda-matchers', '~> 3.1.0'
   gem 'simplecov', '~> 0.11.1', require: false
   gem 'simplecov-rcov', '~> 0.2.3', require: false
 end
