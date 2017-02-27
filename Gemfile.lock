@@ -55,7 +55,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.4)
+    concurrent-ruby (1.0.5)
     devise (3.5.10)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
