@@ -8,9 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Jrnl
   class Application < Rails::Application
-    # TODO: i18n.gemが0.7.0になって以下の設定がデフォルト値になったら除去する
-    # http://blog.n-z.jp/blog/2013-12-04-rails-i18n-deprecated-warning.html
-    I18n.enforce_available_locales = true
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
 
     config.assets.enabled = true
 
