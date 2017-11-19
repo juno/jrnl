@@ -1,7 +1,6 @@
 <h1>Administration</h1>
 <%= content_tag(:div,
-                link_to('Sign out',
-                        [:destroy, current_user, :session]),
+                link_to('Sign out', destroy_user_session_path, method: :delete),
                 class: 'sign-out') %>
 <%= content_tag(:div, link_to('New post', new_post_path)) %>
 <table class="posts">
@@ -11,7 +10,7 @@
   </thead>
   <tbody>
     <% @posts.each do |post| %>
-      <%= content_tag_for(:tr, post) do %>
+      <%= content_tag(:tr, post, id: dom_id(post)) do %>
         <td style="white-space:nowrap">
           <%= post.created_at.strftime('%Y-%m-%d') %>
         </td>

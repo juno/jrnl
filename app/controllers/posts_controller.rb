@@ -1,6 +1,6 @@
 # Posts controller
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show, :monthly_archive]
+  before_action :authenticate_user!, except: [:index, :show, :monthly_archive]
 
   def index
     @posts = Post.recent.page(params[:page]).per(5)

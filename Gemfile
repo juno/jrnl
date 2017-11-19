@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.2'
 
-gem 'rails', '~> 4.2.10'
+gem 'rails', '~> 5.0.6'
 gem 'pg', '~> 0.21.0'
 gem 'jquery-rails', '~> 4.3.1'
 
@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '~> 3.2.0'
 
-gem 'devise', '~> 3.5.2'
+gem 'devise', '~> 4.3.0'
 gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.1.1'
 gem 'redcarpet', '~> 3.4.0'
