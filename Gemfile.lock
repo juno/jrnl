@@ -197,9 +197,8 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
+    uglifier (3.2.0)
+      execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
     xpath (2.1.0)
@@ -232,7 +231,7 @@ DEPENDENCIES
   simplecov-rcov (~> 0.2.3)
   spring (~> 1.6.0)
   spring-commands-rspec (~> 1.0.4)
-  uglifier (~> 2.7.2)
+  uglifier (~> 3.2.0)
 
 RUBY VERSION
    ruby 2.4.2p198
