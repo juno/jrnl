@@ -1,7 +1,8 @@
 body {
     background: #f3f2ee;
     color: #1f0909;
-    font-family: menlo,'andale mono',consolas,"Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "Osaka", "MS PGothic", 'ＭＳ Ｐゴシック', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1em;
     margin: 0;
     padding: 0;
 }
@@ -115,8 +116,6 @@ article.post .content {
 article.post .content a {
     color: #32abc9;
     padding: 0px 0.2em;
-    -webkit-transition-duration: 0.33s;
-    -webkit-transition-property: color, background;
 }
 article.post .content a:link,
 article.post .content a:visited {
@@ -136,24 +135,37 @@ article.post .content blockquote {
 }
 
 article.post .content > pre {
-    background: #333;
-    color: #fff;
-    margin-left: 0;
-    padding: .5em;
+    background-color: #eee;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: 1em auto;
+    padding: 1em 1em;
     width: auto;
     _width: 90%;
     overflow-x: auto;
-    font-family: monospace;
 }
 
 article.post .content p {
-    line-height: 1.8;
+  line-height: 1.7;
+  margin: 2em auto;
+
+  > code {
+    background-color: #eee;
+    border: 1px solid #999;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+  }
 }
 
 article.post .content img {
     border: none;
 }
 
+article.post .content ul {
+  > li {
+    line-height: 1.5;
+  }
+}
 
 .pagination {
     text-align: center;
