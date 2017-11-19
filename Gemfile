@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '~> 3.2.0'
 
-gem 'devise', '~> 4.2.1'
+gem 'devise', '~> 4.3.0'
 gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.1.1'
 gem 'redcarpet', '~> 3.4.0'
