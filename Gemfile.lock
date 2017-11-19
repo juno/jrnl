@@ -237,9 +237,8 @@ DEPENDENCIES
   spring-commands-rspec (~> 1.0.4)
   uglifier (~> 2.7.2)
 
-
 RUBY VERSION
-   ruby 2.3.3p222
+   ruby 2.4.2p198
 
 BUNDLED WITH
-   1.13.6
+   1.16.0
