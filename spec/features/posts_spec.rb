@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe "Manage posts", :type => :feature do
+RSpec.describe "Manage posts", type: :feature do
 
   include RequestSpecHelper
 

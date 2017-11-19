@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <% @posts.each do |post| %>
-      <%= content_tag_for(:tr, post) do %>
+      <%= content_tag(:tr, post, id: dom_id(post)) do %>
         <td style="white-space:nowrap">
           <%= post.created_at.strftime('%Y-%m-%d') %>
         </td>

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-describe AdminController, :type => :controller do
-
+RSpec.describe AdminController, type: :controller do
   def stub_posts(count = 10)
     @posts = []
     count.times { @posts << FactoryBot.build(:post) }
@@ -9,28 +8,27 @@ describe AdminController, :type => :controller do
   end
 
   describe "GET 'index'" do
+    subject { get :index }
+
     context "not sign in" do
-      before { get :index }
-      subject { controller }
-      it { is_expected.to respond_with(:redirect) }
+      it 'redirects to sign in page' do
+        subject
+        expect(request).to redirect_to(new_user_session_url)
+      end
     end
 
     context "sign in" do
+      let(:author) { FactoryBot.create(:author) }
+
       before do
         stub_posts(10)
-        sign_in FactoryBot.create(:author)
-        get :index
+        sign_in(author)
       end
 
-      subject { controller }
-      it { is_expected.to respond_with(:success) }
-      it { is_expected.to render_template(:index) }
-
-      describe '@posts' do
-        subject { assigns(:posts) }
-        it { is_expected.to eq(@posts) }
+      it 'returns status code 200' do
+        subject
+        expect(response).to have_http_status(:ok)
       end
     end
   end
-
 end
