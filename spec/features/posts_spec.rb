@@ -6,8 +6,6 @@ describe "Manage posts", :type => :feature do
 
   include RequestSpecHelper
 
-  after { visit destroy_user_session_path }
-
   context "Not signed in" do
     describe "Can't post an article" do
       before { visit new_post_path }
@@ -34,6 +32,12 @@ describe "Manage posts", :type => :feature do
   context "Signed in" do
     let!(:author) { FactoryBot.create(:author) }
     before { sign_in(author.email, 'secret-phrase') }
+
+    after do
+      # Destory current session
+      visit admin_path
+      click_link 'Sign out'
+    end
 
     describe "Can post an article" do
       before do

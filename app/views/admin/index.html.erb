@@ -1,7 +1,6 @@
 <h1>Administration</h1>
 <%= content_tag(:div,
-                link_to('Sign out',
-                        [:destroy, current_user, :session]),
+                link_to('Sign out', destroy_user_session_path, method: :delete),
                 class: 'sign-out') %>
 <%= content_tag(:div, link_to('New post', new_post_path)) %>
 <table class="posts">
