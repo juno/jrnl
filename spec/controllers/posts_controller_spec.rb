@@ -4,7 +4,7 @@ describe PostsController, :type => :controller do
 
   def stub_recent_posts
     @posts = []
-    5.times { @posts << FactoryGirl.build(:post) }
+    5.times { @posts << FactoryBot.build(:post) }
     allow(Post).to receive_message_chain(:recent, :page, :per) { @posts }
   end
 
@@ -42,7 +42,7 @@ describe PostsController, :type => :controller do
 
   describe "GET show" do
     before do
-      @post = FactoryGirl.build_stubbed(:post)
+      @post = FactoryBot.build_stubbed(:post)
       expect(Post).to receive(:find).with('37').and_return(@post)
       get :show, :id => '37'
     end
@@ -65,10 +65,10 @@ describe PostsController, :type => :controller do
 
     context "sign in" do
       before do
-        @post = FactoryGirl.build_stubbed(:post)
+        @post = FactoryBot.build_stubbed(:post)
         expect(Post).to receive(:new).and_return(@post)
 
-        sign_in FactoryGirl.create(:author)
+        sign_in FactoryBot.create(:author)
         get :new
       end
 
@@ -90,7 +90,7 @@ describe PostsController, :type => :controller do
     end
 
     context "sign in" do
-      before { sign_in FactoryGirl.create(:author) }
+      before { sign_in FactoryBot.create(:author) }
 
       context "with invalid id" do
         it "raises exception" do
@@ -100,7 +100,7 @@ describe PostsController, :type => :controller do
 
       context "with valid id" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(Post).to receive(:find).with('37').and_return(@post)
           get :edit, :id => '37'
         end
@@ -123,11 +123,11 @@ describe PostsController, :type => :controller do
     end
 
     context "sign in" do
-      before { sign_in FactoryGirl.create(:author) }
+      before { sign_in FactoryBot.create(:author) }
 
       context "create failure" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(@post).to receive(:save).and_return(false)
           expect(Post).to receive(:new).and_return(@post)
           post :create, post: { body: 'This is a test post.'}
@@ -144,7 +144,7 @@ describe PostsController, :type => :controller do
 
       context "successfully created" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(@post).to receive(:save).and_return(true)
           expect(Post).to receive(:new).and_return(@post)
           post :create, post: { body: 'This is a test post.'}
@@ -172,11 +172,11 @@ describe PostsController, :type => :controller do
     end
 
     context "sign in" do
-      before { sign_in FactoryGirl.create(:author) }
+      before { sign_in FactoryBot.create(:author) }
 
       context "update failure" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(@post).to receive(:update_attributes).and_return(false)
           expect(Post).to receive(:find).and_return(@post)
           put :update, :id => '1', :post => { content: 'Updated content.' }
@@ -193,7 +193,7 @@ describe PostsController, :type => :controller do
 
       context "successfully updated" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(@post).to receive(:update_attributes).and_return(true)
           expect(Post).to receive(:find).with('37').and_return(@post)
           put :update, :id => '37', :post => { content: 'Updated content.' }
@@ -221,11 +221,11 @@ describe PostsController, :type => :controller do
     end
 
     context "sign in" do
-      before { sign_in FactoryGirl.create(:author) }
+      before { sign_in FactoryBot.create(:author) }
 
       context "destroy failure" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(@post).to receive(:destroy).and_raise(RuntimeError)
           expect(Post).to receive(:find).with('37').and_return(@post)
           expect { delete :destroy, :id => '37' }.to raise_error(ActiveRecord::RecordNotFound)
@@ -234,7 +234,7 @@ describe PostsController, :type => :controller do
 
       context "successfully destroyed" do
         before do
-          @post = FactoryGirl.build_stubbed(:post)
+          @post = FactoryBot.build_stubbed(:post)
           expect(@post).to receive(:destroy)
           expect(Post).to receive(:find).with('37').and_return(@post)
           delete :destroy, :id => '37'
@@ -255,7 +255,7 @@ describe PostsController, :type => :controller do
     before do
       # stub posts
       @posts = []
-      5.times { @posts << FactoryGirl.build(:post) }
+      5.times { @posts << FactoryBot.build(:post) }
       allow(Post).to receive_message_chain(:created_within, :oldest, :page, :per) { @posts }
 
       get :monthly_archive, :year => '2011', :month => '1'

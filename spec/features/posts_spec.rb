@@ -20,7 +20,7 @@ describe "Manage posts", :type => :feature do
     end
 
     describe "Can't update an article" do
-      let(:post) { FactoryGirl.create(:post) }
+      let(:post) { FactoryBot.create(:post) }
       before { visit edit_post_path(post) }
       subject { page }
 
@@ -32,7 +32,7 @@ describe "Manage posts", :type => :feature do
   end
 
   context "Signed in" do
-    let!(:author) { FactoryGirl.create(:author) }
+    let!(:author) { FactoryBot.create(:author) }
     before { sign_in(author.email, 'secret-phrase') }
 
     describe "Can post an article" do
@@ -48,7 +48,7 @@ describe "Manage posts", :type => :feature do
     end
 
     describe "Can update an article" do
-      let!(:post) { FactoryGirl.create(:post, :content => 'Hacker and Painter') }
+      let!(:post) { FactoryBot.create(:post, :content => 'Hacker and Painter') }
       before do
         visit admin_path
         find("#post_#{post.id}").click_link('Edit')
@@ -62,7 +62,7 @@ describe "Manage posts", :type => :feature do
     end
 
     describe "Can destroy an article" do
-      let!(:post) { FactoryGirl.create(:post, :content => 'Deprecated content') }
+      let!(:post) { FactoryBot.create(:post, :content => 'Deprecated content') }
       before do
         visit admin_path
         find("#post_#{post.id}").click_link('Delete')
