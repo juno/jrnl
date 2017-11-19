@@ -4,7 +4,7 @@ describe AdminController, :type => :controller do
 
   def stub_posts(count = 10)
     @posts = []
-    count.times { @posts << FactoryGirl.build(:post) }
+    count.times { @posts << FactoryBot.build(:post) }
     allow(Post).to receive_message_chain(:recent, :page, :per) { @posts }
   end
 
@@ -18,7 +18,7 @@ describe AdminController, :type => :controller do
     context "sign in" do
       before do
         stub_posts(10)
-        sign_in FactoryGirl.create(:author)
+        sign_in FactoryBot.create(:author)
         get :index
       end
 

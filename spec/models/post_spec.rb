@@ -3,11 +3,11 @@ require 'spec_helper'
 describe Post, :type => :model do
 
   def setup_post_fixtures
-    FactoryGirl.create(:post, :created_at => Time.new(2010, 12, 31), :content => 'oldest one')
-    FactoryGirl.create(:post, :created_at => Time.new(2011, 1, 1))
-    FactoryGirl.create(:post, :created_at => Time.new(2011, 1, 31))
-    FactoryGirl.create(:post, :created_at => Time.new(2011, 2, 1))
-    FactoryGirl.create(:post, :created_at => Time.new(2011, 2, 2), :content => 'newest one')
+    FactoryBot.create(:post, :created_at => Time.new(2010, 12, 31), :content => 'oldest one')
+    FactoryBot.create(:post, :created_at => Time.new(2011, 1, 1))
+    FactoryBot.create(:post, :created_at => Time.new(2011, 1, 31))
+    FactoryBot.create(:post, :created_at => Time.new(2011, 2, 1))
+    FactoryBot.create(:post, :created_at => Time.new(2011, 2, 2), :content => 'newest one')
   end
 
   it { is_expected.to validate_presence_of :content }
