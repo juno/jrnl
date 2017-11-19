@@ -4,7 +4,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.recent.page(params[:page]).per(5)
-    @show_comments = false
     respond_to do |format|
       format.html { set_cache_control_header }
       format.rss { render(layout: false) }  # index.rss.builder
@@ -14,7 +13,6 @@ class PostsController < ApplicationController
   def show
     set_cache_control_header
     @post = Post.find(params[:id])
-    @show_comments = true
   end
 
   def new
