@@ -59,7 +59,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    devise (4.3.0)
+    devise (4.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
@@ -117,7 +117,7 @@ GEM
     public_suffix (3.0.1)
     puma (3.10.0)
     rack (2.0.3)
-    rack-test (0.7.1)
+    rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
@@ -225,7 +225,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 2.16.0)
   coffee-rails (~> 4.2.2)
-  devise (~> 4.3.0)
+  devise (~> 4.4.0)
   devise-encryptable (~> 0.2.0)
   factory_bot_rails (~> 4.8.2)
   heroku-deflater (~> 0.6.2)
@@ -247,7 +247,6 @@ DEPENDENCIES
   spring (~> 2.0.2)
   spring-commands-rspec (~> 1.0.4)
   uglifier (~> 3.2.0)
-
 
 RUBY VERSION
    ruby 2.4.2p198
