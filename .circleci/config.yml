@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.0-node-browsers
+        environment:
+          RAILS_ENV: test
+          PGHOST: 127.0.0.1
+      - image: circleci/postgres:9.6.5-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_PASSWORD: ""
+    working_directory: ~/jrnl
+    steps:
+      - checkout
+      - run:
+          name: Installing System Packages (apt)
+          command: sudo apt install postgresql-client
+
+      - restore_cache:
+          keys:
+            - bundler-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - bundler-cache-{{ .Branch }}
+            - bundler-cache
+      - run:
+          name: Installing Ruby Dependencies (bundler)
+          command: bundle install --path vendor/bundle
+      - save_cache:
+          key: bundler-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+      - save_cache:
+          key: bundler-cache-{{ .Branch }}
+          paths:
+            - ./vendor/bundle
+      - save_cache:
+          key: bundler-cache
+          paths:
+            - ./vendor/bundle
+
+      - run:
+          name: Database Setup
+          command: |
+            bundle exec rake db:create db:schema:load
+      - restore_cache:
+          keys:
+            - pronto-gems-cache-{{ .Branch }}-{{ checksum "./bin/ci-run-pronto" }}
+            - pronto-gems-cache-{{ .Branch }}
+            - pronto-gems-cache
+      - run:
+          name: Test (rspec)
+          command: bundle exec rails spec
+
