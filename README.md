@@ -2,7 +2,7 @@ jrnl
 ====
 
 [![Circle CI](https://circleci.com/gh/juno/jrnl.svg?style=svg)](https://circleci.com/gh/juno/jrnl)
-[[![Dependency Status](https://gemnasium.com/juno/jrnl.svg)](https://gemnasium.com/juno/jrnl)](https://gemnasium.com/juno/jrnl/)
+
 
 Getting Start
 -------------
