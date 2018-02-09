@@ -10,15 +10,11 @@ defaults: &defaults
     - name: qnyp
       url: https://qnyp.com/junya
     - name: twitter
-      url: http://twitter.com/junya
-    - name: tumblr
-      url: http://sooey.tumblr.com/
-    - name: facebook
-      url: http://facebook.com/junya.ogura
+      url: https://twitter.com/junya
     - name: pinboard
-      url: http://pinboard.in/u:junya/
-    - name: flickr
-      url: http://www.flickr.com/photos/sooey/
+      url: https://pinboard.in/u:junya/
+    - name: instagram
+      url: https://www.instagram.com/junyaogura/
 
   feedburner:
     use: true

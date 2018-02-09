@@ -8,9 +8,9 @@ defaults: &defaults
 
   social:
     - name: twitter
-      url: http://twitter.com/YOURNAME
+      url: https://twitter.com/YOURNAME
     - name: facebook
-      url: http://facebook.com/YOURNAME
+      url: https://facebook.com/YOURNAME
 
   feedburner:
     use: false

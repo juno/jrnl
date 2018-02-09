@@ -1,6 +1,6 @@
 <div class="search-form">
   <div id="cse">Loading search form...</div>
-  <script src="http://www.google.com/jsapi" type="text/javascript">
+  <script src="//www.google.com/jsapi" type="text/javascript">
     google.load('search', '1', {language : 'ja'});
     google.setOnLoadCallback(function() {
       var customSearchControl = new google.search.CustomSearchControl('<%= Settings.google_custom_search['code'] %>');
