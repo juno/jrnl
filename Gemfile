@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.5.0'
 
 gem 'rails', '~> 5.1.5'
-gem 'pg', '~> 0.21.0'
+gem 'pg', '~> 1.0.0'
 gem 'jquery-rails', '~> 4.3.1'
 
 gem 'sass-rails', '~> 5.0.3'
