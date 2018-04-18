@@ -4,7 +4,7 @@ ruby '2.5.0'
 
 gem 'rails', '~> 5.2.0'
 gem 'pg', '~> 1.0.0'
-gem 'jquery-rails', '~> 4.3.1'
+gem 'jquery-rails', '~> 4.3.3'
 
 gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.2.2'
