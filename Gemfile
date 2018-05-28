@@ -32,7 +32,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 3.1.0'
+  gem 'capybara', '~> 3.1.1'
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'shoulda-matchers', '~> 3.1.0'
   gem 'simplecov', '~> 0.16.1', require: false
