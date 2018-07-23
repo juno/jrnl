@@ -8,7 +8,7 @@ gem 'jquery-rails', '~> 4.3.3'
 
 gem 'sass-rails', '~> 5.0.3'
 gem 'coffee-rails', '~> 4.2.2'
-gem 'uglifier', '~> 4.1.15'
+gem 'uglifier', '~> 4.1.16'
 
 gem 'devise', '~> 4.4.3'
 gem 'devise-encryptable', '~> 0.2.0'
