@@ -6,7 +6,8 @@ jobs:
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
-      - image: circleci/postgres:9.6.5-alpine
+          PGUSER: circleci
+      - image: circleci/postgres:10.3-alpine
         environment:
           POSTGRES_USER: circleci
           POSTGRES_PASSWORD: ""
