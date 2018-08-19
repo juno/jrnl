@@ -40,11 +40,6 @@ jobs:
           name: Database Setup
           command: |
             bundle exec rake db:create db:schema:load
-      - restore_cache:
-          keys:
-            - pronto-gems-cache-{{ .Branch }}-{{ checksum "./bin/ci-run-pronto" }}
-            - pronto-gems-cache-{{ .Branch }}
-            - pronto-gems-cache
       - run:
           name: Test (rspec)
           command: bundle exec rails spec
