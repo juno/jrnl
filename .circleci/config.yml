@@ -6,16 +6,14 @@ jobs:
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
-      - image: circleci/postgres:9.6.5-alpine
+          PGUSER: circleci
+      - image: circleci/postgres:10.3-alpine
         environment:
           POSTGRES_USER: circleci
           POSTGRES_PASSWORD: ""
     working_directory: ~/jrnl
     steps:
       - checkout
-      - run:
-          name: Installing System Packages (apt)
-          command: sudo apt install postgresql-client
 
       - restore_cache:
           keys:
@@ -42,11 +40,6 @@ jobs:
           name: Database Setup
           command: |
             bundle exec rake db:create db:schema:load
-      - restore_cache:
-          keys:
-            - pronto-gems-cache-{{ .Branch }}-{{ checksum "./bin/ci-run-pronto" }}
-            - pronto-gems-cache-{{ .Branch }}
-            - pronto-gems-cache
       - run:
           name: Test (rspec)
           command: bundle exec rails spec
