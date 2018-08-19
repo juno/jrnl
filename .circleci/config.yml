@@ -14,9 +14,6 @@ jobs:
     working_directory: ~/jrnl
     steps:
       - checkout
-      - run:
-          name: Installing System Packages (apt)
-          command: sudo apt install postgresql-client
 
       - restore_cache:
           keys:
