@@ -64,7 +64,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
-    devise (4.6.0)
+    devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -235,7 +235,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (~> 3.13.2)
   coffee-rails (~> 4.2.2)
-  devise (~> 4.6.0)
+  devise (~> 4.6.1)
   devise-encryptable (~> 0.2.0)
   factory_bot_rails (~> 5.0.1)
   heroku-deflater (~> 0.6.2)
