@@ -4,7 +4,7 @@ defaults: &defaults
 
   author:
     name: Junya Ogura
-    email: junyaogura at gmail.com
+    email: juno at sooey.com
 
   social:
     - name: qnyp
