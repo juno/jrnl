@@ -7,7 +7,6 @@ gem 'pg', '~> 1.1.4'
 gem 'jquery-rails', '~> 4.3.3'
 
 gem 'sass-rails', '~> 5.0.3'
-gem 'coffee-rails', '~> 4.2.2'
 gem 'uglifier', '~> 4.1.20'
 
 gem 'devise', '~> 4.6.2'
