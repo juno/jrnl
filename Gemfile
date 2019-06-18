@@ -6,7 +6,7 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '~> 1.1.4'
 gem 'jquery-rails', '~> 4.3.5'
 
-gem 'sassc-rails', '2.1.1'
+gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '3.7.2'
 gem 'sprockets-rails', '3.2.1'
 gem 'uglifier', '4.1.20'
