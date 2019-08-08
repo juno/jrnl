@@ -16,7 +16,7 @@ gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.1.1'
 gem 'redcarpet', '~> 3.5.0'
 gem 'settingslogic', '~> 2.0.9'
-gem 'puma', '~> 4.0.1'
+gem 'puma', '~> 4.1.0'
 
 group :production do
   gem 'heroku-deflater', '~> 0.6.2'
