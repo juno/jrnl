@@ -42,4 +42,4 @@ end
 
 gem 'nokogiri', '>= 1.6.7.2'
 
-gem 'rails-html-sanitizer', '~> 1.1.0'
+gem 'rails-html-sanitizer', '~> 1.2.0'
