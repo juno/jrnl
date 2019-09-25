@@ -207,7 +207,7 @@ GEM
     tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.20)
+    uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.8)
       rack (>= 2.0.6)
@@ -245,7 +245,7 @@ DEPENDENCIES
   spring-commands-rspec (~> 1.0.4)
   sprockets (= 3.7.2)
   sprockets-rails (= 3.2.1)
-  uglifier (= 4.1.20)
+  uglifier (= 4.2.0)
 
 RUBY VERSION
    ruby 2.6.3p62

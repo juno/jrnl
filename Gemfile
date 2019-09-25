@@ -9,7 +9,7 @@ gem 'jquery-rails', '~> 4.3.5'
 gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '3.7.2'
 gem 'sprockets-rails', '3.2.1'
-gem 'uglifier', '4.1.20'
+gem 'uglifier', '4.2.0'
 
 gem 'devise', '~> 4.7.1'
 gem 'devise-encryptable', '~> 0.2.0'
