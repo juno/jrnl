@@ -13,7 +13,7 @@ gem 'uglifier', '4.2.0'
 
 gem 'devise', '~> 4.7.1'
 gem 'devise-encryptable', '~> 0.2.0'
-gem 'kaminari', '~> 1.2.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'redcarpet', '~> 3.5.0'
 gem 'settingslogic', '~> 2.0.9'
 gem 'puma', '~> 4.3.5'
