@@ -11,7 +11,7 @@ gem 'sprockets', '4.0.2'
 gem 'sprockets-rails', '3.2.1'
 gem 'uglifier', '4.2.0'
 
-gem 'devise', '~> 4.7.1'
+gem 'devise', '~> 4.7.2'
 gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.2.1'
 gem 'redcarpet', '~> 3.5.0'
