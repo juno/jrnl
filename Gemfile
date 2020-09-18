@@ -8,7 +8,7 @@ gem 'jquery-rails', '~> 4.4.0'
 
 gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '4.0.2'
-gem 'sprockets-rails', '3.2.1'
+gem 'sprockets-rails', '3.2.2'
 gem 'uglifier', '4.2.0'
 
 gem 'devise', '~> 4.7.2'
