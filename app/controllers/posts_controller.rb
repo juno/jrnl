@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       unless Settings.caching['use']
         flash[:notice] = 'Post was successfully updated.'
       end
