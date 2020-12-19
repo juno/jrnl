@@ -185,7 +185,7 @@ RSpec.describe PostsController, type: :controller do
 
       context "update failure" do
         before do
-          expect(a_post).to receive(:update_attributes).and_return(false)
+          expect(a_post).to receive(:update).and_return(false)
           expect(Post).to receive(:find).and_return(a_post)
         end
 
@@ -197,7 +197,7 @@ RSpec.describe PostsController, type: :controller do
 
       context "successfully updated" do
         before do
-          expect(a_post).to receive(:update_attributes).and_return(true)
+          expect(a_post).to receive(:update).and_return(true)
           expect(Post).to receive(:find).and_return(a_post)
         end
 
