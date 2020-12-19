@@ -10,6 +10,7 @@ gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '4.0.2'
 gem 'sprockets-rails', '3.2.2'
 gem 'uglifier', '4.2.0'
+gem 'webpacker'
 
 gem 'devise', '~> 4.7.3'
 gem 'devise-encryptable', '~> 0.2.0'

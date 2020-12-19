@@ -13,3 +13,10 @@ tmp/sessions/*
 tmp/sockets/*
 vendor/bundle
 vendor/bundles
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
