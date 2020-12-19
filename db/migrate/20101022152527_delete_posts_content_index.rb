@@ -1,4 +1,4 @@
-class DeletePostsContentIndex < ActiveRecord::Migration
+class DeletePostsContentIndex < ActiveRecord::Migration[4.2]
   def self.up
     remove_index :posts, :content
   end
