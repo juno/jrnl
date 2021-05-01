@@ -12,7 +12,7 @@ gem 'sprockets-rails', '3.2.2'
 gem 'uglifier', '4.2.0'
 gem 'webpacker'
 
-gem 'devise', '~> 4.7.3'
+gem 'devise', '~> 4.8.0'
 gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.2.1'
 gem 'redcarpet', '~> 3.5.1'
