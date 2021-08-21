@@ -114,7 +114,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    loofah (2.10.0)
+    loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -135,7 +135,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
-    rack-proxy (0.6.5)
+    rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -170,7 +170,7 @@ GEM
       method_source
       rake (>= 0.13)
       thor (~> 1.0)
-    rake (13.0.3)
+    rake (13.0.6)
     redcarpet (3.5.1)
     regexp_parser (2.0.3)
     responders (3.0.1)
@@ -232,7 +232,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.9)
       rack (>= 2.0.9)
-    webpacker (5.4.0)
+    webpacker (5.4.2)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
