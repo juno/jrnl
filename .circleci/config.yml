@@ -9,6 +9,9 @@ jobs:
           PGUSER: circleci
       - image: circleci/postgres:12-alpine
         environment:
+          BUNDLE_JOBS: 4
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
           POSTGRES_USER: circleci
           POSTGRES_PASSWORD: ""
     working_directory: ~/jrnl
