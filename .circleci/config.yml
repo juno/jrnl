@@ -17,24 +17,17 @@ jobs:
 
       - restore_cache:
           keys:
-            - bundler-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - bundler-cache-{{ .Branch }}
-            - bundler-cache
+            - gem-cache-{{ .Environment.CACHE_KEY }}-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
       - run:
           name: Installing Ruby Dependencies (bundler)
-          command: bundle install --path vendor/bundle
+          command: |
+            bundle config set clean "true"
+            bundle config set path "vendor/bundle"
+            bundle check || bundle install
       - save_cache:
-          key: bundler-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          key: gem-cache-{{ .Environment.CACHE_KEY }}-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
-            - ./vendor/bundle
-      - save_cache:
-          key: bundler-cache-{{ .Branch }}
-          paths:
-            - ./vendor/bundle
-      - save_cache:
-          key: bundler-cache
-          paths:
-            - ./vendor/bundle
+            - vendor/bundle
 
       - run:
           name: Database Setup
