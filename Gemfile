@@ -28,11 +28,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.2'
 end
 
-group :development do
-  gem 'spring', '~> 2.1.1'
-  gem 'spring-commands-rspec', '~> 1.0.4'
-end
-
 group :test do
   gem 'capybara', '~> 3.35.3'
   gem 'factory_bot_rails', '~> 6.2.0'
