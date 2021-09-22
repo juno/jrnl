@@ -20,10 +20,6 @@ defaults: &defaults
     use: true
     code: CUSTOM_SEARCH_CODE
 
-  typekit:
-    use: true
-    id: TYPEKIT_ID
-
   twitter_anywhere:
     use: true
     id: TWITTER_APP_ID

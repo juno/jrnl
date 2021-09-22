@@ -24,10 +24,6 @@ defaults: &defaults
     use: true
     code: 002120026113953543318:8wsc3jhy1fm
 
-  typekit:
-    use: false
-    id:
-
   twitter_anywhere:
     use: false
     id: ua931JjzNdqgvz2B0S85jA
@@ -40,7 +36,3 @@ test:
 
 production:
   <<: *defaults
-
-  typekit:
-    use: true
-    id: ock6krn
