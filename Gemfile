@@ -21,7 +21,6 @@ gem 'redcarpet', '~> 3.5.1'
 gem 'settingslogic', '~> 2.0.9'
 
 group :production do
-  gem 'heroku-deflater', '~> 0.6.2'
   gem 'rails_12factor', '~> 0.0.3'
 end
 
