@@ -1,9 +1,16 @@
+schedule: &schedule
+  interval: "weekly"
+  day: "saturday"
+  timezone: "Asia/Tokyo"
+
 version: 2
 updates:
-- package-ecosystem: bundler
+- package-ecosystem: "bundler"
   directory: "/"
   schedule:
-    interval: weekly
-    day: saturday
-    timezone: Asia/Tokyo
+    <<: *schedule
   open-pull-requests-limit: 10
+- package-ecosystem: "npm"
+  directory: "/"
+  schedule:
+    <<: *schedule
