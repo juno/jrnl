@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build:
+    parallelism: 2
     resource_class: medium
 
     docker:
@@ -70,6 +71,11 @@ jobs:
       - run:
           name: Setup Database
           command: bin/rails db:schema:load --trace
+      - run: mkdir ~/rspec
       - run:
           name: Test (rspec)
-          command: bundle exec rails spec
+          command: |
+            TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings --timings-type=filename)
+            bin/rspec --format progress --format RspecJunitFormatter -o ~/rspec/rspec.xml -- $TESTFILES
+      - store_test_results:
+          path: ~/rspec
