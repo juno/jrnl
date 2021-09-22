@@ -20,10 +20,6 @@ gem 'puma', '~> 5.5.0'
 gem 'redcarpet', '~> 3.5.1'
 gem 'settingslogic', '~> 2.0.9'
 
-group :production do
-  gem 'rails_12factor', '~> 0.0.3'
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.2'
 end
