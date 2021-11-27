@@ -9,7 +9,7 @@ gem 'pg', '~> 1.2.3'
 
 gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '4.0.2'
-gem 'sprockets-rails', '3.4.0'
+gem 'sprockets-rails', '3.4.1'
 gem 'uglifier', '4.2.0'
 gem 'webpacker'
 
