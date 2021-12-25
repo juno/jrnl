@@ -200,7 +200,7 @@ GEM
       tilt
     semantic_range (3.0.0)
     settingslogic (2.0.9)
-    shoulda-matchers (5.0.0)
+    shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
     simplecov (0.21.2)
       docile (~> 1.1)
@@ -257,7 +257,7 @@ DEPENDENCIES
   rspec_junit_formatter (= 0.4.1)
   sassc-rails (= 2.1.2)
   settingslogic (~> 2.0.9)
-  shoulda-matchers (~> 5.0.0)
+  shoulda-matchers (~> 5.1.0)
   simplecov (~> 0.21.2)
   simplecov-rcov (~> 0.2.3)
   sprockets (= 4.0.2)
