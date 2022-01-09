@@ -37,4 +37,7 @@ gem 'nokogiri', '>= 1.6.7.2'
 
 gem 'rails-html-sanitizer', '~> 1.4.2'
 gem 'psych', '3.3.2'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
 
