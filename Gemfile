@@ -27,7 +27,7 @@ end
 group :test do
   gem 'capybara', '~> 3.36.0'
   gem 'factory_bot_rails', '~> 6.2.0'
-  gem 'rspec_junit_formatter', '0.4.1'
+  gem 'rspec_junit_formatter', '0.5.1'
   gem 'shoulda-matchers', '~> 5.1.0'
   gem 'simplecov', '~> 0.21.2', require: false
   gem 'simplecov-rcov', '~> 0.2.3', require: false
