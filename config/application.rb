@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails"
+require 'rails'
 # Pick the frameworks you want:
 require 'active_model/railtie'
 # require 'active_job/railtie'
@@ -20,7 +20,7 @@ Bundler.require(*Rails.groups)
 module Jrnl
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 7.0
 
     config.assets.enabled = true
 
@@ -30,7 +30,7 @@ module Jrnl
 
     config.assets.version = '1.0'
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W[#{config.root}/lib]
 
     config.encoding = 'utf-8'
 
