@@ -227,7 +227,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    settingslogic (2.0.9)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
     simplecov (0.21.2)
@@ -289,7 +288,6 @@ DEPENDENCIES
   rspec-rails (~> 5.1.0)
   rspec_junit_formatter (= 0.5.1)
   sassc-rails (= 2.1.2)
-  settingslogic (~> 2.0.9)
   shoulda-matchers (~> 5.1.0)
   simplecov (~> 0.21.2)
   simplecov-rcov (~> 0.2.3)

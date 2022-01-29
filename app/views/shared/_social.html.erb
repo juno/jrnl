@@ -1,7 +1,7 @@
 <ul class="social tk-museo">
-  <% Settings.social.each do |s| %>
+  <% Rails.configuration.x.jrnl.social.each do |s| %>
     <li>
-      <%= link_to(s['name'], s['url']) %>
+      <%= link_to(s[:name], s[:url]) %>
     </li>
   <% end %>
   <li>

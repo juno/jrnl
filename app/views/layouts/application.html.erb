@@ -6,9 +6,9 @@
     <%= csrf_meta_tag %>
     <title><%= content_for?(:title) ? yield(:title) : 'Sooey' %></title>
     <link rel="shortcut icon" href="/favicon.ico">
-    <%= render(partial: 'shared/feedburner') if Settings.feedburner['use'] %>
+    <%= render(partial: 'shared/feedburner') if Rails.configuration.x.jrnl.feedburner[:use] %>
     <%= stylesheet_link_tag 'application' %>
-    <%= render(partial: 'shared/twitter_anywhere') if Settings.twitter_anywhere['use'] %>
+    <%= render(partial: 'shared/twitter_anywhere') if Rails.configuration.x.jrnl.twitter_anywhere[:use] %>
   </head>
   <body>
     <div id="main">
@@ -20,14 +20,14 @@
       </header>
       <nav class="primary">
         <%= render(partial: 'shared/social') %>
-        <%= render(partial: 'shared/google_custom_search') if Settings.google_custom_search['use'] %>
+        <%= render(partial: 'shared/google_custom_search') if Rails.configuration.x.jrnl.google_custom_search[:use] %>
       </nav>
       <div id="content">
         <%= yield %>
       </div>
       <footer>
         <address>
-          by <%= Settings.author['name'] %> <<%= Settings.author['email'] %>>
+          by <%= Rails.configuration.x.jrnl.author[:name] %> <<%= Rails.configuration.x.jrnl.author[:email] %>>
         </address>
         <p class="powerd_by">
           Hosted at the <a href="https://heroku.com/">Heroku</a>

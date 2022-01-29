@@ -47,5 +47,7 @@ module Jrnl
     config.i18n.default_locale = :ja
 
     config.time_zone = 'Tokyo'
+
+    config.x.jrnl = config_for(Rails.root.join('config/x/jrnl.yml'))
   end
 end

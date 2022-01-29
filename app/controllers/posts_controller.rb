@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      unless Settings.caching['use']
+      unless Rails.configuration.x.jrnl.caching[:use]
         flash[:notice] = 'Post was successfully created.'
       end
       redirect_to @post
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      unless Settings.caching['use']
+      unless Rails.configuration.x.jrnl.caching[:use]
         flash[:notice] = 'Post was successfully updated.'
       end
       redirect_to @post
@@ -68,7 +68,7 @@ class PostsController < ApplicationController
   private
 
   def set_cache_control_header
-    return unless Settings.caching['use']
+    return Rails.configuration.x.jrnl.caching[:use]
     response.headers['Cache-Control'] = 'public, max-age=300'
   end
 
