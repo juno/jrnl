@@ -1,16 +1,16 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails'
+require "rails"
 # Pick the frameworks you want:
-require 'active_model/railtie'
+require "active_model/railtie"
 # require 'active_job/railtie'
-require 'active_record/railtie'
+require "active_record/railtie"
 # require 'active_storage/engine'
-require 'action_controller/railtie'
-require 'action_mailer/railtie'
-require 'action_view/railtie'
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_view/railtie"
 # require 'action_cable/engine'
-require 'sprockets/railtie'
+require "sprockets/railtie"
 # require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
@@ -28,11 +28,11 @@ module Jrnl
     # Herokuへのデプロイ時に必要となる設定
     config.assets.initialize_on_precompile = false
 
-    config.assets.version = '1.0'
+    config.assets.version = "1.0"
 
     config.autoload_paths += %W[#{config.root}/lib]
 
-    config.encoding = 'utf-8'
+    config.encoding = "utf-8"
 
     # ログなどに表示しないパラメーター名を指定
     # 正規表現によってマッチが行われるので`*_confirmation`のような名前の指定は不要
@@ -46,8 +46,8 @@ module Jrnl
 
     config.i18n.default_locale = :ja
 
-    config.time_zone = 'Tokyo'
+    config.time_zone = "Tokyo"
 
-    config.x.jrnl = config_for(Rails.root.join('config/x/jrnl.yml'))
+    config.x.jrnl = config_for(Rails.root.join("config/x/jrnl.yml"))
   end
 end

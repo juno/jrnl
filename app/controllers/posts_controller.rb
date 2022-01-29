@@ -1,6 +1,6 @@
 # Posts controller
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :monthly_archive]
+  before_action :authenticate_user!, except: %i[index show monthly_archive]
 
   def index
     @posts = Post.recent.page(params[:page]).per(5)
@@ -28,11 +28,11 @@ class PostsController < ApplicationController
 
     if @post.save
       unless Rails.configuration.x.jrnl.caching[:use]
-        flash[:notice] = 'Post was successfully created.'
+        flash[:notice] = "Post was successfully created."
       end
       redirect_to @post
     else
-      render action: 'new'
+      render action: "new"
     end
   end
 
@@ -41,11 +41,11 @@ class PostsController < ApplicationController
 
     if @post.update(post_params)
       unless Rails.configuration.x.jrnl.caching[:use]
-        flash[:notice] = 'Post was successfully updated.'
+        flash[:notice] = "Post was successfully updated."
       end
       redirect_to @post
     else
-      render action: 'edit'
+      render action: "edit"
     end
   end
 
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
   end
 
   def monthly_archive
-    t = Time.new(params[:year], params[:month], 1)
+    t = Time.zone.local(params[:year], params[:month], 1)
     @posts = Post.created_within(t.beginning_of_month, t.end_of_month)
       .oldest
       .page(params[:page])
@@ -68,8 +68,9 @@ class PostsController < ApplicationController
   private
 
   def set_cache_control_header
-    return Rails.configuration.x.jrnl.caching[:use]
-    response.headers['Cache-Control'] = 'public, max-age=300'
+    return unless Rails.configuration.x.jrnl.caching[:use]
+
+    response.headers["Cache-Control"] = "public, max-age=300"
   end
 
   def post_params
