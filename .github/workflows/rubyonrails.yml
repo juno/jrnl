@@ -69,6 +69,9 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:schema:load
 
+      - name: Run zeitwerk:check
+        run: bin/rails zeitwerk:check
+
       - name: Run tests
         run: bin/rake
 
