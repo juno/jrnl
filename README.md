@@ -1,8 +1,9 @@
 jrnl
 ====
 
-[![Circle CI](https://circleci.com/gh/juno/jrnl.svg?style=svg)](https://circleci.com/gh/juno/jrnl)
+[![Ruby on Rails CI](https://github.com/juno/jrnl/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/juno/jrnl/actions/workflows/rubyonrails.yml)
 
+[![CodeQL](https://github.com/juno/jrnl/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/juno/jrnl/actions/workflows/codeql-analysis.yml)
 
 Getting Start
 -------------
