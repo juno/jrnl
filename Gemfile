@@ -5,7 +5,7 @@ ruby '3.1.0'
 gem 'rails', '~> 7.0.1'
 
 gem 'jquery-rails', '~> 4.4.0'
-gem 'pg', '~> 1.2.3'
+gem 'pg', '~> 1.3.0'
 
 gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '4.0.2'
