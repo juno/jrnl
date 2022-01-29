@@ -16,7 +16,7 @@ gem 'webpacker'
 gem 'devise', '~> 4.8.1'
 gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.2.2'
-gem 'puma', '~> 5.5.2'
+gem 'puma', '~> 5.6.1'
 gem 'redcarpet', '~> 3.5.1'
 gem 'settingslogic', '~> 2.0.9'
 
