@@ -7,10 +7,10 @@ updates:
     day: "saturday"
     timezone: "Asia/Tokyo"
   open-pull-requests-limit: 10
-- package-ecosystem: "npm"
-  directory: "/"
-  schedule:
-    interval: "weekly"
-    day: "saturday"
-    timezone: "Asia/Tokyo"
-  open-pull-requests-limit: 10
+# - package-ecosystem: "npm"
+#   directory: "/"
+#   schedule:
+#     interval: "weekly"
+#     day: "saturday"
+#     timezone: "Asia/Tokyo"
+#   open-pull-requests-limit: 10
