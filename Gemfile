@@ -21,7 +21,7 @@ gem 'redcarpet', '~> 3.5.1'
 gem 'settingslogic', '~> 2.0.9'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 5.0.2'
+  gem 'rspec-rails', '~> 5.1.0'
 end
 
 group :test do
