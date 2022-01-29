@@ -11,7 +11,6 @@ gem 'sassc-rails', '2.1.2'
 gem 'sprockets', '4.0.2'
 gem 'sprockets-rails', '3.4.2'
 gem 'uglifier', '4.2.0'
-gem 'webpacker'
 
 gem 'devise', '~> 4.8.1'
 gem 'devise-encryptable', '~> 0.2.0'
@@ -40,4 +39,3 @@ gem 'psych', '3.3.2'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
-
