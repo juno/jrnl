@@ -17,7 +17,6 @@ gem 'devise-encryptable', '~> 0.2.0'
 gem 'kaminari', '~> 1.2.2'
 gem 'puma', '~> 5.6.1'
 gem 'redcarpet', '~> 3.5.1'
-gem 'settingslogic', '~> 2.0.9'
 
 group :development, :test do
   gem 'rspec-rails', '~> 5.1.0'
@@ -34,8 +33,8 @@ end
 
 gem 'nokogiri', '>= 1.6.7.2'
 
-gem 'rails-html-sanitizer', '~> 1.4.2'
-gem 'psych', '3.3.2'
 gem 'net-imap'
 gem 'net-pop'
 gem 'net-smtp'
+gem 'psych', '4.0.3'
+gem 'rails-html-sanitizer', '~> 1.4.2'

@@ -33,6 +33,8 @@ development:
 
 test:
   <<: *defaults
+  caching:
+    use: false
 
 production:
   <<: *defaults

@@ -7,8 +7,6 @@ RSpec.describe PostsController, type: :controller do
     allow(Post).to receive_message_chain(:recent, :page, :per) { @posts }
   end
 
-  before { allow(Settings).to receive(:caching).and_return({ 'use' => false }) }
-
   describe "GET index" do
     subject { get :index }
     before { stub_recent_posts }
