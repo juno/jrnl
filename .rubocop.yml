@@ -2,6 +2,7 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rubycw
 
 inherit_mode:
   merge:
@@ -19,7 +20,7 @@ AllCops:
   TargetRailsVersion: 7.0
   CacheRootDirectory: './tmp/cache'
 
-StringLiterals:
+Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Layout/EmptyLinesAroundAttributeAccessor:

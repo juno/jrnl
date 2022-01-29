@@ -245,6 +245,8 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.8.0)
       rubocop (~> 1.19)
+    rubocop-rubycw (0.1.6)
+      rubocop (~> 1.0)
     ruby-progressbar (1.11.0)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -319,6 +321,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  rubocop-rubycw
   sassc-rails (= 2.1.2)
   shoulda-matchers (~> 5.1.0)
   simplecov (~> 0.21.2)
