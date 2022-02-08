@@ -16,7 +16,7 @@ services:
           name: jrnl
           property: connectionString
       - key: SECRET_KEY_BASE
-        generateValue: true
+        sync: false
 
 databases:
   - name: jrnl
