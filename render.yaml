@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: jrnl
+    plan: free
+    env: ruby
+    repo: https://github.com/juno/jrnl.git
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    domains:
+      - journal.sooey.com
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jrnl
+          property: connectionString
+
+databases:
+  - name: jrnl
+    databaseName: jrnl
+    plan: free
+    postgresMajorVersion: 14
