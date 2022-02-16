@@ -50,3 +50,4 @@ Running tests.
 View coverage report.
 
     $ open coverage/index.html
+
