@@ -33,7 +33,7 @@ group :test do
   gem "rspec_junit_formatter", "0.5.1"
   gem "shoulda-matchers", "~> 5.1.0"
   gem "simplecov", "~> 0.21.2", require: false
-  gem "simplecov-rcov", "~> 0.2.3", require: false
+  gem "simplecov-rcov", "~> 0.3.1", require: false
 end
 
 gem "nokogiri", ">= 1.6.7.2"
