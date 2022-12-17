@@ -251,7 +251,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    shoulda-matchers (5.2.0)
+    shoulda-matchers (5.3.0)
       activesupport (>= 5.2.0)
     simplecov (0.21.2)
       docile (~> 1.1)
@@ -317,7 +317,7 @@ DEPENDENCIES
   rubocop-rspec
   rubocop-rubycw
   sassc-rails (= 2.1.2)
-  shoulda-matchers (~> 5.2.0)
+  shoulda-matchers (~> 5.3.0)
   simplecov (~> 0.21.2)
   simplecov-rcov (~> 0.3.1)
   sprockets (= 4.1.1)
