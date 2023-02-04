@@ -16,7 +16,7 @@ gem "devise", "~> 4.8.1"
 gem "devise-encryptable", "~> 0.2.0"
 gem "kaminari", "~> 1.2.2"
 gem "puma", "~> 6.0.2"
-gem "redcarpet", "~> 3.5.1"
+gem "redcarpet", "~> 3.6.0"
 
 group :development, :test do
   gem "rspec-rails", "~> 6.0.1"
