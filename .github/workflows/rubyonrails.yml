@@ -40,9 +40,9 @@ jobs:
           bundler-cache: true
 
       - name: setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version-file: "package.json"
 
       - name: install yarn
         run: npm i -g yarn
