@@ -15,7 +15,7 @@ gem "uglifier", "4.2.0"
 gem "devise", "~> 4.9.0"
 gem "devise-encryptable", "~> 0.2.0"
 gem "kaminari", "~> 1.2.2"
-gem "puma", "~> 6.1.1"
+gem "puma", "~> 6.2.1"
 gem "redcarpet", "~> 3.6.0"
 
 group :development, :test do
