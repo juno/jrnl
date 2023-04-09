@@ -28,7 +28,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara", "~> 3.38.0"
+  gem "capybara", "~> 3.39.0"
   gem "factory_bot_rails", "~> 6.2.0"
   gem "rspec_junit_formatter", "0.6.0"
   gem "shoulda-matchers", "~> 5.3.0"
