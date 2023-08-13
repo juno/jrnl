@@ -7,6 +7,16 @@ updates:
     day: "saturday"
     timezone: "Asia/Tokyo"
   open-pull-requests-limit: 10
+  groups:
+    rspec-dependencies:
+      patterns:
+        - "rspec"
+        - "rspec-*"
+        - "rspec_*"
+    rubocop-dependencies:
+      patterns:
+        - "rubocop"
+        - "rubocop-*"
 # - package-ecosystem: "npm"
 #   directory: "/"
 #   schedule:
