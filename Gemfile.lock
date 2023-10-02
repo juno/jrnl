@@ -271,7 +271,7 @@ GEM
     simplecov-rcov (0.3.3)
       simplecov (>= 0.4.1)
     simplecov_json_formatter (0.1.4)
-    sprockets (4.2.0)
+    sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.4.2)
@@ -328,7 +328,7 @@ DEPENDENCIES
   shoulda-matchers (~> 5.3.0)
   simplecov (~> 0.22.0)
   simplecov-rcov (~> 0.3.3)
-  sprockets (= 4.2.0)
+  sprockets (= 4.2.1)
   sprockets-rails (= 3.4.2)
   uglifier (= 4.2.0)
 
