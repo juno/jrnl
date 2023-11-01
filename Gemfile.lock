@@ -157,7 +157,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.4)
-    psych (5.1.0)
+    psych (5.1.1.1)
       stringio
     public_suffix (5.0.1)
     puma (6.4.0)
@@ -278,7 +278,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stringio (3.0.5)
+    stringio (3.0.8)
     thor (1.2.2)
     tilt (2.0.11)
     timeout (0.4.0)
@@ -312,7 +312,7 @@ DEPENDENCIES
   net-smtp
   nokogiri (>= 1.6.7.2)
   pg (~> 1.5.4)
-  psych (= 5.1.0)
+  psych (= 5.1.1.1)
   puma (~> 6.4.0)
   rails (~> 7.0.8)
   rails-html-sanitizer (~> 1.6.0)
