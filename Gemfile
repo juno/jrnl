@@ -29,7 +29,7 @@ end
 
 group :test do
   gem "capybara", "~> 3.39.2"
-  gem "factory_bot_rails", "~> 6.4.2"
+  gem "factory_bot_rails", "~> 6.4.3"
   gem "rspec_junit_formatter", "0.6.0"
   gem "shoulda-matchers", "~> 5.3.0"
   gem "simplecov", "~> 0.22.0", require: false
