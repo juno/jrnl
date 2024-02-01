@@ -80,7 +80,7 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt (3.1.19)
-    bigdecimal (3.1.5)
+    bigdecimal (3.1.6)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -91,7 +91,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
@@ -152,7 +152,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    minitest (5.20.0)
+    minitest (5.21.2)
     mutex_m (0.2.0)
     net-imap (0.4.9)
       date
@@ -289,7 +289,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    shoulda-matchers (6.0.0)
+    shoulda-matchers (6.1.0)
       activesupport (>= 5.2.0)
     simplecov (0.22.0)
       docile (~> 1.1)
@@ -354,7 +354,7 @@ DEPENDENCIES
   rubocop-rspec
   rubocop-rubycw
   sassc-rails (= 2.1.2)
-  shoulda-matchers (~> 6.0.0)
+  shoulda-matchers (~> 6.1.0)
   simplecov (~> 0.22.0)
   simplecov-rcov (~> 0.3.3)
   sprockets (= 4.2.1)
