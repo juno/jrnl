@@ -2,7 +2,7 @@
   "name": "jrnl",
   "license": "MIT",
   "engines": {
-    "node": "16.*",
+    "node": "20.*",
     "yarn": "1.22.*"
   },
   "devDependencies": {
