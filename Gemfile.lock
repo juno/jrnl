@@ -180,7 +180,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
@@ -342,7 +342,7 @@ DEPENDENCIES
   nokogiri (>= 1.6.7.2)
   pg (~> 1.5.7)
   psych (= 5.1.2)
-  puma (~> 6.4.2)
+  puma (~> 6.4.3)
   rails (~> 7.2.1)
   rails-html-sanitizer (~> 1.6.0)
   redcarpet (~> 3.6.0)
