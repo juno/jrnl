@@ -10,7 +10,7 @@ gem "pg", "~> 1.5.7"
 gem "sassc-rails", "2.1.2"
 gem "sprockets", "4.2.1"
 gem "sprockets-rails", "3.5.2"
-gem "uglifier", "4.2.0"
+gem "uglifier", "4.2.1"
 
 gem "devise", "~> 4.9.4"
 gem "devise-encryptable", "~> 0.2.0"

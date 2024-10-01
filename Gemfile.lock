@@ -307,7 +307,7 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
+    uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.5.0)
     useragent (0.16.10)
@@ -359,7 +359,7 @@ DEPENDENCIES
   simplecov-rcov (~> 0.3.7)
   sprockets (= 4.2.1)
   sprockets-rails (= 3.5.2)
-  uglifier (= 4.2.0)
+  uglifier (= 4.2.1)
 
 RUBY VERSION
    ruby 3.3.3p89
