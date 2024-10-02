@@ -19,7 +19,7 @@ gem "puma", "~> 6.4.3"
 gem "redcarpet", "~> 3.6.0"
 
 group :development, :test do
-  gem "rspec-rails", "~> 6.1.4"
+  gem "rspec-rails", "~> 7.0.1"
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
