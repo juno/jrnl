@@ -255,7 +255,6 @@ RSpec.describe PostsController, type: :controller do
       end
     end
 
-
     context "when signed in and successfully destroyed" do
       let(:author) { create(:author) }
       let!(:a_post) { create(:post) }
