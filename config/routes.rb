@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get "/posts/:id" => redirect("/%{id}"), constraints: { id: /\d+/ } # rubocop:disable Style/FormatStringToken
+  get "/posts/:id" => redirect("/%{id}"), constraints: { id: /\d+/ }
   get "/posts" => redirect("/")
   get "/posts/index" => redirect("/")
 

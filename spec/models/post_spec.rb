@@ -54,7 +54,7 @@ describe Post, type: :model do
   end
 
   describe ".recent" do
-    subject { Post.recent }
+    subject { described_class.recent }
 
     before { setup_post_fixtures }
 
@@ -96,7 +96,7 @@ describe Post, type: :model do
       subject { described_class.new(content: "dummy").html }
 
       before do
-        stub = instance_double("Redcarpet::Markdown")
+        stub = instance_double(Redcarpet::Markdown)
         allow(stub).to receive(:render).and_raise("render error")
         allow(Redcarpet::Markdown).to receive(:new).and_return(stub)
       end

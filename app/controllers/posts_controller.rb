@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @posts = Post.recent.page(params[:page]).per(5)
     respond_to do |format|
       format.html { set_cache_control_header }
-      format.rss { render(layout: false) }  # index.rss.builder
+      format.rss { render(layout: false) } # index.rss.builder
     end
   end
 
