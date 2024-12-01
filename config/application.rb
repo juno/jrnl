@@ -36,5 +36,13 @@ module Jrnl
 
     # Load application custom configuration
     config.x.jrnl = config_for(Rails.root.join("config/x/jrnl.yml"))
+
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w[assets tasks])
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
   end
 end
