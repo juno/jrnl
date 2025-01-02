@@ -171,7 +171,8 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
-    psych (5.2.0)
+    psych (5.2.2)
+      date
       stringio
     public_suffix (5.0.4)
     puma (6.5.0)
@@ -336,7 +337,7 @@ DEPENDENCIES
   net-smtp
   nokogiri (>= 1.6.7.2)
   pg (~> 1.5.9)
-  psych (= 5.2.0)
+  psych (= 5.2.2)
   puma (~> 6.5.0)
   rails (~> 8.0.0)
   rails-html-sanitizer (~> 1.6.1)
