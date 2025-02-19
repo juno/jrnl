@@ -39,33 +39,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - name: setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: "package.json"
-
-      - name: install yarn
-        run: npm i -g yarn
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache yarn cache directory
-        uses: actions/cache@v2.1.5
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Cache node_modules
-        uses: actions/cache@v2.1.5
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-modules-
-      - name: yarn install
-        run: yarn install --frozen-lockfile
-
       - name: Set up database schema
         run: bin/rails db:schema:load
 
