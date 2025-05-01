@@ -16,10 +16,6 @@ defaults: &defaults
     use: true
     url: http://feeds.feedburner.com/Sooey
 
-  google_custom_search:
-    use: true
-    code: 002120026113953543318:8wsc3jhy1fm
-
   twitter_anywhere:
     use: false
     id: ua931JjzNdqgvz2B0S85jA

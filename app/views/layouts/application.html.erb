@@ -20,7 +20,6 @@
       </header>
       <nav class="primary">
         <%= render(partial: 'shared/social') %>
-        <%= render(partial: 'shared/google_custom_search') if Rails.configuration.x.jrnl.google_custom_search[:use] %>
       </nav>
       <div id="content">
         <%= yield %>
