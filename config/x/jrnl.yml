@@ -7,14 +7,10 @@ defaults: &defaults
     email: juno at sooey.com
 
   social:
+    - name: links
+      url: https://junya.bio.link/
     - name: qnyp
       url: https://qnyp.com/junya
-    - name: twitter
-      url: https://twitter.com/junya
-    - name: pinboard
-      url: https://pinboard.in/u:junya/
-    - name: instagram
-      url: https://www.instagram.com/junyaogura/
 
   feedburner:
     use: true
