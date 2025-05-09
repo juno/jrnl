@@ -23,3 +23,11 @@ updates:
 #     day: "saturday"
 #     timezone: "Asia/Tokyo"
 #   open-pull-requests-limit: 10
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule:
+    interval: "weekly"
+    day: "sunday"
+    time: "07:00"
+    timezone: "Asia/Tokyo"
+  open-pull-requests-limit: 20
