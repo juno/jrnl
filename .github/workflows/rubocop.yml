@@ -14,7 +14,7 @@ jobs:
         uses: ruby/setup-ruby@e34163cd15f4bb403dcd72d98e295997e6a55798 # v1.238.0
 
       - name: rubocop
-        uses: reviewdog/action-rubocop@fcb74ba274da10b18d038d0bcddaae3518739634 # v2.21.2
+        uses: reviewdog/action-rubocop@6b7e953d8b63e3e67b3c6464843d2d7eabf1c53c # v2.21.3
         with:
           rubocop_version: gemfile
           rubocop_extensions: rubocop-performance:gemfile rubocop-rails:gemfile rubocop-rspec:gemfile rubocop-rubycw:gemfile
