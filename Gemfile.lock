@@ -192,7 +192,7 @@ GEM
       prettyprint
     prettyprint (0.2.0)
     prism (1.4.0)
-    psych (5.2.4)
+    psych (5.2.6)
       date
       stringio
     public_suffix (6.0.1)
@@ -367,7 +367,7 @@ DEPENDENCIES
   net-smtp
   nokogiri (>= 1.6.7.2)
   pg (~> 1.5.9)
-  psych (= 5.2.4)
+  psych (= 5.2.6)
   puma (~> 6.6.0)
   rails (~> 8.0.2)
   rails-html-sanitizer (~> 1.6.2)
