@@ -12,9 +12,7 @@ services:
     healthCheckPath: /
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: jrnl
-          property: connectionString
+        sync: false # Set Neon's DB connection string on Web UI
       - key: SECRET_KEY_BASE
         sync: false
       - key: WEB_CONCURRENCY
@@ -22,8 +20,3 @@ services:
       - key: RAILS_MAX_THREADS
         value: 2
 
-databases:
-  - name: jrnl
-    databaseName: jrnl
-    plan: free
-    # postgresMajorVersion: 14
