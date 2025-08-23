@@ -1,19 +1,20 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 2 } %>
+  variables:
+    statement_timeout: 5000
+
+development:
+  <<: *default
   database: jrnl_development
-  pool: 5
-  min_messages: warning
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: jrnl_test
-  pool: 5
-  min_messages: warning
+  min_messages: WARNING
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: jrnl_production
-  pool: 5
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+

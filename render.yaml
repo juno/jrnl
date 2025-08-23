@@ -17,6 +17,10 @@ services:
           property: connectionString
       - key: SECRET_KEY_BASE
         sync: false
+      - key: WEB_CONCURRENCY
+        value: 1
+      - key: RAILS_MAX_THREADS
+        value: 2
 
 databases:
   - name: jrnl
