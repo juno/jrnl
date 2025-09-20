@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name:  Install Ruby
-        uses: ruby/setup-ruby@44511735964dcb71245e7e55f72539531f7bc0eb # v1.257.0
+        uses: ruby/setup-ruby@1dc795682739d28740ac76bf40227b89f2ab602a # v1.260.0
 
       - name: rubocop
         uses: reviewdog/action-rubocop@b6d5e953a5fc0bf3ab65254e77730ea2174d6d6d # v2.22.0
