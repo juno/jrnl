@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby file: ".tool-versions"
 
-gem "rails", "~> 8.0.2"
+gem "rails", "~> 8.0.3"
 
 gem "jquery-rails", "~> 4.6.0"
 gem "pg", "~> 1.6.0"
