@@ -169,7 +169,7 @@ GEM
       timeout
     net-smtp (0.5.1)
       net-protocol
-    nio4r (2.7.4)
+    nio4r (2.7.5)
     nokogiri (1.18.10)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -201,7 +201,7 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (7.0.4)
+    puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.3)
@@ -376,7 +376,7 @@ DEPENDENCIES
   nokogiri (>= 1.6.7.2)
   pg (~> 1.6.2)
   psych (= 5.2.6)
-  puma (~> 7.0.4)
+  puma (~> 7.1.0)
   rails (~> 8.0.3)
   rails-html-sanitizer (~> 1.6.2)
   redcarpet (~> 3.6.1)
