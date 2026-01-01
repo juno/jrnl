@@ -5,7 +5,7 @@ ruby file: ".tool-versions"
 gem "rails", "~> 8.1.1"
 
 gem "jquery-rails", "~> 4.6.1"
-gem "pg", "~> 1.6.2"
+gem "pg", "~> 1.6.3"
 
 gem "sassc-rails", "2.1.2"
 gem "sprockets", "4.2.2"
