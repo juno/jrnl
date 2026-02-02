@@ -12,7 +12,7 @@ gem "sprockets", "4.2.2"
 gem "sprockets-rails", "3.5.2"
 gem "uglifier", "4.2.1"
 
-gem "devise", "~> 4.9.4"
+gem "devise", "~> 5.0.0"
 gem "devise-encryptable", "~> 0.2.0"
 gem "kaminari", "~> 1.2.2"
 gem "puma", "~> 7.2.0"
