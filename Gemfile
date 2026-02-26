@@ -18,6 +18,8 @@ gem "kaminari", "~> 1.2.2"
 gem "puma", "~> 7.2.0"
 gem "redcarpet", "~> 3.6.1"
 
+gem "newrelic_rpm", "10.2.0"
+
 group :development, :test do
   gem "rspec-rails", "~> 8.0.1"
   gem "rubocop"
