@@ -21,7 +21,7 @@ gem "redcarpet", "~> 3.6.1"
 gem "newrelic_rpm", "10.2.0"
 
 group :development, :test do
-  gem "rspec-rails", "~> 8.0.1"
+  gem "rspec-rails", "~> 8.0.3"
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
