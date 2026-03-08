@@ -41,7 +41,7 @@ bin/rake assets:precompile
 - **User**: Devise認証。投稿の作成/編集/削除にログインが必要
 - **ルーティング**: `GET /` → 記事一覧、`GET /:id` → 記事詳細（パーマリンク）、`GET /archives/:year/:month` → 月別アーカイブ、`GET /admin` → 管理画面（認証必須）
 - **設定**: `config/x/jrnl.yml` にアプリ固有設定（キャッシュ、author情報、SNSリンク、Feedburner等）
-- **フロントエンド**: Sprockets + jQuery + SCSS（Node.js不要）
+- **フロントエンド**: Sprockets + jQuery + SCSS（開発はSprocketsのみで完結するが、本番用アセットプリコンパイルには JavaScript ランタイム（一般的には Node.js）が必要）
 - **デプロイ**: Render.com（`bin/render-build.sh`）
 
 ## Testing
