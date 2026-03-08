@@ -37,6 +37,9 @@ module Jrnl
     # Load application custom configuration
     config.x.jrnl = config_for(Rails.root.join("config/x/jrnl.yml"))
 
+    # Use lograge for concise single-line request logging
+    config.lograge.enabled = true
+
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
