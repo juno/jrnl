@@ -18,6 +18,10 @@ common: &default_settings
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
   app_name: 'jrnl'
 
+  error_collector:
+    ignore_classes:
+      - 'ActionController::RoutingError'
+
   distributed_tracing:
     enabled: true
 
