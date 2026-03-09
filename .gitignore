@@ -5,6 +5,8 @@
 .yardoc
 coverage
 db/*.sqlite3
+storage/*.sqlite3
+storage/*.sqlite3-*
 doc/*
 log/*.log
 tmp/**/*
