@@ -42,7 +42,7 @@ bin/rake assets:precompile
 - **ルーティング**: `GET /` → 記事一覧、`GET /:id` → 記事詳細（パーマリンク）、`GET /archives/:year/:month` → 月別アーカイブ、`GET /admin` → 管理画面（認証必須）
 - **設定**: `config/x/jrnl.yml` にアプリ固有設定（キャッシュ、author情報、SNSリンク、Feedburner等）
 - **フロントエンド**: Sprockets + jQuery + SCSS（開発はSprocketsのみで完結するが、本番用アセットプリコンパイルには JavaScript ランタイム（一般的には Node.js）が必要）
-- **デプロイ**: Render.com（`bin/render-build.sh`）
+- **デプロイ**: VPS
 
 ## Testing
 
