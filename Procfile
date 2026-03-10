@@ -1,1 +1,1 @@
-web: bundle exec falcon serve -b http://0.0.0.0:$PORT
+web: bundle exec ./falcon.rb
