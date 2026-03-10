@@ -1,1 +1,1 @@
-web: bundle exec puma -C config/puma.rb
+web: bundle exec falcon serve -b http://0.0.0.0:$PORT

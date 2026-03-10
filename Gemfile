@@ -16,7 +16,7 @@ gem "uglifier", "4.2.1"
 gem "devise", "~> 5.0.2"
 gem "devise-encryptable", "~> 0.2.0"
 gem "kaminari", "~> 1.2.2"
-gem "puma", "~> 7.2.0"
+gem "falcon-rails", "~> 0.2.4"
 gem "redcarpet", "~> 3.6.1"
 
 gem "lograge", "~> 0.14.0"
