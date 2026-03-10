@@ -1,1 +1,0 @@
-web: PORT=3000 bundle exec falcon serve -b http://localhost:3000
