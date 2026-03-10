@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 ruby file: ".tool-versions"
 
-gem "csv"
 gem "devise", "~> 5.0.2"
 gem "devise-encryptable", "~> 0.2.0"
 gem "falcon-rails", "~> 0.2.4"

@@ -159,7 +159,6 @@ GEM
       fiber-storage (~> 1.0)
       rails (>= 7.0)
     crass (1.0.6)
-    csv (3.3.5)
     date (3.5.1)
     devise (5.0.2)
       bcrypt (~> 3.0)
@@ -519,7 +518,6 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (~> 3.40.0)
-  csv
   devise (~> 5.0.2)
   devise-encryptable (~> 0.2.0)
   factory_bot_rails (~> 6.5.1)
