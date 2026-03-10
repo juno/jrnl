@@ -2,9 +2,6 @@ source "https://rubygems.org"
 
 ruby file: ".tool-versions"
 
-gem "net-imap"
-gem "net-pop"
-gem "net-smtp"
 gem "devise", "5.0.2"
 gem "devise-encryptable", "0.2.0"
 gem "falcon-rails", "0.2.4"
