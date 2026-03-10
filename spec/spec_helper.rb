@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
+ENV["CONSOLE_LEVEL"] ||= "warn" # suppress falcon log output during tests
 
 require "simplecov"
 require "simplecov-rcov"
