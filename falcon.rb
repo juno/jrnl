@@ -16,6 +16,6 @@ service hostname do
   endpoint do
     Async::HTTP::Endpoint
       .parse("http://0.0.0.0:#{port}")
-      .with(protocol: Async::HTTP::Protocol::HTTP2)
+      .with(protocol: Async::HTTP::Protocol::HTTP11)
   end
 end
