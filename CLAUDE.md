@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-個人ブログアプリケーション。Ruby on Rails 8.1, Ruby 4.0.1, PostgreSQL。
+個人ブログアプリケーション。Ruby on Rails 8.1, Ruby 4.0.1, PostgreSQL。アプリケーションサーバーは Falcon（falcon-rails）。
 
 ## Common Commands
 
@@ -42,6 +42,7 @@ bin/rake assets:precompile
 - **ルーティング**: `GET /` → 記事一覧、`GET /:id` → 記事詳細（パーマリンク）、`GET /archives/:year/:month` → 月別アーカイブ、`GET /admin` → 管理画面（認証必須）
 - **設定**: `config/x/jrnl.yml` にアプリ固有設定（キャッシュ、author情報、SNSリンク、Feedburner等）
 - **フロントエンド**: Sprockets + jQuery + SCSS（開発はSprocketsのみで完結するが、本番用アセットプリコンパイルには JavaScript ランタイム（一般的には Node.js）が必要）
+- **アプリケーションサーバー**: Falcon（`falcon-rails` gem）。開発は `bin/dev`（foreman + Procfile.dev）で起動。本番は `falcon.rb`（falcon-host）+ `preload.rb` で Rails をプリロードして起動
 - **デプロイ**: VPS
 
 ## Testing
