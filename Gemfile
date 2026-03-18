@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby file: ".tool-versions"
 
-gem "devise", "5.0.2"
+gem "devise", "5.0.3"
 gem "devise-encryptable", "0.2.0"
 gem "falcon-rails", "0.2.4"
 gem "jquery-rails", "4.6.1"
