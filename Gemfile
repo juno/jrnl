@@ -21,7 +21,7 @@ gem "sqlite3"
 gem "uglifier", "4.2.1"
 
 group :development, :test do
-  gem "rspec-rails", "~> 8.0.3"
+  gem "rspec-rails", "~> 8.0.4"
   gem "rubocop"
   gem "rubocop-performance"
   gem "rubocop-rails"
