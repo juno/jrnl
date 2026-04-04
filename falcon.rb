@@ -16,12 +16,7 @@ service hostname do
   port { ENV.fetch("PORT", 3000).to_i }
 
   endpoint do
-    if ENV["LISTEN_FDS"].to_i > 0
-      # systemd socket activation: fd=3 が最初のソケット
-      IO::Endpoint.socket(Socket.for_fd(3, autoclose: false))
-    else
-      Async::HTTP::Endpoint.parse("http://0.0.0.0:9000")
-        .with(protocol: Async::HTTP::Protocol::HTTP11)
-    end
+    Async::HTTP::Endpoint.parse("http://0.0.0.0:#{port}")
+      .with(protocol: Async::HTTP::Protocol::HTTP11)
   end
 end
