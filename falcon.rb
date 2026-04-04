@@ -10,8 +10,9 @@ service hostname do
 
   preload "preload.rb"
 
-  port { ENV.fetch("PORT", 9000).to_i }
   count { ENV.fetch("WEB_CONCURRENCY", 1).to_i }
+
+  port { ENV.fetch("PORT", 3000).to_i }
 
   endpoint do
     Async::HTTP::Endpoint

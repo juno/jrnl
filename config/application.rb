@@ -47,5 +47,9 @@ module Jrnl
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Configurations for falcon
+    config.active_support.isolation_level = :fiber
+    config.active_record.permanent_connection_checkout = :disallowed
   end
 end
