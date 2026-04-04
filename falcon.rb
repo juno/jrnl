@@ -19,4 +19,15 @@ service hostname do
       .parse("http://0.0.0.0:#{port}")
       .with(protocol: Async::HTTP::Protocol::HTTP11)
   end
+
+  endpoint do
+    # If a socket has been passed from systemd, use that one.
+    if ENV["LISTEN_FDS"]
+      Async::IO::SharedEndpoint.bound(
+        Async::HTTP::Endpoint.parse("http://localhost:3000"),
+      )
+    else
+      Async::HTTP::Endpoint.parse("http://0.0.0.0:3000")
+    end
+  end
 end

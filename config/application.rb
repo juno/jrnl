@@ -51,5 +51,6 @@ module Jrnl
     # Configurations for falcon
     config.active_support.isolation_level = :fiber
     config.active_record.permanent_connection_checkout = :disallowed
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end
