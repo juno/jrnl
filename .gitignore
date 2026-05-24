@@ -24,3 +24,7 @@ vendor/bundles
 yarn-debug.log*
 .yarn-integrity
 /.vscode
+
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+
