@@ -542,7 +542,7 @@ DEPENDENCIES
   uglifier (= 4.2.1)
 
 RUBY VERSION
-   ruby 4.0.1p0
+  ruby 4.0.5
 
 BUNDLED WITH
-   4.0.8
+  4.0.8
