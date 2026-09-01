@@ -335,7 +335,7 @@ GEM
       stringio
     public_suffix (7.0.5)
     racc (1.8.1)
-    rack (3.2.6)
+    rack (3.2.7)
     rack-session (2.1.2)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -461,8 +461,8 @@ GEM
     simplecov (1.0.3)
     simplecov-rcov (0.3.7)
       simplecov (>= 0.4.1)
-    sprockets (4.2.2)
-      concurrent-ruby (~> 1.0)
+    sprockets (4.4.1)
+      concurrent-ruby (~> 1.1)
       logger
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.5.2)
@@ -536,7 +536,7 @@ DEPENDENCIES
   shoulda-matchers (~> 8.0.1)
   simplecov (~> 1.0.3)
   simplecov-rcov (~> 0.3.7)
-  sprockets (= 4.2.2)
+  sprockets (= 4.4.1)
   sprockets-rails (= 3.5.2)
   sqlite3
   uglifier (= 4.2.1)
