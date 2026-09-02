@@ -34,6 +34,6 @@ group :test do
   gem "factory_bot_rails", "~> 6.5.1"
   gem "rspec_junit_formatter", "0.6.0"
   gem "shoulda-matchers", "~> 8.0.1"
-  gem "simplecov", "~> 1.0.3", require: false
+  gem "simplecov", "~> 1.1.1", require: false
   gem "simplecov-rcov", "~> 0.3.7", require: false
 end
