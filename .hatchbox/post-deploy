@@ -1,0 +1,23 @@
+# --- 設定項目 ---
+# HatchboxのEnvironment Variablesに登録してある場合は $API_KEY のままでOKです
+# 登録していない場合は、直接文字列（"NRAK-..."）を代入してください
+NR_API_KEY="${NEW_RELIC_API_KEY}"
+NR_ENTITY_GUID="${NEW_RELIC_ENTITY_GUID}"
+
+# 1. バージョン情報の取得 (REVISIONファイルがあれば使用、なければ日時)
+DEPLOY_VERSION=$(cat REVISION 2>/dev/null || date +%Y%m%d-%H%M%S)
+
+# 2. GraphQLクエリの組み立て
+# ヒアドキュメントを使うことで、複雑なクォートのエスケープを回避します
+read -r -d '' JSON_PAYLOAD <<EOF
+{
+  "query": "mutation { changeTrackingCreateDeployment(deployment: {entityGuid: \"$NR_ENTITY_GUID\", version: \"$DEPLOY_VERSION\", user: \"Hatchbox\"}) { deploymentId } }"
+}
+EOF
+
+# 3. New Relic APIへのリクエスト実行
+curl -s -X POST 'https://api.newrelic.com/graphql' \
+     -H "Api-Key: $NR_API_KEY" \
+     -H "Content-Type: application/json" \
+     --data "$JSON_PAYLOAD"
+
